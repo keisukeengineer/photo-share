@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/* 共通スタイルまとめ */
+
+/* ボタン */
+
+.btn-square-shadow {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #242222;
+  color: white;
+  border-bottom: solid 4px black;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+
+.btn-square-shadow:hover {
+  opacity: 0.8;
+}
+
+.btn-square-shadow:active {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+/* ホバー */
+
+.cursor {
+  cursor: pointer;
+}
+
+/* フォーム */
+
+.form__item {
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form__item:focus {
+  color: gray;
+  background-color: white;
+  border-color: #a1cbef;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+}
+

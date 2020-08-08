@@ -1,6 +1,6 @@
-# トップページ
-![photo-share-1.png](./public/photo-share-1.png)<br>
-![photo-share-2.png](./public/photo-share-2.png)<br>
+# イメージ
+![photo-share-top.png](./public/photo-share-top.png)<br><br>
+![photo-share-detail.png](./public/photo-share-detail.png)<br>
 
 # 概要
 作成期間：1週間経過<br>
@@ -8,7 +8,7 @@
 
 # コメント
 LaravelとVueを学びたいと思い、以下のサイトを参考に作成しました。<br>
-アプリ作成を通して、Vuexやコンポーネントの仕組みについて更に理解を深めることができました。
+アプリ作成を通して、Vuexやコンポーネントの仕組みについて更に理解を深めることができました。<br>
 [Vue + Vue Router + Vuex + Laravel チュートリアル（全16回）](https://qiita.com/MasahiroHarada/items/2597bd6973a45f92e1e8)<br>
 
 # 機能

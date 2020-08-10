@@ -57,14 +57,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .container {
-    max-width: 1100px;
+.container {
+  max-width: 1100px;
 
-    /** iPad 横向き */
-    @media screen
-      and (max-width: 1366px)
-      and (max-height: 1024px) {
-        max-width: 1370px;
-    }
+  /** iPad 横向き */
+  @media screen
+    and (max-width: 1366px)
+    and (max-height: 1024px) {
+      max-width: 1370px;
   }
+}
 </style>

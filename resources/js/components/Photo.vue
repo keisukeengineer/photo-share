@@ -57,8 +57,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .photo {
-    width: 15rem;
-    margin: 1%;
-  }
+.photo {
+  width: 15rem;
+  margin: 1%;
+}
 </style>

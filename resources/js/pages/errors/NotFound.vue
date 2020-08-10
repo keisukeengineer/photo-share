@@ -3,7 +3,7 @@
 </template>
 
 <style scoped lang="scss">
-  .not_found {
-      text-align: center;
-  }
+.not_found {
+    text-align: center;
+}
 </style>

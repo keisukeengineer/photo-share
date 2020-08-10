@@ -35,16 +35,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .footer {
-    position: fixed;
-    bottom: 0%;
-    width: 100%;
-    height: 5rem;
-    background: white;
+.footer {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  height: 5rem;
+  background: white;
 
-    .copyright {
-      color: #8a8a8a;
-      margin-right: 2%;
-    }
+  .copyright {
+    color: #8a8a8a;
+    margin-right: 2%;
   }
+}
 </style>

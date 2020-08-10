@@ -1,6 +1,6 @@
 # イメージ
 トップページ<br>
-![photo-share-top.png](./public/photo-share-top.png)
+![photo-share-top.png](./public/photo-share-top.png)<br>
 
 詳細ページ<br>
 ![photo-share-detail.png](./public/photo-share-detail.png)<br><br>
@@ -14,10 +14,10 @@ LaravelとVueを学びたいと思い、以下のサイトを参考に作成し�
 アプリ作成を通して、Vuexやコンポーネントの仕組みについて更に理解を深めることができました。<br><br>
 
 # リンク
-<details><summary>サンプルコード</summary>
+・写真共有アプリケーション
 &emsp;<http://54.178.99.211/>
 
-<details><summary>参考にしたサイト</summary>
+・参考にしたサイト
 &emsp;[Vue + Vue Router + Vuex + Laravel チュートリアル（全16回）](https://qiita.com/MasahiroHarada/items/2597bd6973a45f92e1e8)<br>
 &emsp;[Laravel × CircleCI × AWS で CI/CDパイプラインの構築方法を学ぶ）](https://www.techpit.jp/courses/78)<br><br>
 
@@ -50,4 +50,4 @@ CircleCI<br>
 AmazonLinux2<br>
 AWS(EC2、RDS、S3、CodeDeploy)<br>
 VisualStudio / 1.45.1<br>
-MacOS Catalina / 10.15.4<br><br>
+MacOS Catalina / 10.15.4

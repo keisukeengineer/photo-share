@@ -106,81 +106,81 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .paginate {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding-inline-start: 0px;
+.paginate {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-inline-start: 0px;
 
-    li {
-      width: 31%;
-      margin: 1%;
+  li {
+    width: 31%;
+    margin: 1%;
 
-      /** iPad Pro 縦向き */
-      @media screen
-        and (max-width: 1024px)
-        and (max-height: 1366px) {
-        width: 48%;
-      }
-
-      /** iPad 横向き */
-      @media screen
-        and (max-width: 1024px)
-        and (max-height: 768px) {
-        width: 31.33%;
-      }
-
-      /** iPone6,7,8,10 縦向き */
-      @media screen
-        and (max-width: 375px) {
-        width: 98%;
-      }
-    }
-  }
-
-  .pagination {
-    width: 10.5%;
-    margin: auto;
-    display: flex;
-    color: #8a8a8a;
-    list-style: none;
-    font-size: xx-large;
-    margin-block-start: 0.5rem;
-    margin-block-end: 0.5rem;
-    padding-inline-start: 0px;
-
+    /** iPad Pro 縦向き */
     @media screen
-      and (max-width: 1366px) {
-      width: 9.5%;
+      and (max-width: 1024px)
+      and (max-height: 1366px) {
+      width: 48%;
     }
 
+    /** iPad 横向き */
     @media screen
-      and (max-width: 1024px) {
-      width: 12.5%;
+      and (max-width: 1024px)
+      and (max-height: 768px) {
+      width: 31.33%;
     }
 
-    @media screen
-      and (max-width: 812px) {
-      width: 15.5%;
-    }
-
-    @media screen
-      and (max-width: 768px) {
-      width: 16.5%;
-    }
-
+    /** iPone6,7,8,10 縦向き */
     @media screen
       and (max-width: 375px) {
-      width: 33.5%;
-    }
-
-    & :nth-child(1n) {
-      cursor: pointer;
-      margin-right: 13%;
-
-      &:hover {
-        color: black;
-      }
+      width: 98%;
     }
   }
+}
+
+.pagination {
+  width: 11.5%;
+  margin: auto;
+  display: flex;
+  color: #8a8a8a;
+  list-style: none;
+  font-size: xx-large;
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
+  padding-inline-start: 0px;
+
+  @media screen
+    and (max-width: 1366px) {
+    width: 9.5%;
+  }
+
+  @media screen
+    and (max-width: 1024px) {
+    width: 12.5%;
+  }
+
+  @media screen
+    and (max-width: 812px) {
+    width: 15.5%;
+  }
+
+  @media screen
+    and (max-width: 768px) {
+    width: 16.5%;
+  }
+
+  @media screen
+    and (max-width: 375px) {
+    width: 33.5%;
+  }
+
+  & :nth-child(1n) {
+    cursor: pointer;
+    margin-right: 13%;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
 </style>

@@ -17,7 +17,7 @@
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Message from './components/Message.vue'
-import { INTERNAL_SERVER_ERROR } from './util'
+import { NOT_FOUND, UNAUTHORIZED, INTERNAL_SERVER_ERROR } from './util'
 
 export default {
   components: {
@@ -32,9 +32,19 @@ export default {
   },
   watch: {
     errorCode: {
-      handler (val) {
+      async handler (val) {
         if (val === INTERNAL_SERVER_ERROR) {
           this.$router.push('/500')
+
+        } else if (val === UNAUTHORIZED) {
+          // トークンをリフレッシュ
+          await axios.get('/api/refresh-token')
+
+          this.$store.commit('auth/setUser', null)
+          this.$router.push('/login')
+
+        } else if (val === NOT_FOUND) {
+          this.$router.push('/not-found')
         }
       },
       immediate: true
@@ -47,14 +57,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .container {
-    max-width: 1100px;
+.container {
+  max-width: 1100px;
 
-    /** iPad 横向き */
-    @media screen
-      and (max-width: 1366px)
-      and (max-height: 1024px) {
-        max-width: 1370px;
-    }
+  /** iPad 横向き */
+  @media screen
+    and (max-width: 1366px)
+    and (max-height: 1024px) {
+      max-width: 1370px;
   }
+}
 </style>

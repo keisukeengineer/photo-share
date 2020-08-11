@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { CREATED, UNPROCESSABLE_ENTITY } from '../util'
+import { CREATED, REQUEST_ENTITY_TOO_LARGE, UNPROCESSABLE_ENTITY } from '../util'
 import Loader from './Loader.vue'
 
 export default {
@@ -51,7 +51,6 @@ export default {
         return false
       }
 
-      // ファイルが画像ではなかったら処理中断
       if (! event.target.files[0].type.match('image.*')) {
         this.reset()
         return false
@@ -87,6 +86,9 @@ export default {
       if (response.status === UNPROCESSABLE_ENTITY) {
         this.errors = response.data.errors
         return false
+      } else if(response.status === REQUEST_ENTITY_TOO_LARGE) {
+        this.errors = {photo: ['ファイルサイズを小さくしてください。']}
+        return false
       }
 
       this.reset()
@@ -97,7 +99,6 @@ export default {
         return false
       }
 
-      // メッセージ登録
       this.$store.commit('message/setContent', {
         content: '写真が投稿されました！',
         timeout: 6000

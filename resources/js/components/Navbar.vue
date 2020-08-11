@@ -18,7 +18,7 @@
           class="button button--link navbar__menu__auth"
           to="/login"
         >
-          <i class="fas fa-sign-in-alt" > Login</i> / 
+          <i class="fas fa-sign-in-alt" > Login</i>&emsp;/&emsp;
           <i class="fas fa-user"> Register</i>
         </RouterLink>
       </div>

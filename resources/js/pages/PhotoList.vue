@@ -139,9 +139,7 @@ export default {
 }
 
 .pagination {
-  width: 11.5%;
-  margin: auto;
-  display: flex;
+  text-align: center;
   color: #8a8a8a;
   list-style: none;
   font-size: xx-large;
@@ -149,34 +147,10 @@ export default {
   margin-block-end: 0.5rem;
   padding-inline-start: 0px;
 
-  @media screen
-    and (max-width: 1366px) {
-    width: 9.5%;
-  }
-
-  @media screen
-    and (max-width: 1024px) {
-    width: 12.5%;
-  }
-
-  @media screen
-    and (max-width: 812px) {
-    width: 15.5%;
-  }
-
-  @media screen
-    and (max-width: 768px) {
-    width: 16.5%;
-  }
-
-  @media screen
-    and (max-width: 375px) {
-    width: 33.5%;
-  }
-
   & :nth-child(1n) {
     cursor: pointer;
-    margin-right: 13%;
+    display: inline-block;
+    margin: 0 2%;
 
     &:hover {
       color: black;

@@ -54,7 +54,8 @@ jobs:
           name: deploy
           command: |
             ssh -o StrictHostKeyChecking=no -t webapp@${HOST_NAME} "cd photo-ci && \
-              git pull origin master && \
+              git fetch origin master && \
+              git reset --hard origin/master && \
               composer install -n --no-dev --prefer-dist && \
               npm ci && \
               npm run prod && \

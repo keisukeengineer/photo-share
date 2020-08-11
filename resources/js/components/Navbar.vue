@@ -18,8 +18,8 @@
           class="button button--link navbar__menu__auth"
           to="/login"
         >
-          <i class="fas fa-sign-in-alt" > Login</i>&emsp;/&emsp;
-          <i class="fas fa-user"> Register</i>
+          <i class="fas fa-sign-in-alt" />&nbsp;Login&emsp;/&emsp;
+          <i class="fas fa-user" />&nbsp;Register
         </RouterLink>
       </div>
     </div>
@@ -98,6 +98,10 @@ export default {
 
       &:hover {
         opacity: 0.5;
+      }
+
+      .fa-sign-in-alt {
+        font-size: 1.1rem;
       }
     }
   }

@@ -3253,7 +3253,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Navbar */\n.navbar[data-v-6dde423b] {\n  align-items: center;\n  color: black;\n  background: white;\n  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  height: 4rem;\n  justify-content: space-between;\n  left: 0;\n  padding: 2%;\n  position: fixed;\n  right: 0;\n  top: 0;\n  z-index: 3;\n}\n.navbar__brand[data-v-6dde423b] {\n  color: inherit;\n  font-family: Merriweather, serif;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-decoration: none;\n}\n.navbar__brand[data-v-6dde423b]:visited {\n  color: inherit;\n}\n.navbar__brand[data-v-6dde423b]:hover {\n  opacity: 0.6;\n}\n.navbar__menu[data-v-6dde423b] {\n  align-items: center;\n  display: flex;\n}\n.navbar__menu__playlist[data-v-6dde423b]:hover {\n  color: black;\n}\n.navbar__menu__auth[data-v-6dde423b] {\n  color: black;\n  transition: all 0.3s ease;\n}\n.navbar__menu__auth[data-v-6dde423b]:hover {\n  opacity: 0.5;\n}\n.navbar__item[data-v-6dde423b] {\n  margin-left: 2rem;\n}", ""]);
+exports.push([module.i, "/* Navbar */\n.navbar[data-v-6dde423b] {\n  align-items: center;\n  color: black;\n  background: white;\n  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  height: 4rem;\n  justify-content: space-between;\n  left: 0;\n  padding: 2%;\n  position: fixed;\n  right: 0;\n  top: 0;\n  z-index: 3;\n}\n.navbar__brand[data-v-6dde423b] {\n  color: inherit;\n  font-family: Merriweather, serif;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-decoration: none;\n}\n.navbar__brand[data-v-6dde423b]:visited {\n  color: inherit;\n}\n.navbar__brand[data-v-6dde423b]:hover {\n  opacity: 0.6;\n}\n.navbar__menu[data-v-6dde423b] {\n  align-items: center;\n  display: flex;\n}\n.navbar__menu__playlist[data-v-6dde423b]:hover {\n  color: black;\n}\n.navbar__menu__auth[data-v-6dde423b] {\n  color: black;\n  transition: all 0.3s ease;\n}\n.navbar__menu__auth[data-v-6dde423b]:hover {\n  opacity: 0.5;\n}\n.navbar__menu__auth .fa-sign-in-alt[data-v-6dde423b] {\n  font-size: 1.1rem;\n}\n.navbar__item[data-v-6dde423b] {\n  margin-left: 2rem;\n}", ""]);
 
 // exports
 
@@ -5594,13 +5594,10 @@ var render = function() {
                     attrs: { to: "/login" }
                   },
                   [
-                    _c("i", { staticClass: "fas fa-sign-in-alt" }, [
-                      _vm._v(" Login")
-                    ]),
-                    _vm._v(" / \n        "),
-                    _c("i", { staticClass: "fas fa-user" }, [
-                      _vm._v(" Register")
-                    ])
+                    _c("i", { staticClass: "fas fa-sign-in-alt" }),
+                    _vm._v(" Login / \n        "),
+                    _c("i", { staticClass: "fas fa-user" }),
+                    _vm._v(" Register\n      ")
                   ]
                 )
               ],

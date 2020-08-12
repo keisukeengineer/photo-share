@@ -4,6 +4,10 @@
 
 /* ボタン */
 
+button {
+  background-color: 168;
+}
+
 .btn-square-shadow {
   display: inline-block;
   padding: 0.5em 1em;

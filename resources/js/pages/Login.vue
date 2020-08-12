@@ -1,115 +1,121 @@
 <template>
-  <div class="container--small">
-    <ul class="tab">
-      <li
-        class="tab__item"
-        :class="{'tab__item--active': tab === 1 }"
-        @click="tab = 1">
-        Login
-      </li>
-      <li
-        class="tab__item"
-        :class="{'tab__item--active': tab === 2 }"
-        @click="tab = 2">
-        Register
-      </li>
-    </ul>
+  <transition appear>
+    <div class="container--small">
+      <ul class="tab">
+        <li
+          class="tab__item"
+          :class="{'tab__item--active': tab === 1 }"
+          @click="tab = 1">
+          Login
+        </li>
+        <li
+          class="tab__item"
+          :class="{'tab__item--active': tab === 2 }"
+          @click="tab = 2">
+          Register
+        </li>
+      </ul>
 
-    <!-- ログイン -->
-    <div class="panel" v-show="tab === 1">
-      <form class="form" @submit.prevent="login">
-        <div v-if="loginErrors" class="errors">
-          <ul v-if="loginErrors.email">
-            <li v-for="msg in loginErrors.email" :key="msg">{{ msg }}</li>
-          </ul>
-          <ul v-if="loginErrors.password">
-            <li v-for="msg in loginErrors.password" :key="msg">{{ msg }}</li>
-          </ul>
-        </div>
-        <label for="login-email">Email</label>
-        <input
-          type="email"
-          class="form__item"
-          id="login-email"
-          v-model="loginForm.email"
-          v-model.trim="loginForm.email"
-          @keyup.esc="clear_login_email"
-        >
-        <label for="login-password">Password</label>
-        <input
-          type="password"
-          class="form__item"
-          id="login-password"
-          v-model="loginForm.password"
-          v-model.trim="loginForm.password"
-          @keyup.esc="clear_login_password"
-        >
-        <div class="form__button">
-          <button type="submit" class="btn-square-shadow cursor">
-            Login
-          </button>
-        </div>
-      </form>
-    </div>
+      <!-- ログイン -->
+      <div class="panel" v-show="tab === 1">
+        <form class="form" @submit.prevent="login">
+          <transition>
+            <div v-if="loginErrors" class="errors">
+              <ul v-if="loginErrors.email">
+                <li v-for="msg in loginErrors.email" :key="msg">{{ msg }}</li>
+              </ul>
+              <ul v-if="loginErrors.password">
+                <li v-for="msg in loginErrors.password" :key="msg">{{ msg }}</li>
+              </ul>
+            </div>
+          </transition>
+          <label for="login-email">Email</label>
+          <input
+            type="email"
+            class="form__item"
+            id="login-email"
+            v-model="loginForm.email"
+            v-model.trim="loginForm.email"
+            @keyup.esc="clear_login_email"
+          >
+          <label for="login-password">Password</label>
+          <input
+            type="password"
+            class="form__item"
+            id="login-password"
+            v-model="loginForm.password"
+            v-model.trim="loginForm.password"
+            @keyup.esc="clear_login_password"
+          >
+          <div class="form__button">
+            <button type="submit" class="btn-square-shadow cursor">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
 
-    <!-- 会員登録 -->
-    <div class="panel" v-show="tab === 2">
-      <form class="form" @submit.prevent="register">
-        <div v-if="registerErrors" class="errors">
-          <ul v-if="registerErrors.name">
-            <li v-for="msg in registerErrors.name" :key="msg">{{ msg }}</li>
-          </ul>
-          <ul v-if="registerErrors.email">
-            <li v-for="msg in registerErrors.email" :key="msg">{{ msg }}</li>
-          </ul>
-          <ul v-if="registerErrors.password">
-            <li v-for="msg in registerErrors.password" :key="msg">{{ msg }}</li>
-          </ul>
-        </div>
-        <label for="username">Name</label>
-        <input
-          type="text"
-          class="form__item"
-          id="username"
-          v-model="registerForm.name"
-          v-model.trim="registerForm.name"
-          @keyup.esc="clear_register_name"
-        >
-        <label for="email">Email</label>
-        <input
-          type="email"
-          class="form__item"
-          id="email"
-          v-model="registerForm.email"
-          v-model.trim="registerForm.email"
-          @keyup.esc="clear_register_email"
-        >
-        <label for="password">Password</label>
-        <input
-          type="password"
-          class="form__item"
-          id="password"
-          v-model="registerForm.password"
-          v-model.trim="registerForm.password"
-          @keyup.esc="clear_register_password"
-        >
-        <label for="password-confirmation">Password (confirm)</label>
-        <input
-          type="password"
-          class="form__item"
-          id="password-confirmation"
-          v-model="registerForm.password_confirmation"
-          v-model.trim="registerForm.password_confirmation"
-          @keyup.esc="clear_register_password_confirmation"
-        >
-        <div class="form__button">
-          <button type="submit" class="btn-square-shadow cursor">
-            Register
-          </button>
-        </div>
-      </form>
+      <!-- 会員登録 -->
+      <div class="panel" v-show="tab === 2">
+        <form class="form" @submit.prevent="register">
+          <transition>
+            <div v-if="registerErrors" class="errors">
+              <ul v-if="registerErrors.name">
+                <li v-for="msg in registerErrors.name" :key="msg">{{ msg }}</li>
+              </ul>
+              <ul v-if="registerErrors.email">
+                <li v-for="msg in registerErrors.email" :key="msg">{{ msg }}</li>
+              </ul>
+              <ul v-if="registerErrors.password">
+                <li v-for="msg in registerErrors.password" :key="msg">{{ msg }}</li>
+              </ul>
+            </div>
+          </transition>
+          <label for="username">Name</label>
+          <input
+            type="text"
+            class="form__item"
+            id="username"
+            v-model="registerForm.name"
+            v-model.trim="registerForm.name"
+            @keyup.esc="clear_register_name"
+          >
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form__item"
+            id="email"
+            v-model="registerForm.email"
+            v-model.trim="registerForm.email"
+            @keyup.esc="clear_register_email"
+          >
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form__item"
+            id="password"
+            v-model="registerForm.password"
+            v-model.trim="registerForm.password"
+            @keyup.esc="clear_register_password"
+          >
+          <label for="password-confirmation">Password (confirm)</label>
+          <input
+            type="password"
+            class="form__item"
+            id="password-confirmation"
+            v-model="registerForm.password_confirmation"
+            v-model.trim="registerForm.password_confirmation"
+            @keyup.esc="clear_register_password_confirmation"
+          >
+          <div class="form__button">
+            <button type="submit" class="btn-square-shadow cursor">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -182,3 +188,13 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.v-enter-active {
+  transition: opacity .5s
+}
+
+.v-enter {
+  opacity: 0;
+}
+</style>

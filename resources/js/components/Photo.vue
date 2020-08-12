@@ -61,4 +61,5 @@ export default {
   width: 15rem;
   margin: 1%;
 }
+li{display: inline-block;}
 </style>

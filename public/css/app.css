@@ -5,7 +5,8 @@
 /* ボタン */
 
 button {
-  background-color: 168;
+  background-color: white;
+  border-color: #8a8a8a;
 }
 
 .btn-square-shadow {

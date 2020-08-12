@@ -1,76 +1,80 @@
 <template>
-  <div
-    v-if="photo"
-    class="photo-detail"
-    :class="{ 'photo-detail--column': fullWidth }"
-  >
-    <figure class="photo-detail__pane photo-detail__image"
-      @click="fullWidth = ! fullWidth"
+  <transition>
+    <div
+      v-if="photo"
+      class="photo-detail"
+      :class="{ 'photo-detail--column': fullWidth }"
     >
-      <img :src="photo.url" alt="">
-      <figcaption>Posted by {{ photo.owner.name }}</figcaption>
-    </figure>
-    <div class="photo-detail__pane">
-      <button
-        class="button button--like"
-        :class="{ 'button--liked': photo.liked_by_user }"
-        title="Like photo"
-        @click="onLikeClick"
+      <figure class="photo-detail__pane photo-detail__image"
+        @click="fullWidth = ! fullWidth"
       >
-        <i class="icon ion-md-heart" />{{ photo.likes_count }}
-      </button>
-      <a
-        :href="`/photos/${photo.id}/download`"
-        class="button"
-        title="Download photo"
-      >
-        <i class="icon ion-md-arrow-round-down" />Download
-      </a>
-      <div class="share_wrapper">
-        <div
-          class="share_wrapper_sub cursor"
-          @click="onShareClick('twitter')"
+        <img :src="photo.url" alt="">
+        <figcaption>Posted by {{ photo.owner.name }}</figcaption>
+      </figure>
+      <div class="photo-detail__pane">
+        <button
+          class="button button--like"
+          :class="{ 'button--liked': photo.liked_by_user }"
+          title="Like photo"
+          @click="onLikeClick"
         >
-          <i class="fa fa-twitter fa-3x share_wrapper_sub_item" />
-        </div>
-        <div
-          class="share_wrapper_sub cursor"
-          @click="onShareClick('facebook')"
+          <i class="icon ion-md-heart" />{{ photo.likes_count }}
+        </button>
+        <a
+          :href="`/photos/${photo.id}/download`"
+          class="button"
+          title="Download photo"
         >
-          <i class="fa fa-facebook fa-3x share_wrapper_sub_item" />
+          <i class="icon ion-md-arrow-round-down" />Download
+        </a>
+        <div class="share_wrapper">
+          <div
+            class="share_wrapper_sub cursor"
+            @click="onShareClick('twitter')"
+          >
+            <i class="fa fa-twitter fa-3x share_wrapper_sub_item" />
+          </div>
+          <div
+            class="share_wrapper_sub cursor"
+            @click="onShareClick('facebook')"
+          >
+            <i class="fa fa-facebook fa-3x share_wrapper_sub_item" />
+          </div>
         </div>
+        <h2 class="photo-detail__title">
+          <i class="icon ion-md-chatboxes" />Comments
+        </h2>
+        <ul v-if="photo.comments.length > 0" class="photo-detail__comments">
+          <li
+            v-for="comment in photo.comments"
+            :key="comment.content"
+            class="photo-detail__commentItem"
+          >
+            <p class="photo-detail__commentBody">
+              {{ comment.content }}
+            </p>
+            <p class="photo-detail__commentInfo">
+              {{ comment.author.name }}
+            </p>
+          </li>
+        </ul>
+        <p v-else>No comments yet.</p>
+        <form v-if="isLogin" @submit.prevent="addComment" class="form">
+          <transition>
+            <div v-if="commentErrors" class="errors">
+              <ul v-if="commentErrors.content">
+                <li v-for="msg in commentErrors.content" :key="msg">{{ msg }}</li>
+              </ul>
+            </div>
+          </transition>
+          <textarea class="form__item" v-model="commentContent" />
+          <div class="form__button">
+            <button type="submit" class="btn-square-shadow cursor">submit comment</button>
+          </div>
+        </form>
       </div>
-      <h2 class="photo-detail__title">
-        <i class="icon ion-md-chatboxes" />Comments
-      </h2>
-      <ul v-if="photo.comments.length > 0" class="photo-detail__comments">
-        <li
-          v-for="comment in photo.comments"
-          :key="comment.content"
-          class="photo-detail__commentItem"
-        >
-          <p class="photo-detail__commentBody">
-            {{ comment.content }}
-          </p>
-          <p class="photo-detail__commentInfo">
-            {{ comment.author.name }}
-          </p>
-        </li>
-      </ul>
-      <p v-else>No comments yet.</p>
-      <form v-if="isLogin" @submit.prevent="addComment" class="form">
-        <div v-if="commentErrors" class="errors">
-          <ul v-if="commentErrors.content">
-            <li v-for="msg in commentErrors.content" :key="msg">{{ msg }}</li>
-          </ul>
-        </div>
-        <textarea class="form__item" v-model="commentContent" />
-        <div class="form__button">
-          <button type="submit" class="btn-square-shadow cursor">submit comment</button>
-        </div>
-      </form>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -214,5 +218,15 @@ export default {
       }
     }
   }
+}
+</style>
+
+<style scoped lang="scss">
+.v-enter-active {
+  transition: opacity .5s
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0;
 }
 </style>

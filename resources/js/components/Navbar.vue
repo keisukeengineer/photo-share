@@ -60,8 +60,8 @@ export default {
     color: #8a8a8a;
   }
 }
+
 .fa-sign-in-alt {
   font-size: 1.2rem;
 }
-
 </style>

@@ -6,11 +6,13 @@
         <Loader>Sending your photo...</Loader>
       </div>
       <form class="form" @submit.prevent="submit">
-        <div class="errors" v-if="errors">
-          <ul v-if="errors.photo">
-            <li v-for="msg in errors.photo" :key="msg">{{ msg }}</li>
-          </ul>
-        </div>
+        <transition>
+          <div class="errors" v-if="errors">
+            <ul v-if="errors.photo">
+              <li v-for="msg in errors.photo" :key="msg">{{ msg }}</li>
+            </ul>
+          </div>
+        </transition>
         <input class="form__item" type="file" @change="onFileChange">
         <output class="form__output" v-if="preview">
           <img :src="preview" alt="">
@@ -112,12 +114,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .v-enter-active, .v-leave-active {
   transition: opacity .5s
 }
 
 .v-enter, .v-leave-to {
-  opacity: 0
+  opacity: 0;
 }
 </style>

@@ -1,16 +1,18 @@
 <template>
-  <div class="photo-list">
-    <paginate class="paginate" name="paginate-log" :list="photos" :per="6">
-      <Photo
-        class="grid__item"
-        v-for="photo in paginated('paginate-log')"
-        :key="photo.id"
-        :item="photo"
-        @like="onLikeClick"
-      />
-    </paginate>
-    <paginate-links for="paginate-log" class="pagination" :show-step-links="true" />
-  </div>
+  <transition appear>
+    <div class="photo-list">
+      <paginate class="paginate" name="paginate-log" :list="photos" :per="6">
+        <Photo
+          class="grid__item"
+          v-for="photo in paginated('paginate-log')"
+          :key="photo.id"
+          :item="photo"
+          @like="onLikeClick"
+        />
+      </paginate>
+      <paginate-links for="paginate-log" class="pagination" :show-step-links="true" />
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -34,6 +36,14 @@ export default {
       paginate: ['paginate-log'],
       currentPage: 0,
       lastPage: 0
+    }
+  },
+  watch: {
+    $route: {
+      async handler () {
+        await this.fetchPhotos()
+      },
+      immediate: true
     }
   },
   methods: {
@@ -93,14 +103,6 @@ export default {
         return photo
       })
     }
-  },
-  watch: {
-    $route: {
-      async handler () {
-        await this.fetchPhotos()
-      },
-      immediate: true
-    }
   }
 }
 </script>
@@ -156,5 +158,12 @@ export default {
       color: black;
     }
   }
+}
+.v-enter-active, .v-leave-active {
+  transition: opacity .5s
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0;
 }
 </style>

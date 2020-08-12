@@ -42,6 +42,15 @@ export default {
   height: 5rem;
   background: white;
 
+  .button--link {
+    border: 1px solid #dedede;
+    transition: border-color 0.3s ease-in-out;
+
+    &:hover {
+      border-color: black;
+    }
+  }
+
   .copyright {
     color: #8a8a8a;
     margin-right: 2%;

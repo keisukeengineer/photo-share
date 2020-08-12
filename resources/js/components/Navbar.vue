@@ -51,62 +51,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-/* Navbar */
-.navbar {
-  align-items: center;
+.navbar__brand,
+.navbar__menu__auth {
   color: black;
-  background: white;
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, .1);
-  display: flex;
-  height: 4rem;
-  justify-content: space-between;
-  left: 0;
-  padding: 2%;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 3;
+  transition: color 0.3s ease-in-out;
 
-  &__brand {
-    color: inherit;
-    font-family: Merriweather, serif;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-decoration: none;
-
-    &:visited {
-      color: inherit;
-    }
-
-    &:hover {
-      opacity: .6;
-    }
-  }
-
-  &__menu {
-    align-items: center;
-    display: flex;
-
-    &__playlist:hover {
-      color: black;
-    }
-
-    &__auth {
-      color: black;
-      transition: all 0.3s ease;
-
-      &:hover {
-        opacity: 0.5;
-      }
-
-      .fa-sign-in-alt {
-        font-size: 1.1rem;
-      }
-    }
+  &:hover {
+    color: #8a8a8a;
   }
 }
-.navbar__item {
-    margin-left: 2rem;
+.fa-sign-in-alt {
+  font-size: 1.2rem;
 }
+
 </style>

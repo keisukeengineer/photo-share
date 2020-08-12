@@ -5,9 +5,6 @@
 詳細ページ<br>
 ![photo-share-detail.png](./public/photo-share-detail.png)<br><br>
 
-投稿フォーム<br>
-![photo-share-detail.png](./public/photo-share-form.png)<br><br>
-
 # 概要
 作成期間&nbsp;：&nbsp;10日&nbsp;(2020/08/10 時点)<br>
 お気に入りの写真を投稿してシェアできるWEBアプリケーションです。<br><br>

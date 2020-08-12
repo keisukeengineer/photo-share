@@ -1,24 +1,26 @@
 <template>
-<div v-show="value" class="photo-form">
-  <h2 class="title">Submit a photo</h2>
-  <div v-show="loading" class="panel">
-    <Loader>Sending your photo...</Loader>
-  </div>
-  <form class="form" @submit.prevent="submit">
-    <div class="errors" v-if="errors">
-      <ul v-if="errors.photo">
-        <li v-for="msg in errors.photo" :key="msg">{{ msg }}</li>
-      </ul>
+  <transition>
+    <div v-show="value" class="photo-form">
+      <h2 class="title">Submit a photo</h2>
+      <div v-show="loading" class="panel">
+        <Loader>Sending your photo...</Loader>
+      </div>
+      <form class="form" @submit.prevent="submit">
+        <div class="errors" v-if="errors">
+          <ul v-if="errors.photo">
+            <li v-for="msg in errors.photo" :key="msg">{{ msg }}</li>
+          </ul>
+        </div>
+        <input class="form__item" type="file" @change="onFileChange">
+        <output class="form__output" v-if="preview">
+          <img :src="preview" alt="">
+        </output>
+        <div class="form__button">
+          <button type="submit" class="btn-square-shadow cursor">submit</button>
+        </div>
+      </form>
     </div>
-    <input class="form__item" type="file" @change="onFileChange">
-    <output class="form__output" v-if="preview">
-      <img :src="preview" alt="">
-    </output>
-    <div class="form__button">
-      <button type="submit" class="btn-square-shadow cursor">submit</button>
-    </div>
-  </form>
-</div>
+  </transition>
 </template>
 
 <script>
@@ -109,3 +111,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-enter-active, .v-leave-active {
+  transition: opacity .5s
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0
+}
+</style>

@@ -1,14 +1,16 @@
 /* 共通スタイルまとめ */
 
 /* ボタン */
+button {
+  background-color: red($color: #a8a4a4);
+}
+
 .btn-square-shadow {
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  // background: #3490dc;
   background: rgb(36, 34, 34);
   color: white;
-  // border-bottom: solid 4px #285c86;
   border-bottom: solid 4px black;
   border-radius: 3px;
   transition: all 0.5s ease;

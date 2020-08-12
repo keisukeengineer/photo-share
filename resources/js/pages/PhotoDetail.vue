@@ -26,6 +26,21 @@
       >
         <i class="icon ion-md-arrow-round-down" />Download
       </a>
+      <ul class="share_wrapper">
+        <li class="share_wrapper_ko">
+          <a
+            href="https://twitter.com/intent/tweet?url=https://www.photo-share.cf&text=写真共有サイト"
+            target="_blank"
+          >
+            <i class="fa fa-twitter fa-2x share_button_color" />
+          </a>
+        </li>
+        <li class="share_wrapper_ko">
+          <button @click="onShareClick()">
+            <i class="fa fa-facebook fa-2x share_button_color" />
+          </button>
+        </li>
+      </ul>
       <h2 class="photo-detail__title">
         <i class="icon ion-md-chatboxes" />Comments
       </h2>
@@ -74,7 +89,8 @@ export default {
       photo: null,
       fullWidth: false,
       commentContent: '',
-      commentErrors: null
+      commentErrors: null,
+      shareURL: ''
     }
   },
   computed: {
@@ -153,6 +169,9 @@ export default {
 
       this.photo.likes_count = this.photo.likes_count - 1
       this.photo.liked_by_user = false
+    },
+    onShareClick() {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${location.href}`, '_blank');
     }
   },
   watch: {
@@ -165,3 +184,21 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.share_wrapper {
+  text-align: center;
+
+  &_ko {
+    display: inline-block;
+
+    a {
+      margin-left: 1rem;
+
+      .share_button_color {
+        color: gray;
+      }
+    }
+  }
+}
+</style>

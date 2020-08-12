@@ -2,11 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/webapp/server
+    destination: /home/webapp/photo-ci
+
 permissions:
-  - object: /home/webapp/server
+  - object: /home/webapp/photo-ci
     owner: webapp
     group: webapp
+
 hooks:
   AfterInstall:
     - location: ./scripts/after_install.sh

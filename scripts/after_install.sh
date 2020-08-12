@@ -2,6 +2,6 @@
 
 set -eux
 
-cd ~/server
-php artisan migrate:refresh --force
+cd ~/photo-ci
+php artisan migrate --force
 php artisan config:cache

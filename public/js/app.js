@@ -2776,7 +2776,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2969,7 +2968,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee4);
       }))();
     },
-    onShareClick: function onShareClick() {
+    onShareClick: function onShareClick(shareButton) {
+      if (shareButton === 'twitter') {
+        this.twitter();
+      } else {
+        this.facebook();
+      }
+    },
+    twitter: function twitter() {
+      window.open("https://twitter.com/intent/tweet?url=".concat(location.href, "&text="), '_blank');
+    },
+    facebook: function facebook() {
       window.open("https://www.facebook.com/sharer/sharer.php?u=".concat(location.href), '_blank');
     }
   },
@@ -3272,7 +3281,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Navbar */\n.navbar[data-v-6dde423b] {\n  align-items: center;\n  color: black;\n  background: white;\n  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  height: 4rem;\n  justify-content: space-between;\n  left: 0;\n  padding: 2%;\n  position: fixed;\n  right: 0;\n  top: 0;\n  z-index: 3;\n}\n.navbar__brand[data-v-6dde423b] {\n  color: inherit;\n  font-family: Merriweather, serif;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-decoration: none;\n}\n.navbar__brand[data-v-6dde423b]:visited {\n  color: inherit;\n}\n.navbar__brand[data-v-6dde423b]:hover {\n  opacity: 0.6;\n}\n.navbar__menu[data-v-6dde423b] {\n  align-items: center;\n  display: flex;\n}\n.navbar__menu__playlist[data-v-6dde423b]:hover {\n  color: black;\n}\n.navbar__menu__auth[data-v-6dde423b] {\n  color: black;\n  transition: all 0.3s ease;\n}\n.navbar__menu__auth[data-v-6dde423b]:hover {\n  opacity: 0.5;\n}\n.navbar__menu__auth .fa-sign-in-alt[data-v-6dde423b] {\n  font-size: 1.1rem;\n}\n.navbar__item[data-v-6dde423b] {\n  margin-left: 2rem;\n}", ""]);
+exports.push([module.i, ".navbar__brand[data-v-6dde423b],\n.navbar__menu__auth[data-v-6dde423b] {\n  color: black;\n  transition: color 0.3s ease-in-out;\n}\n.navbar__brand[data-v-6dde423b]:hover,\n.navbar__menu__auth[data-v-6dde423b]:hover {\n  color: #8a8a8a;\n}\n.fa-sign-in-alt[data-v-6dde423b] {\n  font-size: 1.2rem;\n}", ""]);
 
 // exports
 
@@ -3310,7 +3319,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".share_wrapper[data-v-c17cd6ac] {\n  text-align: center;\n}\n.share_wrapper_ko[data-v-c17cd6ac] {\n  display: inline-block;\n}\n.share_wrapper_ko a[data-v-c17cd6ac] {\n  margin-left: 1rem;\n}\n.share_wrapper_ko a .share_button_color[data-v-c17cd6ac] {\n  color: gray;\n}", ""]);
+exports.push([module.i, ".share_wrapper[data-v-c17cd6ac] {\n  display: inline-block;\n  position: fixed;\n  right: 2rem;\n  bottom: 7rem;\n}\n.share_wrapper_sub[data-v-c17cd6ac] {\n  display: inline-block;\n}\n.share_wrapper_sub_item[data-v-c17cd6ac] {\n  margin: 0 0.8rem;\n  color: #8a8a8a;\n  transition: color 0.5s ease-in-out;\n}\n.share_wrapper_sub_item[data-v-c17cd6ac]:hover {\n  color: black;\n}", ""]);
 
 // exports
 
@@ -6538,29 +6547,43 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _c("ul", { staticClass: "share_wrapper" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("li", { staticClass: "share_wrapper_ko" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.onShareClick()
-                      }
+            _c("div", { staticClass: "share_wrapper" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "share_wrapper_sub cursor",
+                  on: {
+                    click: function($event) {
+                      return _vm.onShareClick("twitter")
                     }
-                  },
-                  [
-                    _c("i", {
-                      staticClass: "fa fa-facebook fa-2x share_button_color"
-                    })
-                  ]
-                )
-              ])
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "fa fa-twitter fa-3x share_wrapper_sub_item"
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "share_wrapper_sub cursor",
+                  on: {
+                    click: function($event) {
+                      return _vm.onShareClick("facebook")
+                    }
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "fa fa-facebook fa-3x share_wrapper_sub_item"
+                  })
+                ]
+              )
             ]),
             _vm._v(" "),
-            _vm._m(1),
+            _vm._m(0),
             _vm._v(" "),
             _vm.photo.comments.length > 0
               ? _c(
@@ -6648,7 +6671,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(2)
+                    _vm._m(1)
                   ]
                 )
               : _vm._e()
@@ -6658,24 +6681,6 @@ var render = function() {
     : _vm._e()
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "share_wrapper_ko" }, [
-      _c(
-        "a",
-        {
-          attrs: {
-            href:
-              "https://twitter.com/intent/tweet?url=https://www.photo-share.cf&text=写真共有サイト",
-            target: "_blank"
-          }
-        },
-        [_c("i", { staticClass: "fa fa-twitter fa-2x share_button_color" })]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

@@ -3394,7 +3394,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".v-enter-active[data-v-c17cd6ac] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-c17cd6ac] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".photo-detail__image img[data-v-c17cd6ac]:hover {\n  opacity: 0.7;\n}\n.v-enter-active[data-v-c17cd6ac] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-c17cd6ac] {\n  opacity: 0;\n}", ""]);
 
 // exports
 

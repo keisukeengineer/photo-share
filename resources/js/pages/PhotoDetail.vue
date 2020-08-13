@@ -222,6 +222,12 @@ export default {
 </style>
 
 <style scoped lang="scss">
+.photo-detail__image {
+  img:hover {
+    opacity: .7;
+  }
+}
+
 .v-enter-active {
   transition: opacity .5s
 }

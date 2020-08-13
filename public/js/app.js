@@ -2239,6 +2239,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     item: {
@@ -3316,7 +3318,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".photo[data-v-c0696452] {\n  width: 15rem;\n  margin: 1%;\n}\nli[data-v-c0696452] {\n  display: inline-block;\n}", ""]);
+exports.push([module.i, ".photo[data-v-c0696452] {\n  width: 15rem;\n  margin: 1%;\n}\n.v-enter-active[data-v-c0696452], .v-leave-active[data-v-c0696452] {\n  transition: opacity 0.7s;\n}\n.v-enter[data-v-c0696452], .v-leave-to[data-v-c0696452] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -3354,7 +3356,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".v-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-3b6adb30] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".v-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.7s;\n}\n.form-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-3b6adb30], .form-enter[data-v-3b6adb30] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -3392,7 +3394,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".v-enter-active[data-v-c17cd6ac] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-c17cd6ac], .v-leave-to[data-v-c17cd6ac] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".v-enter-active[data-v-c17cd6ac] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-c17cd6ac] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -5884,12 +5886,22 @@ var render = function() {
     "li",
     { staticClass: "photo" },
     [
-      _c("figure", { staticClass: "photo__wrapper" }, [
-        _c("img", {
-          staticClass: "photo__image",
-          attrs: { src: _vm.item.url, alt: "Photo by " + _vm.item.owner.name }
-        })
-      ]),
+      _c(
+        "figure",
+        { staticClass: "photo__wrapper" },
+        [
+          _c("transition", { attrs: { appear: "" } }, [
+            _c("img", {
+              staticClass: "photo__image",
+              attrs: {
+                src: _vm.item.url,
+                alt: "Photo by " + _vm.item.owner.name
+              }
+            })
+          ])
+        ],
+        1
+      ),
       _vm._v(" "),
       _c(
         "RouterLink",
@@ -6141,7 +6153,7 @@ var render = function() {
               }
             },
             [
-              _c("transition", [
+              _c("transition", { attrs: { name: "form" } }, [
                 _vm.loginErrors
                   ? _c("div", { staticClass: "errors" }, [
                       _vm.loginErrors.email
@@ -6337,7 +6349,7 @@ var render = function() {
               }
             },
             [
-              _c("transition", [
+              _c("transition", { attrs: { name: "form" } }, [
                 _vm.registerErrors
                   ? _c("div", { staticClass: "errors" }, [
                       _vm.registerErrors.name

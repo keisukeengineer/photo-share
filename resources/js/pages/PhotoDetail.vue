@@ -226,7 +226,7 @@ export default {
   transition: opacity .5s
 }
 
-.v-enter, .v-leave-to {
+.v-enter {
   opacity: 0;
 }
 </style>

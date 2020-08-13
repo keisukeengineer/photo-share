@@ -19,7 +19,7 @@
       <!-- ログイン -->
       <div class="panel" v-show="tab === 1">
         <form class="form" @submit.prevent="login">
-          <transition>
+          <transition name="form">
             <div v-if="loginErrors" class="errors">
               <ul v-if="loginErrors.email">
                 <li v-for="msg in loginErrors.email" :key="msg">{{ msg }}</li>
@@ -58,7 +58,7 @@
       <!-- 会員登録 -->
       <div class="panel" v-show="tab === 2">
         <form class="form" @submit.prevent="register">
-          <transition>
+          <transition name="form">
             <div v-if="registerErrors" class="errors">
               <ul v-if="registerErrors.name">
                 <li v-for="msg in registerErrors.name" :key="msg">{{ msg }}</li>
@@ -191,10 +191,14 @@ export default {
 
 <style scoped lang="scss">
 .v-enter-active {
+  transition: opacity .7s
+}
+
+.form-enter-active {
   transition: opacity .5s
 }
 
-.v-enter {
+.v-enter, .form-enter {
   opacity: 0;
 }
 </style>

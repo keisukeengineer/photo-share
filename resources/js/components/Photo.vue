@@ -1,11 +1,13 @@
 <template>
   <li class="photo">
     <figure class="photo__wrapper">
-      <img
-        class="photo__image"
-        :src="item.url"
-        :alt="`Photo by ${item.owner.name}`"
-      >
+      <transition appear>
+        <img
+          class="photo__image"
+          :src="item.url"
+          :alt="`Photo by ${item.owner.name}`"
+        >
+      </transition>
     </figure>
     <RouterLink
       class="photo__overlay"
@@ -61,5 +63,11 @@ export default {
   width: 15rem;
   margin: 1%;
 }
-li{display: inline-block;}
+.v-enter-active, .v-leave-active {
+  transition: opacity .7s
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0;
+}
 </style>

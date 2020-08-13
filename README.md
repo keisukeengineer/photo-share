@@ -6,11 +6,11 @@
 ![photo-share-detail.png](./public/photo-share-detail.png)<br><br>
 
 # 概要
-作成期間&nbsp;：&nbsp;10日&nbsp;(2020/08/10 時点)<br>
+作成期間&nbsp;：&nbsp;13日&nbsp;(2020/08/13 時点)<br>
 お気に入りの写真を投稿してシェアできるWEBアプリケーションです。<br><br>
 
 # コメント
-フロントやサーバーについて効率よく学習できるサイトを参考に作成しました。<br>
+フロントエンドやバックエンドについてバランスよく学習できるサイトを参考に作成しました。<br>
 アプリ作成を通して、Vuexやコンポーネントの仕組みについて更に理解を深めることができました。<br><br>
 
 # リンク
@@ -28,11 +28,13 @@
 コメント投稿<br>
 イイね<br>
 ダウンロード<br>
+シェアボタン<br>
 ページネーション<br><br>
 
 # 言語
 HTML<br>
 CSS<br>
+SASS<br>
 Javascript<br>
 PHP&ensp;/&ensp;7.2.30<br>
 MySQL&ensp;/&ensp;5.7.30<br><br>

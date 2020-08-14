@@ -1,15 +1,17 @@
 # イメージ
 トップページ<br>
-![photo-share-top.png](./public/photo-share-top.png)<br><br>
-
-スマホから見た場合 ( iPhone 6/7/8 )<br>
-![photo-share-responsive.png](./public/photo-share-responsive.png)<br><br>
+![photo-share-top.png](./public/photo-share-top.png)<br>
 
 詳細ページ<br>
-![photo-share-detail.png](./public/photo-share-detail.png)<br><br>
+![photo-share-detail.png](./public/photo-share-detail.png)<br>
+
+写真投稿<br>
+![photo-share-form.png](./public/photo-share-form.png)<br>
+
+※ レスポンシブに対応させました(iPhone / iPad)<br><br>
 
 # 概要
-作成期間&nbsp;：&nbsp;13日&nbsp;(2020/08/13 時点)<br>
+作成期間&nbsp;：&nbsp;14日&nbsp;(2020/08/14 時点)<br>
 お気に入りの写真を投稿してシェアできるWEBアプリケーションです。<br><br>
 
 # コメント

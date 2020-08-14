@@ -2,6 +2,9 @@
 トップページ<br>
 ![photo-share-top.png](./public/photo-share-top.png)<br><br>
 
+スマホから見た場合 ( iPhone 6/7/8 )<br>
+![photo-share-responsive.png](./public/photo-share-responsive.png)<br><br>
+
 詳細ページ<br>
 ![photo-share-detail.png](./public/photo-share-detail.png)<br><br>
 

@@ -3299,7 +3299,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navbar__brand[data-v-6dde423b],\n.navbar__menu__auth[data-v-6dde423b] {\n  color: black;\n  transition: color 0.3s ease-in-out;\n}\n.navbar__brand[data-v-6dde423b]:hover,\n.navbar__menu__auth[data-v-6dde423b]:hover {\n  color: #8a8a8a;\n}\n.fa-sign-in-alt[data-v-6dde423b] {\n  font-size: 1.2rem;\n}", ""]);
+exports.push([module.i, ".navbar__brand[data-v-6dde423b]:hover {\n  transition: all 0.3s ease-in-out;\n}\n.navbar__menu__auth[data-v-6dde423b] {\n  color: black;\n}\n.navbar__menu__auth[data-v-6dde423b]:hover {\n  color: #8a8a8a;\n}\n.fa-sign-in-alt[data-v-6dde423b] {\n  font-size: 1.2rem;\n}", ""]);
 
 // exports
 
@@ -3318,7 +3318,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".photo[data-v-c0696452] {\n  width: 15rem;\n  margin: 1%;\n}\n.v-enter-active[data-v-c0696452], .v-leave-active[data-v-c0696452] {\n  transition: opacity 0.7s;\n}\n.v-enter[data-v-c0696452], .v-leave-to[data-v-c0696452] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".photo[data-v-c0696452] {\n  width: 15rem;\n  margin: 1%;\n}\n.v-enter-active[data-v-c0696452], .v-leave-active[data-v-c0696452] {\n  transition: opacity 0.8s;\n}\n.v-enter[data-v-c0696452], .v-leave-to[data-v-c0696452] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -3413,7 +3413,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n.paginate[data-v-401edab7] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.paginate li[data-v-401edab7] {\n  width: 31%;\n  margin: 1%;\n  /** iPad Pro 縦向き */\n  /** iPad 横向き */\n  /** iPone6,7,8,10 縦向き */\n}\n@media screen and (max-width: 1024px) and (max-height: 1366px) {\n.paginate li[data-v-401edab7] {\n    width: 48%;\n}\n}\n@media screen and (max-width: 1024px) and (max-height: 768px) {\n.paginate li[data-v-401edab7] {\n    width: 31.33%;\n}\n}\n@media screen and (max-width: 375px) {\n.paginate li[data-v-401edab7] {\n    width: 98%;\n}\n}\n.pagination[data-v-401edab7] {\n  text-align: center;\n  color: #8a8a8a;\n  list-style: none;\n  font-size: xx-large;\n  -webkit-margin-before: 0.5rem;\n          margin-block-start: 0.5rem;\n  -webkit-margin-after: 0.5rem;\n          margin-block-end: 0.5rem;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.pagination[data-v-401edab7] :nth-child(1n) {\n  cursor: pointer;\n  display: inline-block;\n  margin: 0 2%;\n}\n.pagination[data-v-401edab7] :nth-child(1n):hover {\n  color: black;\n}\n.v-enter-active[data-v-401edab7], .v-leave-active[data-v-401edab7] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-401edab7], .v-leave-to[data-v-401edab7] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.paginate[data-v-401edab7] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.paginate li[data-v-401edab7] {\n  width: 31%;\n  margin: 1%;\n  /** iPad Pro 縦向き */\n  /** iPad 横向き */\n  /** iPone6,7,8,10 縦向き */\n}\n@media screen and (max-width: 1024px) and (max-height: 1366px) {\n.paginate li[data-v-401edab7] {\n    width: 48%;\n}\n}\n@media screen and (max-width: 1024px) and (max-height: 768px) {\n.paginate li[data-v-401edab7] {\n    width: 31.33%;\n}\n}\n@media screen and (max-width: 375px) {\n.paginate li[data-v-401edab7] {\n    width: 98%;\n}\n}\n.paginate_links[data-v-401edab7] {\n  text-align: center;\n  color: #8a8a8a;\n  list-style: none;\n  font-size: xx-large;\n}\n.v-enter-active[data-v-401edab7], .v-leave-active[data-v-401edab7] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-401edab7], .v-leave-to[data-v-401edab7] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -6945,7 +6945,7 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("paginate-links", {
-          staticClass: "pagination",
+          staticClass: "paginate_links",
           attrs: { for: "paginate-log", "show-step-links": true }
         })
       ],

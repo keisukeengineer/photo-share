@@ -2,6 +2,24 @@
 
 /* 共通スタイルまとめ */
 
+/* ページネーション */
+
+.paginate_links li {
+  font-size: larger;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 2%;
+  transition: color 0.3s ease-in-out;
+}
+
+.paginate_links li:hover {
+  color: black;
+}
+
+.paginate_links .active a {
+  color: black;
+}
+
 /* ボタン */
 
 button {

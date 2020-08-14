@@ -41,20 +41,20 @@ HTML<br>
 CSS<br>
 SASS<br>
 Javascript<br>
-PHP&ensp;/&ensp;7.2.30<br>
-MySQL&ensp;/&ensp;5.7.30<br><br>
+PHP&ensp;:&ensp;7.2.30<br>
+MySQL&ensp;:&ensp;5.7.30<br><br>
 
 # フレームワーク
-Vue.js&ensp;/&ensp;2.6.11<br>
-Laravel&ensp;/&ensp;6.18.31<br><br>
+Vue.js&ensp;:&ensp;2.6.11<br>
+Laravel&ensp;:&ensp;6.18.31<br><br>
 
 # 開発環境
-Git&ensp;/&ensp;2.23.0<br>
-Node&ensp;/&ensp;12.16.3<br>
-Nginx&ensp;/&ensp;1.17.10<br>
-Docker&ensp;/&ensp;19.03.12<br>
+Git&ensp;:&ensp;2.23.0<br>
+Node&ensp;:&ensp;12.16.3<br>
+Nginx&ensp;:&ensp;1.17.10<br>
+Docker&ensp;:&ensp;19.03.12<br>
 CircleCI<br>
 AmazonLinux2<br>
 AWS&nbsp;(EC2、RDS、S3、CodeDeploy)<br>
-VisualStudio&ensp;/&ensp;1.45.1<br>
-MacOS Catalina&ensp;/&ensp;10.15.4
+VisualStudio&ensp;:&ensp;1.45.1<br>
+MacOS Catalina&ensp;:&ensp;10.15.4

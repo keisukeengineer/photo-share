@@ -142,6 +142,7 @@ export default {
   color: #8a8a8a;
   list-style: none;
   font-size: xx-large;
+  padding-inline-start: 0px;
 }
 
 .v-enter-active, .v-leave-active {

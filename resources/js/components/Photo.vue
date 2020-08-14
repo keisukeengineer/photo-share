@@ -64,7 +64,7 @@ export default {
   margin: 1%;
 }
 .v-enter-active, .v-leave-active {
-  transition: opacity .7s
+  transition: opacity .8s
 }
 
 .v-enter, .v-leave-to {

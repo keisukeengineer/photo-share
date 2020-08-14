@@ -51,10 +51,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.navbar__brand,
+.navbar__brand {
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+  }
+}
+
 .navbar__menu__auth {
   color: black;
-  transition: color 0.3s ease-in-out;
 
   &:hover {
     color: #8a8a8a;

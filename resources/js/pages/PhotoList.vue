@@ -10,7 +10,7 @@
           @like="onLikeClick"
         />
       </paginate>
-      <paginate-links for="paginate-log" class="pagination" :show-step-links="true" />
+      <paginate-links for="paginate-log" class="paginate_links" :show-step-links="true" />
     </div>
   </transition>
 </template>
@@ -18,7 +18,6 @@
 <script>
 import { OK } from '../util'
 import Photo from '../components/Photo.vue'
-
 export default {
   components: {
     Photo,
@@ -124,14 +123,12 @@ export default {
       and (max-height: 1366px) {
       width: 48%;
     }
-
     /** iPad 横向き */
     @media screen
       and (max-width: 1024px)
       and (max-height: 768px) {
       width: 31.33%;
     }
-
     /** iPone6,7,8,10 縦向き */
     @media screen
       and (max-width: 375px) {
@@ -140,25 +137,13 @@ export default {
   }
 }
 
-.pagination {
+.paginate_links {
   text-align: center;
   color: #8a8a8a;
   list-style: none;
   font-size: xx-large;
-  margin-block-start: 0.5rem;
-  margin-block-end: 0.5rem;
-  padding-inline-start: 0px;
-
-  & :nth-child(1n) {
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 2%;
-
-    &:hover {
-      color: black;
-    }
-  }
 }
+
 .v-enter-active, .v-leave-active {
   transition: opacity .5s
 }

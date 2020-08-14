@@ -9,7 +9,7 @@ const createApp = async () => {
 
   await store.dispatch('auth/currentUser')
 
-  Vue.use(VuePaginate);
+  Vue.use(VuePaginate)
 
   new Vue({
     el: '#app',

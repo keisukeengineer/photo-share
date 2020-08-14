@@ -10,7 +10,12 @@
           @like="onLikeClick"
         />
       </paginate>
-      <paginate-links for="paginate-log" class="paginate_links" :show-step-links="true" />
+      <paginate-links
+        for="paginate-log"
+        class="paginate_links"
+        :class="{'paginate_hidden': photos[0] === undefined}"
+        :show-step-links="true"
+      />
     </div>
   </transition>
 </template>
@@ -57,6 +62,8 @@ export default {
       this.photos = response.data.data
       this.currentPage = response.data.current_page
       this.lastPage = response.data.last_page
+
+      console.log(this.photos[0])
     },
     onLikeClick ({ id, liked }) {
       if (! this.$store.getters['auth/check']) {
@@ -143,6 +150,10 @@ export default {
   list-style: none;
   font-size: xx-large;
   padding-inline-start: 0px;
+}
+
+.paginate_hidden {
+  display: none;
 }
 
 .v-enter-active, .v-leave-active {

@@ -16,7 +16,7 @@ const createApp = async () => {
     router,
     store,
     components: { App },
-    template: '<App />'
+    template: '<App />',
   })
 }
 

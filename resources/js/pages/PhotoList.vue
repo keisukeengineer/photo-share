@@ -1,5 +1,4 @@
 <template>
-  <transition appear>
     <div class="photo-list">
       <paginate class="paginate" name="paginate-log" :list="photos" :per="6">
         <Photo
@@ -16,8 +15,17 @@
         :class="{'paginate_hidden': photos[0] === undefined}"
         :show-step-links="true"
       />
+      <transition>
+        <button
+          type="button"
+          class="button button--link"
+          v-if="show"
+          @click="moveToTop()"
+        >
+          Top
+        </button>
+      </transition>
     </div>
-  </transition>
 </template>
 
 <script>
@@ -39,8 +47,16 @@ export default {
       photos: [],
       paginate: ['paginate-log'],
       currentPage: 0,
-      lastPage: 0
+      lastPage: 0,
+      scrollY: 0,
+      show: false
     }
+  },
+  mounted() {
+   window.addEventListener('scroll', this.calculateScrollY);
+  },
+  beforeDestroy() {
+   window.removeEventListener('scroll', this.calculateScrollY);
   },
   watch: {
     $route: {
@@ -62,8 +78,6 @@ export default {
       this.photos = response.data.data
       this.currentPage = response.data.current_page
       this.lastPage = response.data.last_page
-
-      console.log(this.photos[0])
     },
     onLikeClick ({ id, liked }) {
       if (! this.$store.getters['auth/check']) {
@@ -108,12 +122,37 @@ export default {
         }
         return photo
       })
+    },
+    calculateScrollY() {
+      this.scrollY = window.scrollY;
+
+      if(this.scrollY > 100) {
+        this.show = true
+      } else if(this.scrollY === 0) {
+        this.show = false
+      }
+
+    },
+    moveToTop() {
+      const duration = 500;  // 移動速度 : 0.5s
+      const interval = 7;    // 0.07s毎に移動
+      const step = -window.scrollY / Math.ceil(duration / interval); // 1回に移動する距離
+
+      const timer = setInterval(() => {
+        window.scrollBy(0, step); // 指定した位置へ移動
+
+        if(window.scrollY <= 0) {
+          clearInterval(timer);
+        }
+      }, interval);
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
+@import '../../sass/_mixin';
+
 .paginate {
   display: flex;
   flex-wrap: wrap;
@@ -154,6 +193,17 @@ export default {
 
 .paginate_hidden {
   display: none;
+}
+
+.button--link {
+  position: fixed;
+  right: 5%;
+  bottom: 12%;
+  @include button__link;
+
+  &:hover {
+    border-color: black;
+  }
 }
 
 .v-enter-active, .v-leave-active {

@@ -6,7 +6,9 @@
     <main>
       <div class="container">
         <Message />
-        <RouterView />
+        <transition>
+          <RouterView />
+        </transition>
       </div>
     </main>
     <Footer />

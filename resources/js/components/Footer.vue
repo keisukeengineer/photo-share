@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="copyright">©︎ 2020 KeisukeNakama</div>
+    <div class="copyright">©︎ 2020 photo share</div>
     <button v-if="isLogin" class="button button--link" @click="logout">
       Logout
     </button>

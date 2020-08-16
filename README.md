@@ -8,10 +8,10 @@
 写真投稿<br>
 ![photo-share-form.png](./public/photo-share-form.png)<br>
 
-※ レスポンシブに対応させました(iPhone / iPad)<br><br>
+※ レスポンシブに対応させました( iPhone / iPad )<br><br>
 
 # 概要
-作成期間&nbsp;：&nbsp;14日&nbsp;(2020/08/14 時点)<br>
+作成期間&nbsp;：&nbsp;16日&nbsp;( 2020/08/16 時点 )<br>
 お気に入りの写真を投稿してシェアできるWEBアプリケーションです。<br><br>
 
 # コメント
@@ -32,14 +32,12 @@
 写真投稿<br>
 コメント投稿<br>
 イイね<br>
-ダウンロード<br>
-シェアボタン<br>
-ページネーション<br><br>
+ダウンロード<br><br>
 
 # 言語
 HTML<br>
 CSS<br>
-SASS<br>
+SCSS<br>
 Javascript<br>
 PHP&ensp;:&ensp;7.2.30<br>
 MySQL&ensp;:&ensp;5.7.30<br><br>
@@ -55,6 +53,6 @@ Nginx&ensp;:&ensp;1.17.10<br>
 Docker&ensp;:&ensp;19.03.12<br>
 CircleCI<br>
 AmazonLinux2<br>
-AWS&nbsp;(EC2、RDS、S3、CodeDeploy)<br>
+AWS ( EC2、RDS、S3、CodeDeploy )<br>
 VisualStudio&ensp;:&ensp;1.45.1<br>
 MacOS Catalina&ensp;:&ensp;10.15.4

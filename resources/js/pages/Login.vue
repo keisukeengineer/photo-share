@@ -1,22 +1,22 @@
 <template>
-  <transition appear>
-    <div class="container--small">
-      <ul class="tab">
-        <li
-          class="tab__item"
-          :class="{'tab__item--active': tab === 1 }"
-          @click="tab = 1">
-          Login
-        </li>
-        <li
-          class="tab__item"
-          :class="{'tab__item--active': tab === 2 }"
-          @click="tab = 2">
-          Register
-        </li>
-      </ul>
+  <div class="container--small">
+    <ul class="tab">
+      <li
+        class="tab__item"
+        :class="{'tab__item--active': tab === 1 }"
+        @click="tab = 1">
+        Login
+      </li>
+      <li
+        class="tab__item"
+        :class="{'tab__item--active': tab === 2 }"
+        @click="tab = 2">
+        Register
+      </li>
+    </ul>
 
-      <!-- ログイン -->
+    <!-- ログイン -->
+    <transition appear>
       <div class="panel" v-show="tab === 1">
         <form class="form" @submit.prevent="login">
           <transition name="form">
@@ -48,14 +48,16 @@
             @keyup.esc="clear_login_password"
           >
           <div class="form__button">
-            <button type="submit" class="btn-square-shadow cursor">
+            <button type="submit" class="button-square-shadow cursor">
               Login
             </button>
           </div>
         </form>
       </div>
+    </transition>
 
-      <!-- 会員登録 -->
+    <!-- 会員登録 -->
+    <transition appear>
       <div class="panel" v-show="tab === 2">
         <form class="form" @submit.prevent="register">
           <transition name="form">
@@ -108,14 +110,14 @@
             @keyup.esc="clear_register_password_confirmation"
           >
           <div class="form__button">
-            <button type="submit" class="btn-square-shadow cursor">
+            <button type="submit" class="button-square-shadow cursor">
               Register
             </button>
           </div>
         </form>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
 <script>

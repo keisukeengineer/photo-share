@@ -18,7 +18,12 @@
           <img :src="preview" alt="">
         </output>
         <div class="form__button">
-          <button type="submit" class="btn-square-shadow cursor">submit</button>
+          <button
+            type="submit"
+            class="button-square-shadow cursor"
+          >
+            submit
+          </button>
         </div>
       </form>
     </div>

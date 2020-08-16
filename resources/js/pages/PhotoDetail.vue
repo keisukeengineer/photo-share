@@ -69,7 +69,12 @@
           </transition>
           <textarea class="form__item" v-model="commentContent" />
           <div class="form__button">
-            <button type="submit" class="btn-square-shadow cursor">submit comment</button>
+            <button
+              type="submit"
+              class="button-square-shadow cursor"
+            >
+              submit comment
+            </button>
           </div>
         </form>
       </div>

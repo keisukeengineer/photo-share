@@ -27,7 +27,7 @@ button {
   border-color: #8a8a8a;
 }
 
-.btn-square-shadow {
+.button-square-shadow {
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -38,11 +38,11 @@ button {
   transition: all 0.5s ease;
 }
 
-.btn-square-shadow:hover {
+.button-square-shadow:hover {
   opacity: 0.8;
 }
 
-.btn-square-shadow:active {
+.button-square-shadow:active {
   transform: translateY(4px);
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
   border-bottom: none;

@@ -35,6 +35,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../sass/_mixin';
+
 .footer {
   position: fixed;
   bottom: 0%;
@@ -43,8 +45,7 @@ export default {
   background: white;
 
   .button--link {
-    border: 1px solid #dedede;
-    transition: border-color 0.3s ease-in-out;
+    @include button__link;
 
     &:hover {
       border-color: black;

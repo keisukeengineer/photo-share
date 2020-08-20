@@ -3,7 +3,7 @@
     <div
       v-if="photo"
       class="photo-detail"
-      :class="{ 'photo-detail--column': fullWidth }"
+      :class="{ 'photo-detail--column': fullWidth}"
     >
       <figure class="photo-detail__pane photo-detail__image"
         @click="fullWidth = ! fullWidth"
@@ -27,20 +27,6 @@
         >
           <i class="icon ion-md-arrow-round-down" />Download
         </a>
-        <div class="share_wrapper">
-          <div
-            class="share_wrapper_sub cursor"
-            @click="onShareClick('twitter')"
-          >
-            <i class="fa fa-twitter fa-3x share_wrapper_sub_item" />
-          </div>
-          <div
-            class="share_wrapper_sub cursor"
-            @click="onShareClick('facebook')"
-          >
-            <i class="fa fa-facebook fa-3x share_wrapper_sub_item" />
-          </div>
-        </div>
         <h2 class="photo-detail__title">
           <i class="icon ion-md-chatboxes" />Comments
         </h2>
@@ -101,9 +87,23 @@ export default {
       shareURL: ''
     }
   },
+  mounted: function () {
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.handleResize)
+  },
   computed: {
     isLogin () {
       return this.$store.getters['auth/check']
+    }
+  },
+  watch: {
+    $route: {
+      async handler() {
+        await this.fetchPhoto()
+      },
+      immediate: true
     }
   },
   methods: {
@@ -178,61 +178,21 @@ export default {
       this.photo.likes_count = this.photo.likes_count - 1
       this.photo.liked_by_user = false
     },
-    onShareClick(shareButton) {
-      if(shareButton === 'twitter') {
-        this.twitter()
+    handleResize() {
+      this.test = window.innerWidth
+
+      // iPhone 6/7/8/10 の場合、画像をフルサイズにする
+      if(window.innerWidth <= 375) {
+        this.fullWidth = true
       } else {
-        this.facebook()
+        this.fullWidth = false
       }
-    },
-    twitter() {
-      window.open(`https://twitter.com/intent/tweet?url=${location.href}&text=`, '_blank')
-    },
-    facebook() {
-      window.open(`https://www.facebook.com/sharer/sharer.php?u=${location.href}`, '_blank')
-    }
-  },
-  watch: {
-    $route: {
-      async handler () {
-        await this.fetchPhoto()
-      },
-      immediate: true
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-.share_wrapper {
-  display: inline-block;
-  position: fixed;
-  right: 2rem;
-  bottom: 7rem;
-
-  &_sub {
-    display: inline-block;
-
-    &_item {
-      margin: 0 0.8rem;
-      color: #8a8a8a;
-      transition: color 0.5s ease-in-out;
-
-      &:hover {
-        color: black;
-      }
-    }
-  }
-}
-</style>
-
-<style scoped lang="scss">
-.photo-detail__image {
-  img:hover {
-    opacity: .7;
-  }
-}
-
 .v-enter-active {
   transition: opacity .5s
 }

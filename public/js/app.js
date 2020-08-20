@@ -2837,6 +2837,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   mounted: function mounted() {
+    this.getDefaultWindowWidth();
     window.addEventListener('resize', this.handleResize);
   },
   beforeDestroy: function beforeDestroy() {
@@ -3041,9 +3042,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee5);
       }))();
     },
+    getDefaultWindowWidth: function getDefaultWindowWidth() {
+      if (screen.width === 375) {
+        this.fullWidth = true;
+      }
+    },
     handleResize: function handleResize() {
-      this.test = window.innerWidth; // iPhone 6/7/8/10 の場合、画像をフルサイズにする
-
+      // iPhone 6/7/8/10 の場合、画像をフルサイズにする
       if (window.innerWidth <= 375) {
         this.fullWidth = true;
       } else {

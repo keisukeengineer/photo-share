@@ -31,13 +31,16 @@
 ユーザー登録<br>
 写真投稿<br>
 コメント投稿<br>
-イイね<br>
-ダウンロード<br><br>
+イイね
+ダウンロード<br>
+シェアボタン<br>
+Topボタン<br>
+ページネーション<br><br>
 
 # 言語
 HTML<br>
 CSS<br>
-SCSS<br>
+SASS<br>
 Javascript<br>
 PHP&ensp;:&ensp;7.2.30<br>
 MySQL&ensp;:&ensp;5.7.30<br><br>

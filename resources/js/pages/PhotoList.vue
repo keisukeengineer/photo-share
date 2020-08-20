@@ -135,7 +135,7 @@ export default {
     },
     moveToTop() {
       const duration = 500;  // 移動速度 : 0.5s
-      const interval = 7;    // 0.07s毎に移動
+      const interval = 8;    // 0.07s毎に移動
       const step = -window.scrollY / Math.ceil(duration / interval); // 1回に移動する距離
 
       const timer = setInterval(() => {

@@ -84,10 +84,11 @@ export default {
       fullWidth: false,
       commentContent: '',
       commentErrors: null,
-      shareURL: ''
+      shareURL: '',
     }
   },
   mounted: function () {
+    this.getDefaultWindowWidth()
     window.addEventListener('resize', this.handleResize)
   },
   beforeDestroy: function () {
@@ -178,9 +179,12 @@ export default {
       this.photo.likes_count = this.photo.likes_count - 1
       this.photo.liked_by_user = false
     },
+    getDefaultWindowWidth() {
+      if(screen.width === 375) {
+        this.fullWidth = true
+      }
+    },
     handleResize() {
-      this.test = window.innerWidth
-
       // iPhone 6/7/8/10 の場合、画像をフルサイズにする
       if(window.innerWidth <= 375) {
         this.fullWidth = true

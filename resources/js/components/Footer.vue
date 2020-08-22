@@ -1,12 +1,12 @@
 <template>
   <footer class="footer">
-    <div class="copyright">©︎ 2020 PhotoShare</div>
     <button v-if="isLogin" class="button button--link" @click="logout">
       Logout
     </button>
     <RouterLink v-else class="button button--link" to="/login">
       Login / Register
     </RouterLink>
+    <div class="copyright">©︎ 2020 PhotoShare</div>
     <div class="share_wrapper">
       <div
         class="share_wrapper_sub cursor"
@@ -91,7 +91,7 @@ export default {
       display: inline-block;
 
       &_item {
-        margin: 0 0.8rem;
+        margin: 0 0.5rem;
         color: #8a8a8a;
         transition: color 0.5s ease-in-out;
 

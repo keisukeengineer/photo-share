@@ -3126,8 +3126,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       photos: [],
       paginate: ['paginate-log'],
-      currentPage: 0,
-      lastPage: 0,
       scrollY: 0,
       show: false
     };
@@ -3189,10 +3187,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 6:
                 _this2.photos = response.data.data;
-                _this2.currentPage = response.data.current_page;
-                _this2.lastPage = response.data.last_page;
 
-              case 9:
+              case 7:
               case "end":
                 return _context2.stop();
             }
@@ -3311,7 +3307,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     moveToTop: function moveToTop() {
       var duration = 500; // 移動速度 : 0.5s
 
-      var interval = 8; // 0.07s毎に移動
+      var interval = 8; // 0.08s毎に移動
 
       var step = -window.scrollY / Math.ceil(duration / interval); // 1回に移動する距離
 
@@ -3359,7 +3355,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n.footer[data-v-61a7c374] {\n  position: fixed;\n  bottom: 0%;\n  width: 100%;\n  height: 5rem;\n  background: white;\n}\n.footer .copyright[data-v-61a7c374] {\n  color: #8a8a8a;\n  padding: 0.5rem;\n}\n.footer .button--link[data-v-61a7c374] {\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.footer .button--link[data-v-61a7c374]:hover {\n  border-color: black;\n}\n.footer .share_wrapper[data-v-61a7c374] {\n  display: inline-block;\n}\n.footer .share_wrapper_sub[data-v-61a7c374] {\n  display: inline-block;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374] {\n  margin: 0 0.8rem;\n  color: #8a8a8a;\n  transition: color 0.5s ease-in-out;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374]:hover {\n  color: black;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n.footer[data-v-61a7c374] {\n  position: fixed;\n  bottom: 0%;\n  width: 100%;\n  height: 5rem;\n  background: white;\n}\n.footer .copyright[data-v-61a7c374] {\n  color: #8a8a8a;\n  padding: 0.5rem;\n}\n.footer .button--link[data-v-61a7c374] {\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.footer .button--link[data-v-61a7c374]:hover {\n  border-color: black;\n}\n.footer .share_wrapper[data-v-61a7c374] {\n  display: inline-block;\n}\n.footer .share_wrapper_sub[data-v-61a7c374] {\n  display: inline-block;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374] {\n  margin: 0 0.5rem;\n  color: #8a8a8a;\n  transition: color 0.5s ease-in-out;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374]:hover {\n  color: black;\n}", ""]);
 
 // exports
 
@@ -3473,7 +3469,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n.paginate[data-v-401edab7] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.paginate li[data-v-401edab7] {\n  width: 31%;\n  margin: 1%;\n  /** iPad Pro 縦向き */\n  /** iPad 横向き */\n  /** iPone6,7,8,10 縦向き */\n}\n@media screen and (max-width: 1024px) and (max-height: 1366px) {\n.paginate li[data-v-401edab7] {\n    width: 48%;\n}\n}\n@media screen and (max-width: 1024px) and (max-height: 768px) {\n.paginate li[data-v-401edab7] {\n    width: 31.33%;\n}\n}\n@media screen and (max-width: 375px) {\n.paginate li[data-v-401edab7] {\n    width: 98%;\n}\n}\n.paginate_links[data-v-401edab7] {\n  text-align: center;\n  color: #8a8a8a;\n  list-style: none;\n  font-size: xx-large;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.paginate_hidden[data-v-401edab7] {\n  display: none;\n}\n.button--link[data-v-401edab7] {\n  position: fixed;\n  right: 5%;\n  bottom: 12%;\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.button--link[data-v-401edab7]:hover {\n  border-color: black;\n}\n.v-enter-active[data-v-401edab7], .v-leave-active[data-v-401edab7] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-401edab7], .v-leave-to[data-v-401edab7] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n.paginate[data-v-401edab7] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.paginate li[data-v-401edab7] {\n  width: 31%;\n  margin: 1%;\n  /** iPad Pro 縦向き */\n  /** iPad 横向き */\n  /** iPone6,7,8,10 縦向き */\n}\n@media screen and (max-width: 1024px) and (max-height: 1366px) {\n.paginate li[data-v-401edab7] {\n    width: 48%;\n}\n}\n@media screen and (max-width: 1024px) and (max-height: 768px) {\n.paginate li[data-v-401edab7] {\n    width: 31.33%;\n}\n}\n@media screen and (max-width: 375px) {\n.paginate li[data-v-401edab7] {\n    width: 98%;\n}\n}\n.paginate_links[data-v-401edab7] {\n  text-align: center;\n  color: #8a8a8a;\n  list-style: none;\n  font-size: xx-large;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n  -webkit-margin-before: 0em;\n          margin-block-start: 0em;\n}\n.paginate_hidden[data-v-401edab7] {\n  display: none;\n}\n.button--link[data-v-401edab7] {\n  position: fixed;\n  right: 1rem;\n  bottom: 6rem;\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.button--link[data-v-401edab7]:hover {\n  border-color: black;\n}\n.v-enter-active[data-v-401edab7], .v-leave-active[data-v-401edab7] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-401edab7], .v-leave-to[data-v-401edab7] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -5701,8 +5697,6 @@ var render = function() {
     "footer",
     { staticClass: "footer" },
     [
-      _c("div", { staticClass: "copyright" }, [_vm._v("©︎ 2020 PhotoShare")]),
-      _vm._v(" "),
       _vm.isLogin
         ? _c(
             "button",
@@ -5714,6 +5708,8 @@ var render = function() {
             { staticClass: "button button--link", attrs: { to: "/login" } },
             [_vm._v("\n    Login / Register\n  ")]
           ),
+      _vm._v(" "),
+      _c("div", { staticClass: "copyright" }, [_vm._v("©︎ 2020 PhotoShare")]),
       _vm._v(" "),
       _c("div", { staticClass: "share_wrapper" }, [
         _c(

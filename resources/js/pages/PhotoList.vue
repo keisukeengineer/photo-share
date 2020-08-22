@@ -46,8 +46,6 @@ export default {
     return {
       photos: [],
       paginate: ['paginate-log'],
-      currentPage: 0,
-      lastPage: 0,
       scrollY: 0,
       show: false
     }
@@ -76,8 +74,6 @@ export default {
       }
 
       this.photos = response.data.data
-      this.currentPage = response.data.current_page
-      this.lastPage = response.data.last_page
     },
     onLikeClick ({ id, liked }) {
       if (! this.$store.getters['auth/check']) {
@@ -135,7 +131,7 @@ export default {
     },
     moveToTop() {
       const duration = 500;  // 移動速度 : 0.5s
-      const interval = 8;    // 0.07s毎に移動
+      const interval = 8;    // 0.08s毎に移動
       const step = -window.scrollY / Math.ceil(duration / interval); // 1回に移動する距離
 
       const timer = setInterval(() => {
@@ -189,6 +185,7 @@ export default {
   list-style: none;
   font-size: xx-large;
   padding-inline-start: 0px;
+  margin-block-start: 0em;
 }
 
 .paginate_hidden {
@@ -197,8 +194,8 @@ export default {
 
 .button--link {
   position: fixed;
-  right: 5%;
-  bottom: 12%;
+  right: 1rem;
+  bottom: 6rem;
   @include button__link;
 
   &:hover {

@@ -6999,7 +6999,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("\n      Top\n    ")]
+              [_c("i", { staticClass: "fas fa-arrow-up" })]
             )
           : _vm._e()
       ])

@@ -22,7 +22,7 @@
           v-if="show"
           @click="moveToTop()"
         >
-          Top
+          <i class="fas fa-arrow-up" />
         </button>
       </transition>
     </div>

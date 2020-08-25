@@ -3,10 +3,9 @@
     <button v-if="isLogin" class="button button--link" @click="logout">
       Logout
     </button>
-    <RouterLink v-else class="button button--link" to="/login">
+    <!-- <RouterLink v-else class="button button--link" to="/login">
       Login / Register
-    </RouterLink>
-    <div class="copyright">©︎ 2020 PhotoShare</div>
+    </RouterLink> -->
     <div class="share_wrapper">
       <div
         class="share_wrapper_sub cursor"
@@ -21,6 +20,7 @@
         <i class="fa fa-facebook fa-2x share_wrapper_sub_item" />
       </div>
     </div>
+    <div class="copyright">©︎ 2020 PhotoShare</div>
   </footer>
 </template>
 
@@ -66,14 +66,15 @@ export default {
 
 .footer {
   position: fixed;
+  flex-direction: column;
   bottom: 0%;
   width: 100%;
-  height: 5rem;
+  height: 6rem;
   background: white;
 
   .copyright {
     color: #8a8a8a;
-    padding: 0.5rem;
+    padding: .5rem 0;
   }
 
   .button--link {
@@ -86,14 +87,15 @@ export default {
 
   .share_wrapper {
     display: inline-block;
+    padding: .5rem 0;
 
     &_sub {
       display: inline-block;
 
       &_item {
-        margin: 0 0.5rem;
+        margin: 0 1rem;
         color: #8a8a8a;
-        transition: color 0.5s ease-in-out;
+        transition: color .5s ease-in-out;
 
         &:hover {
           color: black;

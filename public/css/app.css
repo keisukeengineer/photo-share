@@ -8,7 +8,7 @@
   font-size: larger;
   cursor: pointer;
   display: inline-block;
-  margin: 0 2%;
+  margin: 0 3%;
   transition: color 0.3s ease-in-out;
 }
 
@@ -66,5 +66,14 @@ button {
   border-color: #a1cbef;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+}
+
+/* その他 */
+
+.tab__item {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 

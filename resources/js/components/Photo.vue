@@ -1,13 +1,12 @@
 <template>
   <li class="photo">
     <figure class="photo__wrapper">
-      <transition appear>
+
         <img
           class="photo__image"
           :src="item.url"
           :alt="`Photo by ${item.owner.name}`"
         >
-      </transition>
     </figure>
     <RouterLink
       class="photo__overlay"

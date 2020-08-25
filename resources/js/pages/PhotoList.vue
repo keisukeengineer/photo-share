@@ -1,31 +1,31 @@
 <template>
-    <div class="photo-list">
-      <paginate class="paginate" name="paginate-log" :list="photos" :per="6">
-        <Photo
-          class="grid__item"
-          v-for="photo in paginated('paginate-log')"
-          :key="photo.id"
-          :item="photo"
-          @like="onLikeClick"
-        />
-      </paginate>
-      <paginate-links
-        for="paginate-log"
-        class="paginate_links"
-        :class="{'paginate_hidden': photos[0] === undefined}"
-        :show-step-links="true"
+  <div class="photo-list">
+    <paginate class="paginate" name="paginate-log" :list="photos" :per="6">
+      <Photo
+        class="grid__item"
+        v-for="photo in paginated('paginate-log')"
+        :key="photo.id"
+        :item="photo"
+        @like="onLikeClick"
       />
-      <transition>
-        <button
-          type="button"
-          class="button button--link"
-          v-if="show"
-          @click="moveToTop()"
-        >
-          <i class="fas fa-arrow-up" />
-        </button>
-      </transition>
-    </div>
+    </paginate>
+    <paginate-links
+      for="paginate-log"
+      class="paginate_links"
+      :class="{'paginate_hidden': photos[0] === undefined}"
+      :show-step-links="true"
+    />
+    <transition name="topButton">
+      <button
+        type="button"
+        class="button button--link"
+        v-if="show"
+        @click="moveToTop()"
+      >
+        <i class="fas fa-arrow-up" />
+      </button>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -149,65 +149,74 @@ export default {
 <style scoped lang="scss">
 @import '../../sass/_mixin';
 
-.paginate {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding-inline-start: 0px;
+.photo-list {
+  @media screen
+    and (max-width: 375px) {
+    height: 123rem;
+  }
 
-  li {
-    width: 31%;
-    margin: 1%;
+  .paginate {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-inline-start: 0px;
 
-    /** iPad Pro 縦向き */
-    @media screen
-      and (max-width: 1024px)
-      and (max-height: 1366px) {
-      width: 48%;
-    }
-    /** iPad 横向き */
-    @media screen
-      and (max-width: 1024px)
-      and (max-height: 768px) {
-      width: 31.33%;
-    }
-    /** iPone6,7,8,10 縦向き */
-    @media screen
-      and (max-width: 375px) {
-      width: 98%;
+    li {
+      width: 31%;
+      margin: 1%;
+
+      /** iPad Pro 縦向き */
+      @media screen
+        and (max-width: 1024px)
+        and (max-height: 1366px) {
+        width: 48%;
+      }
+      /** iPad 横向き */
+      @media screen
+        and (max-width: 1024px)
+        and (max-height: 768px) {
+        width: 31.33%;
+      }
+      @media screen
+        and (max-width: 375px) {
+        width: 98%;
+      }
     }
   }
-}
 
-.paginate_links {
-  text-align: center;
-  color: #8a8a8a;
-  list-style: none;
-  font-size: xx-large;
-  padding-inline-start: 0px;
-  margin-block-start: 0em;
-}
-
-.paginate_hidden {
-  display: none;
-}
-
-.button--link {
-  position: fixed;
-  right: 1rem;
-  bottom: 6rem;
-  @include button__link;
-
-  &:hover {
-    border-color: black;
+  .paginate_links {
+    text-align: center;
+    color: #8a8a8a;
+    list-style: none;
+    font-size: xx-large;
+    padding-inline-start: 0px;
+    margin-block-start: 0em;
+    user-select: none;
   }
-}
 
-.v-enter-active, .v-leave-active {
-  transition: opacity .5s
-}
+  .paginate_hidden {
+    display: none;
+  }
 
-.v-enter, .v-leave-to {
-  opacity: 0;
+  .button--link {
+    position: fixed;
+    right: 1rem;
+    bottom: 7rem;
+    @include button__link;
+
+    &:hover {
+      border-color: black;
+    }
+  }
+
+  .topButton-enter-active,
+  .topButton-leave-active {
+    transition: opacity .5s
+  }
+
+  .topButton-enter,
+  .topButton-leave-to {
+    opacity: 0;
+  }
 }
 </style>

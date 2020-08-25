@@ -52,10 +52,10 @@ export default {
 
 <style scoped lang="scss">
 .navbar__brand {
-  padding: 0.5rem;
+  padding: .5rem;
 
   &:hover {
-    transition: all 0.3s ease-in-out;
+    transition: all .3s ease-in-out;
   }
 }
 

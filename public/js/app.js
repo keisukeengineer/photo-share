@@ -2269,7 +2269,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     item: {
@@ -3355,7 +3354,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n.footer[data-v-61a7c374] {\n  position: fixed;\n  bottom: 0%;\n  width: 100%;\n  height: 5rem;\n  background: white;\n}\n.footer .copyright[data-v-61a7c374] {\n  color: #8a8a8a;\n  padding: 0.5rem;\n}\n.footer .button--link[data-v-61a7c374] {\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.footer .button--link[data-v-61a7c374]:hover {\n  border-color: black;\n}\n.footer .share_wrapper[data-v-61a7c374] {\n  display: inline-block;\n}\n.footer .share_wrapper_sub[data-v-61a7c374] {\n  display: inline-block;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374] {\n  margin: 0 0.5rem;\n  color: #8a8a8a;\n  transition: color 0.5s ease-in-out;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374]:hover {\n  color: black;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n.footer[data-v-61a7c374] {\n  position: fixed;\n  flex-direction: column;\n  bottom: 0%;\n  width: 100%;\n  height: 6rem;\n  background: white;\n}\n.footer .copyright[data-v-61a7c374] {\n  color: #8a8a8a;\n  padding: 0.5rem 0;\n}\n.footer .button--link[data-v-61a7c374] {\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.footer .button--link[data-v-61a7c374]:hover {\n  border-color: black;\n}\n.footer .share_wrapper[data-v-61a7c374] {\n  display: inline-block;\n  padding: 0.5rem 0;\n}\n.footer .share_wrapper_sub[data-v-61a7c374] {\n  display: inline-block;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374] {\n  margin: 0 1rem;\n  color: #8a8a8a;\n  transition: color 0.5s ease-in-out;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374]:hover {\n  color: black;\n}", ""]);
 
 // exports
 
@@ -3469,7 +3468,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n.paginate[data-v-401edab7] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.paginate li[data-v-401edab7] {\n  width: 31%;\n  margin: 1%;\n  /** iPad Pro 縦向き */\n  /** iPad 横向き */\n  /** iPone6,7,8,10 縦向き */\n}\n@media screen and (max-width: 1024px) and (max-height: 1366px) {\n.paginate li[data-v-401edab7] {\n    width: 48%;\n}\n}\n@media screen and (max-width: 1024px) and (max-height: 768px) {\n.paginate li[data-v-401edab7] {\n    width: 31.33%;\n}\n}\n@media screen and (max-width: 375px) {\n.paginate li[data-v-401edab7] {\n    width: 98%;\n}\n}\n.paginate_links[data-v-401edab7] {\n  text-align: center;\n  color: #8a8a8a;\n  list-style: none;\n  font-size: xx-large;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n  -webkit-margin-before: 0em;\n          margin-block-start: 0em;\n}\n.paginate_hidden[data-v-401edab7] {\n  display: none;\n}\n.button--link[data-v-401edab7] {\n  position: fixed;\n  right: 1rem;\n  bottom: 6rem;\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.button--link[data-v-401edab7]:hover {\n  border-color: black;\n}\n.v-enter-active[data-v-401edab7], .v-leave-active[data-v-401edab7] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-401edab7], .v-leave-to[data-v-401edab7] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n@media screen and (max-width: 375px) {\n.photo-list[data-v-401edab7] {\n    height: 123rem;\n}\n}\n.photo-list .paginate[data-v-401edab7] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.photo-list .paginate li[data-v-401edab7] {\n  width: 31%;\n  margin: 1%;\n  /** iPad Pro 縦向き */\n  /** iPad 横向き */\n}\n@media screen and (max-width: 1024px) and (max-height: 1366px) {\n.photo-list .paginate li[data-v-401edab7] {\n    width: 48%;\n}\n}\n@media screen and (max-width: 1024px) and (max-height: 768px) {\n.photo-list .paginate li[data-v-401edab7] {\n    width: 31.33%;\n}\n}\n@media screen and (max-width: 375px) {\n.photo-list .paginate li[data-v-401edab7] {\n    width: 98%;\n}\n}\n.photo-list .paginate_links[data-v-401edab7] {\n  text-align: center;\n  color: #8a8a8a;\n  list-style: none;\n  font-size: xx-large;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n  -webkit-margin-before: 0em;\n          margin-block-start: 0em;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n.photo-list .paginate_hidden[data-v-401edab7] {\n  display: none;\n}\n.photo-list .button--link[data-v-401edab7] {\n  position: fixed;\n  right: 1rem;\n  bottom: 7rem;\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.photo-list .button--link[data-v-401edab7]:hover {\n  border-color: black;\n}\n.photo-list .topButton-enter-active[data-v-401edab7],\n.photo-list .topButton-leave-active[data-v-401edab7] {\n  transition: opacity 0.5s;\n}\n.photo-list .topButton-enter[data-v-401edab7],\n.photo-list .topButton-leave-to[data-v-401edab7] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -5693,62 +5692,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "footer",
-    { staticClass: "footer" },
-    [
-      _vm.isLogin
-        ? _c(
-            "button",
-            { staticClass: "button button--link", on: { click: _vm.logout } },
-            [_vm._v("\n    Logout\n  ")]
-          )
-        : _c(
-            "RouterLink",
-            { staticClass: "button button--link", attrs: { to: "/login" } },
-            [_vm._v("\n    Login / Register\n  ")]
-          ),
-      _vm._v(" "),
-      _c("div", { staticClass: "copyright" }, [_vm._v("©︎ 2020 PhotoShare")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "share_wrapper" }, [
-        _c(
-          "div",
-          {
-            staticClass: "share_wrapper_sub cursor",
-            on: {
-              click: function($event) {
-                return _vm.onShareClick("twitter")
-              }
-            }
-          },
-          [
-            _c("i", {
-              staticClass: "fa fa-twitter fa-2x share_wrapper_sub_item"
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "share_wrapper_sub cursor",
-            on: {
-              click: function($event) {
-                return _vm.onShareClick("facebook")
-              }
-            }
-          },
-          [
-            _c("i", {
-              staticClass: "fa fa-facebook fa-2x share_wrapper_sub_item"
-            })
-          ]
+  return _c("footer", { staticClass: "footer" }, [
+    _vm.isLogin
+      ? _c(
+          "button",
+          { staticClass: "button button--link", on: { click: _vm.logout } },
+          [_vm._v("\n    Logout\n  ")]
         )
-      ])
-    ],
-    1
-  )
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "share_wrapper" }, [
+      _c(
+        "div",
+        {
+          staticClass: "share_wrapper_sub cursor",
+          on: {
+            click: function($event) {
+              return _vm.onShareClick("twitter")
+            }
+          }
+        },
+        [_c("i", { staticClass: "fa fa-twitter fa-2x share_wrapper_sub_item" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "share_wrapper_sub cursor",
+          on: {
+            click: function($event) {
+              return _vm.onShareClick("facebook")
+            }
+          }
+        },
+        [
+          _c("i", {
+            staticClass: "fa fa-facebook fa-2x share_wrapper_sub_item"
+          })
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "copyright" }, [_vm._v("©︎ 2020 PhotoShare")])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -5946,22 +5932,12 @@ var render = function() {
     "li",
     { staticClass: "photo" },
     [
-      _c(
-        "figure",
-        { staticClass: "photo__wrapper" },
-        [
-          _c("transition", { attrs: { appear: "" } }, [
-            _c("img", {
-              staticClass: "photo__image",
-              attrs: {
-                src: _vm.item.url,
-                alt: "Photo by " + _vm.item.owner.name
-              }
-            })
-          ])
-        ],
-        1
-      ),
+      _c("figure", { staticClass: "photo__wrapper" }, [
+        _c("img", {
+          staticClass: "photo__image",
+          attrs: { src: _vm.item.url, alt: "Photo by " + _vm.item.owner.name }
+        })
+      ]),
       _vm._v(" "),
       _c(
         "RouterLink",
@@ -6986,7 +6962,7 @@ var render = function() {
         attrs: { for: "paginate-log", "show-step-links": true }
       }),
       _vm._v(" "),
-      _c("transition", [
+      _c("transition", { attrs: { name: "topButton" } }, [
         _vm.show
           ? _c(
               "button",

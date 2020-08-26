@@ -2033,21 +2033,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -2068,46 +2053,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
-    apiStatus: function apiStatus(state) {
-      return state.auth.apiStatus;
-    }
-  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
-    isLogin: 'auth/check'
-  })),
   methods: {
-    logout: function logout() {
-      var _this = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return _this.$store.dispatch('auth/logout');
-
-              case 2:
-                if (_this.apiStatus) {
-                  _this.$router.push('/login');
-                }
-
-              case 3:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }))();
-    },
     onShareClick: function onShareClick(shareButton) {
       if (shareButton === 'twitter') {
         this.twitter();
@@ -2168,7 +2115,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PhotoForm_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoForm.vue */ "./resources/js/components/PhotoForm.vue");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _PhotoForm_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoForm.vue */ "./resources/js/components/PhotoForm.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2199,21 +2171,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    PhotoForm: _PhotoForm_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    PhotoForm: _PhotoForm_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
-      showForm: false
+      showForm: false,
+      nowLoginForm: false
     };
   },
-  computed: {
+  computed: _objectSpread(_objectSpread({
     isLogin: function isLogin() {
       return this.$store.getters['auth/check'];
     },
     username: function username() {
       return this.$store.getters['auth/username'];
+    }
+  }, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapState"])({
+    apiStatus: function apiStatus(state) {
+      return state.auth.apiStatus;
+    }
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapGetters"])({
+    isLogin: 'auth/check'
+  })),
+  methods: {
+    logout: function logout() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.$store.dispatch('auth/logout');
+
+              case 2:
+                if (_this.apiStatus) {
+                  _this.$router.push('/login');
+                }
+
+                _this.closeMenue();
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    closeMenue: function closeMenue() {
+      //       if(location.href === window.Laravel.basePath + 'login') {
+      // console.log('test')
+      //       }
+      document.getElementById('drawer-check').checked = false;
     }
   }
 });
@@ -2229,6 +2243,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -3114,13 +3129,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   components: {
     Photo: _components_Photo_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
-  props: {
-    page: {
-      type: Number,
-      required: false,
-      "default": 1
-    }
-  },
   data: function data() {
     return {
       photos: [],
@@ -3354,7 +3362,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n.footer[data-v-61a7c374] {\n  position: fixed;\n  flex-direction: column;\n  bottom: 0%;\n  width: 100%;\n  height: 6rem;\n  background: white;\n}\n.footer .copyright[data-v-61a7c374] {\n  color: #8a8a8a;\n  padding: 0.5rem 0;\n}\n.footer .button--link[data-v-61a7c374] {\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.footer .button--link[data-v-61a7c374]:hover {\n  border-color: black;\n}\n.footer .share_wrapper[data-v-61a7c374] {\n  display: inline-block;\n  padding: 0.5rem 0;\n}\n.footer .share_wrapper_sub[data-v-61a7c374] {\n  display: inline-block;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374] {\n  margin: 0 1rem;\n  color: #8a8a8a;\n  transition: color 0.5s ease-in-out;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374]:hover {\n  color: black;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n/* ボタン ( メニューバー ) */\n.footer[data-v-61a7c374] {\n  position: fixed;\n  flex-direction: column;\n  bottom: 0%;\n  width: 100%;\n  height: 6rem;\n  background: white;\n}\n.footer .copyright[data-v-61a7c374] {\n  color: #8a8a8a;\n  padding: 0.5rem 0;\n}\n.footer .button--link[data-v-61a7c374] {\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.footer .button--link[data-v-61a7c374]:hover {\n  border-color: black;\n}\n.footer .share_wrapper[data-v-61a7c374] {\n  display: inline-block;\n  padding: 0.5rem 0;\n}\n.footer .share_wrapper_sub[data-v-61a7c374] {\n  display: inline-block;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374] {\n  margin: 0 1rem;\n  color: #8a8a8a;\n  transition: color 0.5s ease-in-out;\n}\n.footer .share_wrapper_sub_item[data-v-61a7c374]:hover {\n  color: black;\n}", ""]);
 
 // exports
 
@@ -3373,7 +3381,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navbar__brand[data-v-6dde423b] {\n  padding: 0.5rem;\n}\n.navbar__brand[data-v-6dde423b]:hover {\n  transition: all 0.3s ease-in-out;\n}\n.navbar__menu__auth[data-v-6dde423b] {\n  color: black;\n}\n.navbar__menu__auth[data-v-6dde423b]:hover {\n  color: #8a8a8a;\n}\n.fa-sign-in-alt[data-v-6dde423b] {\n  font-size: 1.2rem;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n/* ボタン ( メニューバー ) */\n.navbar[data-v-6dde423b] {\n  height: 6rem;\n  /* 三本線のうち一番上の棒の位置調整 */\n  /* 三本線のうち一番下の棒の位置調整 */\n  /* アイコンがクリックされたら真ん中の線を透明にする */\n  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */\n  /* メニューのデザイン*/\n  /* アイコンがクリックされたらメニューを表示 */\n}\n.navbar__brand[data-v-6dde423b] {\n  margin-left: 1rem;\n}\n.navbar__menu[data-v-6dde423b] {\n  margin-left: auto;\n}\n.navbar__menu__brand[data-v-6dde423b] {\n  padding: 0.5rem;\n}\n.navbar__menu__brand[data-v-6dde423b]:hover {\n  transition: all 0.3s ease-in-out;\n}\n.navbar__menu #user-name[data-v-6dde423b] {\n  padding: 1rem;\n}\n.navbar .drawer-item[data-v-6dde423b] {\n  padding: 2rem 0;\n  color: white;\n}\n.navbar .drawer-item .navbar__menu__auth[data-v-6dde423b] {\n  color: white;\n}\n.navbar .drawer-item .navbar__menu__auth .fa-sign-in-alt[data-v-6dde423b] {\n  margin-left: 2rem;\n  font-size: 1.5rem;\n  transition: font-size 0.3s;\n  margin-left: 1rem;\n}\n.navbar .drawer-item .navbar__menu__auth .fa-sign-in-alt[data-v-6dde423b]:hover {\n  font-size: 1.8rem;\n}\n.navbar .drawer-item .navbar__menu__auth .fa-user-plus[data-v-6dde423b] {\n  margin-left: 2rem;\n  font-size: 1.5rem;\n  transition: font-size 0.3s;\n  margin-left: 0;\n}\n.navbar .drawer-item .navbar__menu__auth .fa-user-plus[data-v-6dde423b]:hover {\n  font-size: 1.8rem;\n}\n.navbar .drawer-item .fa-sign-out-alt[data-v-6dde423b] {\n  margin-left: 2rem;\n  font-size: 1.5rem;\n  transition: font-size 0.3s;\n}\n.navbar .drawer-item .fa-sign-out-alt[data-v-6dde423b]:hover {\n  font-size: 1.8rem;\n}\n.navbar .drawer-item .fa-user[data-v-6dde423b] {\n  margin-left: 2rem;\n  font-size: 1.5rem;\n  transition: font-size 0.3s;\n}\n.navbar .drawer-item .fa-user[data-v-6dde423b]:hover {\n  font-size: 1.8rem;\n}\n.navbar .drawer-open[data-v-6dde423b] {\n  display: flex;\n  height: 60px;\n  width: 60px;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  z-index: 100;\n}\n.navbar .drawer-hidden[data-v-6dde423b] {\n  display: none;\n}\n.navbar .drawer-open span[data-v-6dde423b],\n.navbar .drawer-open span[data-v-6dde423b]:before,\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  content: \"\";\n  display: block;\n  height: 3px;\n  width: 25px;\n  border-radius: 3px;\n  background: #333;\n  transition: 0.5s;\n  position: absolute;\n}\n.navbar .drawer-open span[data-v-6dde423b]:before {\n  bottom: 8px;\n}\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  top: 8px;\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b] {\n  background: rgba(255, 255, 255, 0);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::before {\n  bottom: 0;\n  transform: rotate(45deg);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::after {\n  top: 0;\n  transform: rotate(-45deg);\n}\n.navbar .drawer-content[data-v-6dde423b] {\n  width: 22%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 100%;\n  /* メニューを画面の外に飛ばす */\n  z-index: 99;\n  background: #9b9898;\n  transition: 0.5s;\n}\n@media screen and (max-width: 1350px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 30%;\n}\n}\n@media screen and (max-width: 1010px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 40%;\n}\n}\n@media screen and (max-width: 760px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 50%;\n}\n}\n@media screen and (max-width: 620px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 70%;\n}\n}\n@media screen and (max-width: 414px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 100%;\n}\n}\n.navbar .drawer-content .drawer-list[data-v-6dde423b] {\n  list-style: none;\n  padding-top: 3rem;\n  padding-left: 1.5rem;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n}\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n  left: 78%;\n  /* メニューを画面に入れる */\n}\n@media screen and (max-width: 1350px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 70%;\n}\n}\n@media screen and (max-width: 1010px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 60%;\n}\n}\n@media screen and (max-width: 760px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 50%;\n}\n}\n@media screen and (max-width: 620px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 30%;\n}\n}\n@media screen and (max-width: 414px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 0%;\n}\n}", ""]);
 
 // exports
 
@@ -3392,7 +3400,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".photo[data-v-c0696452] {\n  width: 15rem;\n  margin: 1%;\n}\n.v-enter-active[data-v-c0696452], .v-leave-active[data-v-c0696452] {\n  transition: opacity 0.8s;\n}\n.v-enter[data-v-c0696452], .v-leave-to[data-v-c0696452] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".photo[data-v-c0696452] {\n  width: 15rem;\n  margin: 1%;\n}\n.photo .v-enter-active[data-v-c0696452], .photo .v-leave-active[data-v-c0696452] {\n  transition: opacity 0.8s;\n}\n.photo .v-enter[data-v-c0696452], .photo .v-leave-to[data-v-c0696452] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -3430,7 +3438,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".v-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.7s;\n}\n.form-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-3b6adb30], .form-enter[data-v-3b6adb30] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".login[data-v-3b6adb30] {\n  margin-top: 9rem;\n}\n.login .v-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.7s;\n}\n.login .form-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.5s;\n}\n.login .v-enter[data-v-3b6adb30], .login .form-enter[data-v-3b6adb30] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -3449,7 +3457,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".v-enter-active[data-v-c17cd6ac] {\n  transition: opacity 0.5s;\n}\n.v-enter[data-v-c17cd6ac] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".photo-detail[data-v-c17cd6ac] {\n  margin-top: 9rem;\n}\n.photo-detail .v-enter-active[data-v-c17cd6ac] {\n  transition: opacity 0.5s;\n}\n.photo-detail .v-enter[data-v-c17cd6ac] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -3468,7 +3476,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n@media screen and (max-width: 375px) {\n.photo-list[data-v-401edab7] {\n    height: 123rem;\n}\n}\n.photo-list .paginate[data-v-401edab7] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.photo-list .paginate li[data-v-401edab7] {\n  width: 31%;\n  margin: 1%;\n  /** iPad Pro 縦向き */\n  /** iPad 横向き */\n}\n@media screen and (max-width: 1024px) and (max-height: 1366px) {\n.photo-list .paginate li[data-v-401edab7] {\n    width: 48%;\n}\n}\n@media screen and (max-width: 1024px) and (max-height: 768px) {\n.photo-list .paginate li[data-v-401edab7] {\n    width: 31.33%;\n}\n}\n@media screen and (max-width: 375px) {\n.photo-list .paginate li[data-v-401edab7] {\n    width: 98%;\n}\n}\n.photo-list .paginate_links[data-v-401edab7] {\n  text-align: center;\n  color: #8a8a8a;\n  list-style: none;\n  font-size: xx-large;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n  -webkit-margin-before: 0em;\n          margin-block-start: 0em;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n.photo-list .paginate_hidden[data-v-401edab7] {\n  display: none;\n}\n.photo-list .button--link[data-v-401edab7] {\n  position: fixed;\n  right: 1rem;\n  bottom: 7rem;\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.photo-list .button--link[data-v-401edab7]:hover {\n  border-color: black;\n}\n.photo-list .topButton-enter-active[data-v-401edab7],\n.photo-list .topButton-leave-active[data-v-401edab7] {\n  transition: opacity 0.5s;\n}\n.photo-list .topButton-enter[data-v-401edab7],\n.photo-list .topButton-leave-to[data-v-401edab7] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n/* ボタン ( メニューバー ) */\n.photo-list[data-v-401edab7] {\n  margin-top: 9rem;\n}\n@media screen and (max-width: 375px) {\n.photo-list[data-v-401edab7] {\n    height: 123rem;\n    margin-top: 1rem;\n}\n}\n.photo-list .paginate[data-v-401edab7] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n}\n.photo-list .paginate li[data-v-401edab7] {\n  width: 31%;\n  margin: 1%;\n  /** iPad Pro 縦向き */\n  /** iPad 横向き */\n}\n@media screen and (max-width: 1024px) and (max-height: 1366px) {\n.photo-list .paginate li[data-v-401edab7] {\n    width: 48%;\n}\n}\n@media screen and (max-width: 1024px) and (max-height: 768px) {\n.photo-list .paginate li[data-v-401edab7] {\n    width: 31.33%;\n}\n}\n@media screen and (max-width: 375px) {\n.photo-list .paginate li[data-v-401edab7] {\n    width: 98%;\n}\n}\n.photo-list .paginate_links[data-v-401edab7] {\n  text-align: center;\n  color: #8a8a8a;\n  list-style: none;\n  font-size: xx-large;\n  -webkit-padding-start: 0px;\n          padding-inline-start: 0px;\n  -webkit-margin-before: 0em;\n          margin-block-start: 0em;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n.photo-list .paginate_hidden[data-v-401edab7] {\n  display: none;\n}\n.photo-list .button--link[data-v-401edab7] {\n  position: fixed;\n  right: 1rem;\n  bottom: 7rem;\n  margin: 0 0.45rem;\n  border: 1px solid #dedede;\n  transition: border-color 0.3s ease-in-out;\n}\n.photo-list .button--link[data-v-401edab7]:hover {\n  border-color: black;\n}\n.photo-list .topButton-enter-active[data-v-401edab7],\n.photo-list .topButton-leave-active[data-v-401edab7] {\n  transition: opacity 0.5s;\n}\n.photo-list .topButton-enter[data-v-401edab7],\n.photo-list .topButton-leave-to[data-v-401edab7] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -5693,14 +5701,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("footer", { staticClass: "footer" }, [
-    _vm.isLogin
-      ? _c(
-          "button",
-          { staticClass: "button button--link", on: { click: _vm.logout } },
-          [_vm._v("\n    Logout\n  ")]
-        )
-      : _vm._e(),
-    _vm._v(" "),
     _c("div", { staticClass: "share_wrapper" }, [
       _c(
         "div",
@@ -5848,7 +5848,13 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "navbar__menu" }, [
         _vm.isLogin
-          ? _c("div", { staticClass: "navbar__item" }, [
+          ? _c("div", { attrs: { id: "user-name" } }, [
+              _vm._v(_vm._s(_vm.username))
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.isLogin
+          ? _c("div", [
               _c(
                 "button",
                 {
@@ -5861,36 +5867,12 @@ var render = function() {
                 },
                 [
                   _c("i", { staticClass: "icon ion-md-add" }),
-                  _vm._v("\n      Submit a photo\n    ")
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fas fa-image" })
                 ]
               )
             ])
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.isLogin
-          ? _c("span", { staticClass: "navbar__item" }, [
-              _vm._v("\n    " + _vm._s(_vm.username) + "\n  ")
-            ])
-          : _c(
-              "div",
-              { staticClass: "navbar__item" },
-              [
-                _c(
-                  "RouterLink",
-                  {
-                    staticClass: "button button--link navbar__menu__auth",
-                    attrs: { to: "/login" }
-                  },
-                  [
-                    _c("i", { staticClass: "fas fa-sign-in-alt" }),
-                    _vm._v(" Login / \n        "),
-                    _c("i", { staticClass: "fas fa-user" }),
-                    _vm._v(" Register\n      ")
-                  ]
-                )
-              ],
-              1
-            )
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c("PhotoForm", {
@@ -5901,12 +5883,92 @@ var render = function() {
           },
           expression: "showForm"
         }
-      })
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "drawer-hidden",
+        attrs: { type: "checkbox", id: "drawer-check" }
+      }),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("nav", { staticClass: "drawer-content" }, [
+        _c("ul", { staticClass: "drawer-list" }, [
+          !_vm.isLogin
+            ? _c(
+                "li",
+                {
+                  staticClass: "drawer-item",
+                  on: {
+                    click: function($event) {
+                      return _vm.closeMenue()
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "RouterLink",
+                    {
+                      staticClass: "button button--link navbar__menu__auth",
+                      attrs: { to: "/login" }
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-sign-in-alt" }, [
+                        _vm._v(" Login")
+                      ]),
+                      _vm._v(" / \n          "),
+                      _c("i", { staticClass: "fas fa-user-plus" }, [
+                        _vm._v(" Register")
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.isLogin
+            ? _c(
+                "li",
+                {
+                  staticClass: "drawer-item cursor",
+                  on: { click: _vm.logout }
+                },
+                [
+                  _c("i", { staticClass: "fas fa-sign-out-alt" }, [
+                    _vm._v(" Logout")
+                  ])
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ])
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "drawer-open cursor", attrs: { for: "drawer-check" } },
+      [_c("span")]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "drawer-item cursor" }, [
+      _c("i", { staticClass: "fas fa-user" }, [_vm._v(" Contact Us")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -5932,12 +5994,22 @@ var render = function() {
     "li",
     { staticClass: "photo" },
     [
-      _c("figure", { staticClass: "photo__wrapper" }, [
-        _c("img", {
-          staticClass: "photo__image",
-          attrs: { src: _vm.item.url, alt: "Photo by " + _vm.item.owner.name }
-        })
-      ]),
+      _c(
+        "figure",
+        { staticClass: "photo__wrapper" },
+        [
+          _c("transition", { attrs: { appear: "" } }, [
+            _c("img", {
+              staticClass: "photo__image",
+              attrs: {
+                src: _vm.item.url,
+                alt: "Photo by " + _vm.item.owner.name
+              }
+            })
+          ])
+        ],
+        1
+      ),
       _vm._v(" "),
       _c(
         "RouterLink",
@@ -6133,7 +6205,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container--small" },
+    { staticClass: "login container--small" },
     [
       _c("ul", { staticClass: "tab" }, [
         _c(
@@ -6734,7 +6806,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("transition", [
+  return _c("transition", { attrs: { appear: "" } }, [
     _vm.photo
       ? _c(
           "div",
@@ -25160,13 +25232,7 @@ var routes = [{
   }
 }, {
   path: '/',
-  component: _pages_PhotoList_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-  props: function props(route) {
-    var page = route.query.page;
-    return {
-      page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1
-    };
-  }
+  component: _pages_PhotoList_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
   path: '/photos/:id',
   component: _js_pages_PhotoDetail_vue__WEBPACK_IMPORTED_MODULE_6__["default"],

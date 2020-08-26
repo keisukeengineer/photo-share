@@ -4,3 +4,14 @@
   border: 1px solid #dedede;
   transition: border-color .3s ease-in-out;
 }
+
+/* ボタン ( メニューバー ) */
+@mixin button__link__menu {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  transition: font-size .3s;
+
+  &:hover {
+    font-size: 1.8rem;
+  }
+}

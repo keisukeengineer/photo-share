@@ -1,5 +1,5 @@
 <template>
-  <div class="container--small">
+  <div class="login container--small">
     <ul class="tab">
       <li
         class="tab__item"
@@ -192,15 +192,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.v-enter-active {
-  transition: opacity .7s
-}
+.login {
+  margin-top: 9rem;
 
-.form-enter-active {
-  transition: opacity .5s
-}
+  .v-enter-active {
+    transition: opacity .7s
+  }
 
-.v-enter, .form-enter {
-  opacity: 0;
+  .form-enter-active {
+    transition: opacity .5s
+  }
+
+  .v-enter, .form-enter {
+    opacity: 0;
+  }
 }
 </style>

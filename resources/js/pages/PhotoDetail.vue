@@ -1,5 +1,5 @@
 <template>
-  <transition>
+  <transition appear>
     <div
       v-if="photo"
       class="photo-detail"
@@ -197,11 +197,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.v-enter-active {
-  transition: opacity .5s
-}
+.photo-detail {
+  margin-top: 9rem;
 
-.v-enter {
-  opacity: 0;
+  .v-enter-active {
+    transition: opacity .5s
+  }
+
+  .v-enter {
+    opacity: 0;
+  }
 }
 </style>

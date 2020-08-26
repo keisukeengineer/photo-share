@@ -4,31 +4,42 @@
       Photo Share
     </RouterLink>
     <div class="navbar__menu">
-      <div v-if="isLogin" class="navbar__item">
-      <button class="button" @click="showForm = ! showForm">
-        <i class="icon ion-md-add" />
-        Submit a photo
-      </button>
-    </div>
-    <span v-if="isLogin" class="navbar__item">
-      {{ username }}
-    </span>
-      <div v-else class="navbar__item">
-        <RouterLink
-          class="button button--link navbar__menu__auth"
-          to="/login"
-        >
-          <i class="fas fa-sign-in-alt" />&nbsp;Login&emsp;/&emsp;
-          <i class="fas fa-user" />&nbsp;Register
-        </RouterLink>
+      <div id="user-name" v-if="isLogin">{{ username }}</div>
+      <div v-if="isLogin">
+        <button class="button" @click="showForm = ! showForm">
+          <i class="icon ion-md-add" />
+          <i class="fas fa-image" />
+        </button>
       </div>
     </div>
     <PhotoForm v-model="showForm" />
+    <input type="checkbox" id="drawer-check" class="drawer-hidden" >
+    <label for="drawer-check" class="drawer-open cursor"><span></span></label>
+    <nav class="drawer-content">
+      <ul class="drawer-list">
+        <li class="drawer-item" v-if="!isLogin" @click="closeMenue()">
+          <RouterLink
+            class="button button--link navbar__menu__auth"
+            to="/login"
+          >
+            <i class="fas fa-sign-in-alt">&nbsp;Login</i>&emsp;/&emsp;
+            <i class="fas fa-user-plus">&nbsp;Register</i>
+          </RouterLink>
+        </li>
+        <li class="drawer-item cursor" v-if="isLogin" @click="logout">
+          <i class="fas fa-sign-out-alt">&nbsp;Logout</i>
+        </li>
+        <li class="drawer-item cursor">
+          <i class="fas fa-user">&nbsp;Contact Us</i>
+        </li>
+      </ul>
+    </nav>
   </nav>
 </template>
 
 <script>
 import PhotoForm from './PhotoForm.vue'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -36,7 +47,8 @@ export default {
   },
   data () {
     return {
-      showForm: false
+      showForm: false,
+      nowLoginForm: false
     }
   },
   computed: {
@@ -45,29 +57,203 @@ export default {
     },
     username () {
       return this.$store.getters['auth/username']
+    },
+    ...mapState({
+      apiStatus: state => state.auth.apiStatus
+    }),
+    ...mapGetters({
+      isLogin: 'auth/check'
+    })
+  },
+  methods: {
+    async logout () {
+      await this.$store.dispatch('auth/logout')
+
+      if (this.apiStatus) {
+        this.$router.push('/login')
+      }
+
+      this.closeMenue()
+    },
+    closeMenue() {
+//       if(location.href === window.Laravel.basePath + 'login') {
+// console.log('test')
+//       }
+
+      document.getElementById('drawer-check').checked =false
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-.navbar__brand {
-  padding: .5rem;
+@import '../../sass/_mixin';
 
-  &:hover {
-    transition: all .3s ease-in-out;
+.navbar {
+  height: 6rem;
+
+  &__brand {
+    margin-left: 1rem;
   }
-}
 
-.navbar__menu__auth {
-  color: black;
+  &__menu {
+    margin-left: auto;
 
-  &:hover {
-    color: #8a8a8a;
+    &__brand {
+      padding: .5rem;
+
+      &:hover {
+        transition: all .3s ease-in-out;
+      }
+    }
+
+    #user-name {
+      padding: 1rem;
+    }
   }
-}
 
-.fa-sign-in-alt {
-  font-size: 1.2rem;
+  .drawer-item {
+    padding: 2rem 0;
+    color: white;
+
+    .navbar__menu__auth {
+      color: white;
+
+      .fa-sign-in-alt {
+        @include button__link__menu;
+        margin-left: 1rem;
+      }
+
+      .fa-user-plus {
+        @include button__link__menu;
+        margin-left: 0;
+      }
+    }
+
+    .fa-sign-out-alt {
+      @include button__link__menu;
+    }
+
+    .fa-user {
+      @include button__link__menu;
+    }
+  }
+
+  .drawer-open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+  }
+
+  .drawer-hidden {
+    display: none;
+  }
+
+  .drawer-open span,
+  .drawer-open span:before,
+  .drawer-open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.5s;
+    position: absolute;
+  }
+
+  /* 三本線のうち一番上の棒の位置調整 */
+  .drawer-open span:before {
+    bottom: 8px;
+  }
+
+  /* 三本線のうち一番下の棒の位置調整 */
+  .drawer-open span:after {
+    top: 8px;
+  }
+
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+  #drawer-check:checked ~ .drawer-open span {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer-check:checked ~ .drawer-open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  #drawer-check:checked ~ .drawer-open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* メニューのデザイン*/
+  .drawer-content {
+    width: 22%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: rgb(155, 152, 152);
+    transition: .5s;
+
+    @media screen and (max-width: 1350px) {
+      width: 30%;
+    }
+
+    @media screen and (max-width: 1010px) {
+      width: 40%;
+    }
+
+    @media screen and (max-width: 760px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 620px) {
+      width: 70%;
+    }
+
+    @media screen and (max-width: 414px) {
+      width: 100%;
+    }
+
+    .drawer-list {
+      list-style: none;
+      padding-top: 3rem;
+      padding-left: 1.5rem;
+      padding-inline-start: 0;
+    }
+  }
+
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer-check:checked ~ .drawer-content {
+    left: 78%; /* メニューを画面に入れる */
+
+    @media screen and (max-width: 1350px) {
+      left: 70%;
+    }
+
+    @media screen and (max-width: 1010px) {
+      left: 60%;
+    }
+
+    @media screen and (max-width: 760px) {
+      left: 50%;
+    }
+
+    @media screen and (max-width: 620px) {
+      left: 30%;
+    }
+
+    @media screen and (max-width: 414px) {
+      left: 0%;
+    }
+  }
 }
 </style>

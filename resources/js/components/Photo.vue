@@ -1,12 +1,13 @@
 <template>
   <li class="photo">
     <figure class="photo__wrapper">
-
+      <transition appear>
         <img
           class="photo__image"
           :src="item.url"
           :alt="`Photo by ${item.owner.name}`"
         >
+      </transition>
     </figure>
     <RouterLink
       class="photo__overlay"
@@ -61,12 +62,13 @@ export default {
 .photo {
   width: 15rem;
   margin: 1%;
-}
-.v-enter-active, .v-leave-active {
-  transition: opacity .8s
-}
 
-.v-enter, .v-leave-to {
-  opacity: 0;
+  .v-enter-active, .v-leave-active {
+    transition: opacity .8s
+  }
+
+  .v-enter, .v-leave-to {
+    opacity: 0;
+  }
 }
 </style>

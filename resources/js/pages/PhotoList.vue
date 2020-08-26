@@ -35,13 +35,6 @@ export default {
   components: {
     Photo,
   },
-  props: {
-    page: {
-      type: Number,
-      required: false,
-      default: 1
-    }
-  },
   data () {
     return {
       photos: [],
@@ -150,9 +143,12 @@ export default {
 @import '../../sass/_mixin';
 
 .photo-list {
+  margin-top: 9rem;
+
   @media screen
     and (max-width: 375px) {
     height: 123rem;
+    margin-top: 1rem;
   }
 
   .paginate {

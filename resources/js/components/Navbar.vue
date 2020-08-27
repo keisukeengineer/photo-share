@@ -14,23 +14,29 @@
     </div>
     <PhotoForm v-model="showForm" />
     <input type="checkbox" id="drawer-check" class="drawer-hidden" >
-    <label for="drawer-check" class="drawer-open cursor"><span></span></label>
+    <label for="drawer-check" class="drawer-open cursor">
+      <span></span>
+    </label>
     <nav class="drawer-content">
       <ul class="drawer-list">
         <li class="drawer-item" v-if="!isLogin" @click="closeMenue()">
-          <RouterLink
-            class="button button--link navbar__menu__auth"
-            to="/login"
-          >
+          <RouterLink class="login" to="/login">
             <i class="fas fa-sign-in-alt">&nbsp;Login</i>&emsp;/&emsp;
             <i class="fas fa-user-plus">&nbsp;Register</i>
           </RouterLink>
         </li>
         <li class="drawer-item cursor" v-if="isLogin" @click="logout">
-          <i class="fas fa-sign-out-alt">&nbsp;Logout</i>
+          <i class="fas fa-sign-out-alt logout">&nbsp;Logout</i>
         </li>
-        <li class="drawer-item cursor">
-          <i class="fas fa-user">&nbsp;Contact Us</i>
+        <li class="drawer-item cursor" @click="closeMenue()">
+          <RouterLink class="contact" to="/contact">
+            <i class="fas fa-user">&nbsp;Contact Us</i>
+          </RouterLink>
+        </li>
+        <li class="drawer-item cursor" @click="closeMenue()">
+          <RouterLink class="terms_of_service" to="/terms_of_service">
+            <i class="fas fa-asterisk">&nbsp;Terms of service</i>
+          </RouterLink>
         </li>
       </ul>
     </nav>
@@ -80,7 +86,7 @@ export default {
 // console.log('test')
 //       }
 
-      document.getElementById('drawer-check').checked =false
+      document.getElementById('drawer-check').checked = false
     }
   }
 }
@@ -94,6 +100,11 @@ export default {
 
   &__brand {
     margin-left: 1rem;
+    transition: opacity .3s ease-in-out;
+
+    &hover {
+      opacity: .5;
+    }
   }
 
   &__menu {
@@ -116,26 +127,16 @@ export default {
     padding: 2rem 0;
     color: white;
 
-    .navbar__menu__auth {
+    .logout {
+      @include button__link__menu;
+    }
+
+    .login,
+    .contact,
+    .terms_of_service {
+      @include button__link__menu;
+      text-decoration: none;
       color: white;
-
-      .fa-sign-in-alt {
-        @include button__link__menu;
-        margin-left: 1rem;
-      }
-
-      .fa-user-plus {
-        @include button__link__menu;
-        margin-left: 0;
-      }
-    }
-
-    .fa-sign-out-alt {
-      @include button__link__menu;
-    }
-
-    .fa-user {
-      @include button__link__menu;
     }
   }
 
@@ -194,7 +195,7 @@ export default {
 
   /* メニューのデザイン*/
   .drawer-content {
-    width: 22%;
+    width: 30%;
     height: 100%;
     position: fixed;
     top: 0;
@@ -203,23 +204,19 @@ export default {
     background: rgb(155, 152, 152);
     transition: .5s;
 
-    @media screen and (max-width: 1350px) {
-      width: 30%;
-    }
-
-    @media screen and (max-width: 1010px) {
+    @media screen and (max-width: 1200px) {
       width: 40%;
     }
-
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 950px) {
       width: 50%;
     }
-
-    @media screen and (max-width: 620px) {
+    @media screen and (max-width: 750px) {
+      width: 60%;
+    }
+    @media screen and (max-width: 650px) {
       width: 70%;
     }
-
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 550px) {
       width: 100%;
     }
 
@@ -233,25 +230,21 @@ export default {
 
   /* アイコンがクリックされたらメニューを表示 */
   #drawer-check:checked ~ .drawer-content {
-    left: 78%; /* メニューを画面に入れる */
+    left: 70%; /* メニューを画面に入れる */
 
-    @media screen and (max-width: 1350px) {
-      left: 70%;
-    }
-
-    @media screen and (max-width: 1010px) {
+    @media screen and (max-width: 1200px) {
       left: 60%;
     }
-
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 950px) {
       left: 50%;
     }
-
-    @media screen and (max-width: 620px) {
+    @media screen and (max-width: 750px) {
+      left: 40%;
+    }
+    @media screen and (max-width: 650px) {
       left: 30%;
     }
-
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 550px) {
       left: 0%;
     }
   }

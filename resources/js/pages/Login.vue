@@ -195,6 +195,10 @@ export default {
 .login {
   margin-top: 9rem;
 
+  @media screen and (max-width: 375px) {
+    margin-top: 1rem;
+  }
+
   .v-enter-active {
     transition: opacity .7s
   }

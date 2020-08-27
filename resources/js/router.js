@@ -6,6 +6,8 @@ import PhotoList from './pages/PhotoList.vue'
 import store from './store'
 import SystemError from './pages/errors/System.vue'
 import PhotoDetail from '../js/pages/PhotoDetail.vue'
+import Contact from './pages/Contact.vue'
+import TermsOfService from './pages/TermsOfService.vue'
 import NotFound from './pages/errors/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -30,6 +32,14 @@ const routes = [
     path: '/photos/:id',
     component: PhotoDetail,
     props: true
+  },
+  {
+    path: '/contact',
+    component: Contact
+  },
+  {
+    path: '/terms_of_service',
+    component: TermsOfService
   },
   {
     path: '/500',

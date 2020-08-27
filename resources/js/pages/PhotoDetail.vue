@@ -1,71 +1,71 @@
 <template>
-  <transition appear>
-    <div
-      v-if="photo"
-      class="photo-detail"
-      :class="{ 'photo-detail--column': fullWidth}"
+  <div
+    v-if="photo"
+    class="photo-detail"
+    :class="{ 'photo-detail--column': fullWidth}"
+  >
+    <figure class="photo-detail__pane photo-detail__image"
+      @click="fullWidth = ! fullWidth"
     >
-      <figure class="photo-detail__pane photo-detail__image"
-        @click="fullWidth = ! fullWidth"
-      >
+      <transition appear>
         <img :src="photo.url" alt="">
         <figcaption>Posted by {{ photo.owner.name }}</figcaption>
-      </figure>
-      <div class="photo-detail__pane">
-        <button
-          class="button button--like"
-          :class="{ 'button--liked': photo.liked_by_user }"
-          title="Like photo"
-          @click="onLikeClick"
+      </transition>
+    </figure>
+    <div class="photo-detail__pane">
+      <button
+        class="button button--like"
+        :class="{ 'button--liked': photo.liked_by_user }"
+        title="Like photo"
+        @click="onLikeClick"
+      >
+        <i class="icon ion-md-heart" />{{ photo.likes_count }}
+      </button>
+      <a
+        :href="`/photos/${photo.id}/download`"
+        class="button"
+        title="Download photo"
+      >
+        <i class="icon ion-md-arrow-round-down" />Download
+      </a>
+      <h2 class="photo-detail__title">
+        <i class="icon ion-md-chatboxes" />Comments
+      </h2>
+      <ul v-if="photo.comments.length > 0" class="photo-detail__comments">
+        <li
+          v-for="comment in photo.comments"
+          :key="comment.content"
+          class="photo-detail__commentItem"
         >
-          <i class="icon ion-md-heart" />{{ photo.likes_count }}
-        </button>
-        <a
-          :href="`/photos/${photo.id}/download`"
-          class="button"
-          title="Download photo"
-        >
-          <i class="icon ion-md-arrow-round-down" />Download
-        </a>
-        <h2 class="photo-detail__title">
-          <i class="icon ion-md-chatboxes" />Comments
-        </h2>
-        <ul v-if="photo.comments.length > 0" class="photo-detail__comments">
-          <li
-            v-for="comment in photo.comments"
-            :key="comment.content"
-            class="photo-detail__commentItem"
-          >
-            <p class="photo-detail__commentBody">
-              {{ comment.content }}
-            </p>
-            <p class="photo-detail__commentInfo">
-              {{ comment.author.name }}
-            </p>
-          </li>
-        </ul>
-        <p v-else>No comments yet.</p>
-        <form v-if="isLogin" @submit.prevent="addComment" class="form">
-          <transition>
-            <div v-if="commentErrors" class="errors">
-              <ul v-if="commentErrors.content">
-                <li v-for="msg in commentErrors.content" :key="msg">{{ msg }}</li>
-              </ul>
-            </div>
-          </transition>
-          <textarea class="form__item" v-model="commentContent" />
-          <div class="form__button">
-            <button
-              type="submit"
-              class="button-square-shadow cursor"
-            >
-              submit comment
-            </button>
+          <p class="photo-detail__commentBody">
+            {{ comment.content }}
+          </p>
+          <p class="photo-detail__commentInfo">
+            {{ comment.author.name }}
+          </p>
+        </li>
+      </ul>
+      <p v-else>No comments yet.</p>
+      <form v-if="isLogin" @submit.prevent="addComment" class="form">
+        <transition>
+          <div v-if="commentErrors" class="errors">
+            <ul v-if="commentErrors.content">
+              <li v-for="msg in commentErrors.content" :key="msg">{{ msg }}</li>
+            </ul>
           </div>
-        </form>
-      </div>
+        </transition>
+        <textarea class="form__item" v-model="commentContent" />
+        <div class="form__button">
+          <button
+            type="submit"
+            class="button-square-shadow cursor"
+          >
+            submit comment
+          </button>
+        </div>
+      </form>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
@@ -131,7 +131,6 @@ export default {
       }
 
       this.commentContent = ''
-      // エラーメッセージをクリア
       this.commentErrors = null
 
       // その他のエラー
@@ -200,11 +199,15 @@ export default {
 .photo-detail {
   margin-top: 9rem;
 
-  .v-enter-active {
-    transition: opacity .5s
+  @media screen and (max-width: 375px) {
+    margin-top: 1rem;
   }
 
-  .v-enter {
+  .v-enter-active, .v-leave-active {
+    transition: opacity .8s
+  }
+
+  .v-enter, .v-leave-to {
     opacity: 0;
   }
 }

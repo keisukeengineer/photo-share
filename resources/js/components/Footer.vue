@@ -72,7 +72,7 @@ export default {
       &_item {
         margin: 0 1rem;
         color: #8a8a8a;
-        transition: color .5s ease-in-out;
+        transition: color .3s ease-in-out;
 
         &:hover {
           color: black;

@@ -7,11 +7,15 @@
 
 /* ボタン ( メニューバー ) */
 @mixin button__link__menu {
-  margin-left: 2rem;
+  width: 100%;
+  display: block;
+  padding: 2rem 0;
+  padding-left: 2rem;
   font-size: 1.5rem;
-  transition: font-size .3s;
+  transition: 0.5s;
 
   &:hover {
-    font-size: 1.8rem;
+    color: #9b9898;
+    background: white;
   }
 }

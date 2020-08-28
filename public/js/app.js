@@ -2838,7 +2838,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2850,18 +2849,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       photo: null,
-      fullWidth: false,
       commentContent: '',
       commentErrors: null,
       shareURL: ''
     };
-  },
-  mounted: function mounted() {
-    this.getDefaultWindowWidth();
-    window.addEventListener('resize', this.handleResize);
-  },
-  beforeDestroy: function beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize);
   },
   computed: {
     isLogin: function isLogin() {
@@ -3060,19 +3051,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee5);
       }))();
-    },
-    getDefaultWindowWidth: function getDefaultWindowWidth() {
-      if (screen.width === 375) {
-        this.fullWidth = true;
-      }
-    },
-    handleResize: function handleResize() {
-      // iPhone 6/7/8/10 の場合、画像をフルサイズにする
-      if (window.innerWidth <= 375) {
-        this.fullWidth = true;
-      } else {
-        this.fullWidth = false;
-      }
     }
   }
 });
@@ -3386,7 +3364,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n/* ボタン ( メニューバー ) */\n.navbar[data-v-6dde423b] {\n  height: 6rem;\n  /* 三本線のうち一番上の棒の位置調整 */\n  /* 三本線のうち一番下の棒の位置調整 */\n  /* アイコンがクリックされたら真ん中の線を透明にする */\n  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */\n  /* メニューのデザイン*/\n  /* アイコンがクリックされたらメニューを表示 */\n}\n.navbar__brand[data-v-6dde423b] {\n  margin-left: 1rem;\n  transition: opacity 0.3s ease-in-out;\n}\n.navbar__brandhover[data-v-6dde423b] {\n  opacity: 0.5;\n}\n.navbar__menu[data-v-6dde423b] {\n  margin-left: auto;\n}\n.navbar__menu__brand[data-v-6dde423b] {\n  padding: 0.5rem;\n}\n.navbar__menu__brand[data-v-6dde423b]:hover {\n  transition: all 0.3s ease-in-out;\n}\n.navbar__menu #user-name[data-v-6dde423b] {\n  padding: 1rem;\n}\n.navbar .drawer-item[data-v-6dde423b] {\n  padding: 2rem 0;\n  color: white;\n}\n.navbar .drawer-item .logout[data-v-6dde423b] {\n  margin-left: 2rem;\n  font-size: 1.5rem;\n  transition: font-size 0.3s;\n}\n.navbar .drawer-item .logout[data-v-6dde423b]:hover {\n  font-size: 1.8rem;\n}\n.navbar .drawer-item .login[data-v-6dde423b],\n.navbar .drawer-item .contact[data-v-6dde423b],\n.navbar .drawer-item .terms_of_service[data-v-6dde423b] {\n  margin-left: 2rem;\n  font-size: 1.5rem;\n  transition: font-size 0.3s;\n  text-decoration: none;\n  color: white;\n}\n.navbar .drawer-item .login[data-v-6dde423b]:hover,\n.navbar .drawer-item .contact[data-v-6dde423b]:hover,\n.navbar .drawer-item .terms_of_service[data-v-6dde423b]:hover {\n  font-size: 1.8rem;\n}\n.navbar .drawer-open[data-v-6dde423b] {\n  display: flex;\n  height: 60px;\n  width: 60px;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  z-index: 100;\n}\n.navbar .drawer-hidden[data-v-6dde423b] {\n  display: none;\n}\n.navbar .drawer-open span[data-v-6dde423b],\n.navbar .drawer-open span[data-v-6dde423b]:before,\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  content: \"\";\n  display: block;\n  height: 3px;\n  width: 25px;\n  border-radius: 3px;\n  background: #333;\n  transition: 0.5s;\n  position: absolute;\n}\n.navbar .drawer-open span[data-v-6dde423b]:before {\n  bottom: 8px;\n}\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  top: 8px;\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b] {\n  background: rgba(255, 255, 255, 0);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::before {\n  bottom: 0;\n  transform: rotate(45deg);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::after {\n  top: 0;\n  transform: rotate(-45deg);\n}\n.navbar .drawer-content[data-v-6dde423b] {\n  width: 30%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 100%;\n  /* メニューを画面の外に飛ばす */\n  z-index: 99;\n  background: #9b9898;\n  transition: 0.5s;\n}\n@media screen and (max-width: 1200px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 40%;\n}\n}\n@media screen and (max-width: 950px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 50%;\n}\n}\n@media screen and (max-width: 750px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 60%;\n}\n}\n@media screen and (max-width: 650px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 70%;\n}\n}\n@media screen and (max-width: 550px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 100%;\n}\n}\n.navbar .drawer-content .drawer-list[data-v-6dde423b] {\n  list-style: none;\n  padding-top: 3rem;\n  padding-left: 1.5rem;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n}\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n  left: 70%;\n  /* メニューを画面に入れる */\n}\n@media screen and (max-width: 1200px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 60%;\n}\n}\n@media screen and (max-width: 950px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 50%;\n}\n}\n@media screen and (max-width: 750px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 40%;\n}\n}\n@media screen and (max-width: 650px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 30%;\n}\n}\n@media screen and (max-width: 550px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 0%;\n}\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン */\n/* ボタン ( メニューバー ) */\n.navbar[data-v-6dde423b] {\n  height: 6rem;\n  /* 三本線のうち一番上の棒の位置調整 */\n  /* 三本線のうち一番下の棒の位置調整 */\n  /* アイコンがクリックされたら真ん中の線を透明にする */\n  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */\n  /* メニューのデザイン*/\n  /* アイコンがクリックされたらメニューを表示 */\n}\n.navbar__brand[data-v-6dde423b] {\n  margin-left: 1rem;\n  transition: opacity 0.3s ease-in-out;\n}\n.navbar__brandhover[data-v-6dde423b] {\n  opacity: 0.5;\n}\n.navbar__menu[data-v-6dde423b] {\n  margin-left: auto;\n}\n.navbar__menu__brand[data-v-6dde423b] {\n  padding: 0.5rem;\n}\n.navbar__menu__brand[data-v-6dde423b]:hover {\n  transition: all 0.3s ease-in-out;\n}\n.navbar__menu #user-name[data-v-6dde423b] {\n  padding: 1rem;\n}\n.navbar .drawer-item[data-v-6dde423b] {\n  color: white;\n  transition: 0.5s;\n}\n.navbar .drawer-item .logout[data-v-6dde423b] {\n  width: 100%;\n  display: block;\n  padding: 2rem 0;\n  padding-left: 2rem;\n  font-size: 1.5rem;\n  transition: 0.5s;\n}\n.navbar .drawer-item .logout[data-v-6dde423b]:hover {\n  color: #9b9898;\n  background: white;\n}\n.navbar .drawer-item .login[data-v-6dde423b],\n.navbar .drawer-item .contact[data-v-6dde423b],\n.navbar .drawer-item .terms_of_service[data-v-6dde423b] {\n  width: 100%;\n  display: block;\n  padding: 2rem 0;\n  padding-left: 2rem;\n  font-size: 1.5rem;\n  transition: 0.5s;\n  text-decoration: none;\n  color: white;\n}\n.navbar .drawer-item .login[data-v-6dde423b]:hover,\n.navbar .drawer-item .contact[data-v-6dde423b]:hover,\n.navbar .drawer-item .terms_of_service[data-v-6dde423b]:hover {\n  color: #9b9898;\n  background: white;\n}\n.navbar .drawer-open[data-v-6dde423b] {\n  display: flex;\n  height: 60px;\n  width: 60px;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  z-index: 100;\n}\n.navbar .drawer-hidden[data-v-6dde423b] {\n  display: none;\n}\n.navbar .drawer-open span[data-v-6dde423b],\n.navbar .drawer-open span[data-v-6dde423b]:before,\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  content: \"\";\n  display: block;\n  height: 3px;\n  width: 25px;\n  border-radius: 3px;\n  background: #333;\n  transition: 0.5s;\n  position: absolute;\n}\n.navbar .drawer-open span[data-v-6dde423b]:before {\n  bottom: 8px;\n}\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  top: 8px;\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b] {\n  background: rgba(255, 255, 255, 0);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::before {\n  bottom: 0;\n  transform: rotate(45deg);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::after {\n  top: 0;\n  transform: rotate(-45deg);\n}\n.navbar .drawer-content[data-v-6dde423b] {\n  width: 30%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 100%;\n  /* メニューを画面の外に飛ばす */\n  z-index: 99;\n  background: #9b9898;\n  transition: 0.5s;\n}\n@media screen and (max-width: 1200px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 40%;\n}\n}\n@media screen and (max-width: 950px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 50%;\n}\n}\n@media screen and (max-width: 750px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 60%;\n}\n}\n@media screen and (max-width: 650px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 70%;\n}\n}\n@media screen and (max-width: 550px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 100%;\n}\n}\n.navbar .drawer-content .drawer-list[data-v-6dde423b] {\n  list-style: none;\n  padding-top: 4rem;\n  padding-left: 1.5rem;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n}\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n  left: 70%;\n  /* メニューを画面に入れる */\n}\n@media screen and (max-width: 1200px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 60%;\n}\n}\n@media screen and (max-width: 950px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 50%;\n}\n}\n@media screen and (max-width: 750px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 40%;\n}\n}\n@media screen and (max-width: 650px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 30%;\n}\n}\n@media screen and (max-width: 550px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 0%;\n}\n}", ""]);
 
 // exports
 
@@ -3462,7 +3440,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".photo-detail[data-v-c17cd6ac] {\n  margin-top: 9rem;\n}\n@media screen and (max-width: 375px) {\n.photo-detail[data-v-c17cd6ac] {\n    margin-top: 1rem;\n}\n}\n.photo-detail .v-enter-active[data-v-c17cd6ac], .photo-detail .v-leave-active[data-v-c17cd6ac] {\n  transition: opacity 0.8s;\n}\n.photo-detail .v-enter[data-v-c17cd6ac], .photo-detail .v-leave-to[data-v-c17cd6ac] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".photo-detail[data-v-c17cd6ac] {\n  margin-top: 9rem;\n  display: flex;\n  justify-content: space-between;\n}\n.photo-detail__photo[data-v-c17cd6ac] {\n  margin-right: 1rem;\n}\n@media screen and (max-width: 1000px) {\n.photo-detail__photo[data-v-c17cd6ac] {\n    margin-right: 0rem;\n    margin-bottom: 2rem;\n}\n}\n@media screen and (max-width: 1000px) {\n.photo-detail[data-v-c17cd6ac] {\n    flex-direction: column;\n}\n.photo-detail__pane[data-v-c17cd6ac] {\n    width: 100%;\n}\n}\n@media screen and (max-width: 375px) {\n.photo-detail[data-v-c17cd6ac] {\n    margin-top: 1rem;\n}\n}\n.photo-detail .v-enter-active[data-v-c17cd6ac], .photo-detail .v-leave-active[data-v-c17cd6ac] {\n  transition: opacity 0.8s;\n}\n.photo-detail .v-enter[data-v-c17cd6ac], .photo-detail .v-leave-to[data-v-c17cd6ac] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -3500,7 +3478,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".terms_of_service[data-v-37f3a540] {\n  color: inherit;\n  padding: 0.5rem 2rem;\n  -webkit-animation: page-data-v-37f3a540 1s forwards;\n          animation: page-data-v-37f3a540 1s forwards;\n}\n@-webkit-keyframes page-data-v-37f3a540 {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes page-data-v-37f3a540 {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n.terms_of_service #theme[data-v-37f3a540] {\n  padding: 0.5rem 0;\n  margin-bottom: 2.5rem;\n  border-top: 1rem solid #afa9a9;\n  border-bottom: 1rem solid #afa9a9;\n}\n@media screen and (max-width: 375px) {\n.terms_of_service #theme[data-v-37f3a540] {\n    font-size: 1.8rem;\n}\n}\n@media screen and (max-width: 375px) {\n.terms_of_service .item[data-v-37f3a540] {\n    font-size: 1.3rem;\n}\n}\n.terms_of_service .item_contents[data-v-37f3a540] {\n  padding-left: 1rem;\n  padding-bottom: 1rem;\n}", ""]);
+exports.push([module.i, "#terms-of-service[data-v-37f3a540] {\n  color: inherit;\n  padding: 0.5rem 2rem;\n  -webkit-animation: page-data-v-37f3a540 1s forwards;\n          animation: page-data-v-37f3a540 1s forwards;\n}\n@-webkit-keyframes page-data-v-37f3a540 {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes page-data-v-37f3a540 {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n#terms-of-service_first_contents[data-v-37f3a540] {\n  margin-bottom: 2rem;\n}\n#terms-of-service #theme[data-v-37f3a540] {\n  padding: 0.5rem 0;\n  margin-bottom: 2.5rem;\n  border-top: 1rem solid #afa9a9;\n  border-bottom: 1rem solid #afa9a9;\n}\n@media screen and (max-width: 375px) {\n#terms-of-service #theme[data-v-37f3a540] {\n    font-size: 1.8rem;\n}\n}\n@media screen and (max-width: 375px) {\n#terms-of-service .item[data-v-37f3a540] {\n    font-size: 1.3rem;\n}\n}\n#terms-of-service .item_contents[data-v-37f3a540] {\n  padding-left: 1rem;\n  padding-bottom: 1rem;\n}\n#terms-of-service .item_contents .privacy-item[data-v-37f3a540] {\n  padding-bottom: 1rem;\n}\n#terms-of-service .item_contents .privacy-item-theme[data-v-37f3a540] {\n  font-weight: bold;\n}\n#terms-of-service .item_contents .privacy-item_first_contents[data-v-37f3a540] {\n  padding-bottom: 1rem;\n}\n#terms-of-service .item_contents .privacy-item_contents[data-v-37f3a540] {\n  padding-top: 1rem;\n}\n#terms-of-service .item_contents .use-item[data-v-37f3a540] {\n  padding-bottom: 1rem;\n}\n#terms-of-service .item_contents .use-item-theme[data-v-37f3a540] {\n  font-weight: bold;\n}\n#terms-of-service .item_contents .use-item_contents[data-v-37f3a540] {\n  padding-top: 1rem;\n}", ""]);
 
 // exports
 
@@ -6923,163 +6901,151 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.photo
-    ? _c(
-        "div",
-        {
-          staticClass: "photo-detail",
-          class: { "photo-detail--column": _vm.fullWidth }
-        },
-        [
+    ? _c("div", { staticClass: "photo-detail" }, [
+        _c(
+          "div",
+          { staticClass: "photo-detail__photo" },
+          [
+            _c("transition", { attrs: { appear: "" } }, [
+              _c(
+                "a",
+                { attrs: { href: _vm.photo.url, "data-lightbox": "group" } },
+                [_c("img", { attrs: { src: _vm.photo.url, alt: "" } })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [_vm._v("by " + _vm._s(_vm.photo.owner.name))])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "photo-detail__pane" }, [
           _c(
-            "figure",
+            "button",
             {
-              staticClass: "photo-detail__pane photo-detail__image",
-              on: {
-                click: function($event) {
-                  _vm.fullWidth = !_vm.fullWidth
-                }
+              staticClass: "button button--like",
+              class: { "button--liked": _vm.photo.liked_by_user },
+              attrs: { title: "Like photo" },
+              on: { click: _vm.onLikeClick }
+            },
+            [
+              _c("i", { staticClass: "icon ion-md-heart" }),
+              _vm._v(_vm._s(_vm.photo.likes_count) + "\n    ")
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "button",
+              attrs: {
+                href: "/photos/" + _vm.photo.id + "/download",
+                title: "Download photo"
               }
             },
             [
-              _c("transition", { attrs: { appear: "" } }, [
-                _c("img", { attrs: { src: _vm.photo.url, alt: "" } }),
-                _vm._v(" "),
-                _c("figcaption", [
-                  _vm._v("Posted by " + _vm._s(_vm.photo.owner.name))
-                ])
-              ])
-            ],
-            1
+              _c("i", { staticClass: "icon ion-md-arrow-round-down" }),
+              _vm._v("Download\n    ")
+            ]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "photo-detail__pane" }, [
-            _c(
-              "button",
-              {
-                staticClass: "button button--like",
-                class: { "button--liked": _vm.photo.liked_by_user },
-                attrs: { title: "Like photo" },
-                on: { click: _vm.onLikeClick }
-              },
-              [
-                _c("i", { staticClass: "icon ion-md-heart" }),
-                _vm._v(_vm._s(_vm.photo.likes_count) + "\n    ")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "button",
-                attrs: {
-                  href: "/photos/" + _vm.photo.id + "/download",
-                  title: "Download photo"
-                }
-              },
-              [
-                _c("i", { staticClass: "icon ion-md-arrow-round-down" }),
-                _vm._v("Download\n    ")
-              ]
-            ),
-            _vm._v(" "),
-            _vm._m(0),
-            _vm._v(" "),
-            _vm.photo.comments.length > 0
-              ? _c(
-                  "ul",
-                  { staticClass: "photo-detail__comments" },
-                  _vm._l(_vm.photo.comments, function(comment) {
-                    return _c(
-                      "li",
-                      {
-                        key: comment.content,
-                        staticClass: "photo-detail__commentItem"
-                      },
-                      [
-                        _c("p", { staticClass: "photo-detail__commentBody" }, [
-                          _vm._v(
-                            "\n          " +
-                              _vm._s(comment.content) +
-                              "\n        "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "photo-detail__commentInfo" }, [
-                          _vm._v(
-                            "\n          " +
-                              _vm._s(comment.author.name) +
-                              "\n        "
-                          )
+          _vm._m(0),
+          _vm._v(" "),
+          _vm.photo.comments.length > 0
+            ? _c(
+                "ul",
+                { staticClass: "photo-detail__comments" },
+                _vm._l(_vm.photo.comments, function(comment) {
+                  return _c(
+                    "li",
+                    {
+                      key: comment.content,
+                      staticClass: "photo-detail__commentItem"
+                    },
+                    [
+                      _c("p", { staticClass: "photo-detail__commentBody" }, [
+                        _vm._v(
+                          "\n          " +
+                            _vm._s(comment.content) +
+                            "\n        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "photo-detail__commentInfo" }, [
+                        _vm._v(
+                          "\n          " +
+                            _vm._s(comment.author.name) +
+                            "\n        "
+                        )
+                      ])
+                    ]
+                  )
+                }),
+                0
+              )
+            : _c("p", [_vm._v("No comments yet.")]),
+          _vm._v(" "),
+          _vm.isLogin
+            ? _c(
+                "form",
+                {
+                  staticClass: "form",
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.addComment($event)
+                    }
+                  }
+                },
+                [
+                  _c("transition", [
+                    _vm.commentErrors
+                      ? _c("div", { staticClass: "errors" }, [
+                          _vm.commentErrors.content
+                            ? _c(
+                                "ul",
+                                _vm._l(_vm.commentErrors.content, function(
+                                  msg
+                                ) {
+                                  return _c("li", { key: msg }, [
+                                    _vm._v(_vm._s(msg))
+                                  ])
+                                }),
+                                0
+                              )
+                            : _vm._e()
                         ])
-                      ]
-                    )
-                  }),
-                  0
-                )
-              : _c("p", [_vm._v("No comments yet.")]),
-            _vm._v(" "),
-            _vm.isLogin
-              ? _c(
-                  "form",
-                  {
-                    staticClass: "form",
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.commentContent,
+                        expression: "commentContent"
+                      }
+                    ],
+                    staticClass: "form__item",
+                    domProps: { value: _vm.commentContent },
                     on: {
-                      submit: function($event) {
-                        $event.preventDefault()
-                        return _vm.addComment($event)
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.commentContent = $event.target.value
                       }
                     }
-                  },
-                  [
-                    _c("transition", [
-                      _vm.commentErrors
-                        ? _c("div", { staticClass: "errors" }, [
-                            _vm.commentErrors.content
-                              ? _c(
-                                  "ul",
-                                  _vm._l(_vm.commentErrors.content, function(
-                                    msg
-                                  ) {
-                                    return _c("li", { key: msg }, [
-                                      _vm._v(_vm._s(msg))
-                                    ])
-                                  }),
-                                  0
-                                )
-                              : _vm._e()
-                          ])
-                        : _vm._e()
-                    ]),
-                    _vm._v(" "),
-                    _c("textarea", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.commentContent,
-                          expression: "commentContent"
-                        }
-                      ],
-                      staticClass: "form__item",
-                      domProps: { value: _vm.commentContent },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.commentContent = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm._m(1)
-                  ],
-                  1
-                )
-              : _vm._e()
-          ])
-        ]
-      )
+                  }),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ],
+                1
+              )
+            : _vm._e()
+        ])
+      ])
     : _vm._e()
 }
 var staticRenderFns = [
@@ -7199,36 +7165,62 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "terms_of_service" }, [
+  return _c("div", { attrs: { id: "terms-of-service" } }, [
     _c("h1", { attrs: { id: "theme" } }, [_vm._v("Photo Share Terms of Use")]),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "terms-of-service_first_contents" } }, [
+      _vm._v(
+        "\n    Regarding the use of Photo Share, the following terms of use are established.\n  "
+      )
+    ]),
     _vm._v(" "),
     _c("h2", { staticClass: "item" }, [_vm._v("1. Purpose")]),
     _vm._v(" "),
-    _c("div", { staticClass: "item_contents" }, [_vm._v("nothing yet")]),
+    _c("div", { staticClass: "item_contents" }, [
+      _vm._v(
+        "\n    Photo Share aims to inspire each other by sharing the photos posted by users.\n  "
+      )
+    ]),
     _vm._v(" "),
     _c("h2", { staticClass: "item" }, [_vm._v("2. Resister")]),
     _vm._v(" "),
-    _c("div", { staticClass: "item_contents" }, [_vm._v("nothing yet")]),
+    _c("div", { staticClass: "item_contents" }, [
+      _vm._v(
+        "\n    We may differ in the services provided in Tabelog from customers who are not \n    Photo Share members or who have not completed the member registration procedures prescribed by us.\n  "
+      )
+    ]),
     _vm._v(" "),
     _c("h2", { staticClass: "item" }, [_vm._v("3. Security")]),
     _vm._v(" "),
-    _c("div", { staticClass: "item_contents" }, [_vm._v("nothing yet")]),
+    _c("div", { staticClass: "item_contents" }, [
+      _vm._v(
+        "\n    Photo Share membership registration uses SSL (Secure Socket Layer), which is the most \n    reliable encryption communication technology on the Internet, and the information \n    transmitted is encrypted so that it cannot be seen by a third party.\n  "
+      )
+    ]),
     _vm._v(" "),
     _c("h2", { staticClass: "item" }, [_vm._v("4. Login account")]),
     _vm._v(" "),
-    _c("div", { staticClass: "item_contents" }, [_vm._v("nothing yet")]),
+    _c("div", { staticClass: "item_contents" }, [
+      _vm._v(
+        "\n    You are responsible for the registration and management of login accounts and passwords \n    at your own risk. Insufficient management of customers, errors in use, and the use of third parties. \n    The Company shall not be liable for any damages resulting from such reasons.\n  "
+      )
+    ]),
     _vm._v(" "),
     _c("h2", { staticClass: "item" }, [_vm._v("5. Privacy")]),
     _vm._v(" "),
-    _c("div", { staticClass: "item_contents" }, [_vm._v("nothing yet")]),
+    _vm._m(0),
     _vm._v(" "),
     _c("h2", { staticClass: "item" }, [_vm._v("6. About Use")]),
     _vm._v(" "),
-    _c("div", { staticClass: "item_contents" }, [_vm._v("nothing yet")]),
+    _vm._m(1),
     _vm._v(" "),
     _c("h2", { staticClass: "item" }, [_vm._v("7. Disclaimer")]),
     _vm._v(" "),
-    _c("div", { staticClass: "item_contents" }, [_vm._v("nothing yet")]),
+    _c("div", { staticClass: "item_contents" }, [
+      _vm._v(
+        "\n    We do not guarantee any information about the photos posted. In addition, we will not compensate or be involved in \n    any damages caused to customers by the information on the posted photos or troubles between customers.\n  "
+      )
+    ]),
     _vm._v(" "),
     _c("h2", { staticClass: "item" }, [_vm._v("8. Right")]),
     _vm._v(" "),
@@ -7242,13 +7234,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "item_contents" }, [_vm._v("nothing yet")]),
     _vm._v(" "),
-    _c("h2", { staticClass: "item" }, [
-      _vm._v("11. Changes to this agreement")
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "item_contents" }, [_vm._v("nothing yet")]),
-    _vm._v(" "),
-    _c("h2", { staticClass: "item" }, [_vm._v("12. Contact Us")]),
+    _c("h2", { staticClass: "item" }, [_vm._v("11. Contact Us")]),
     _vm._v(" "),
     _c(
       "div",
@@ -7263,7 +7249,150 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_contents" }, [
+      _c("div", { staticClass: "privacy-item" }, [
+        _c("div", { staticClass: "privacy-item_first_contents" }, [
+          _vm._v("Handling of personal information")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item-theme" }, [
+          _vm._v("[1] purpose of use")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v(
+            "\n        To promote the use of our services, such as creating statistical data after processing it into \n        a format that cannot identify individuals\n      "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v(
+            "\n        To contact customers as necessary regarding eating logs\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "privacy-item" }, [
+        _c("div", { staticClass: "privacy-item-theme" }, [
+          _vm._v("[2] Third party provided")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v("\n        When there is customer consent\n      ")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v(
+            "\n        When disclosing or providing as statistical data without being able to identify the customer\n      "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v("\n        When required by law\n      ")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v(
+            "\n        When it is necessary to protect human life, body or property, and it is difficult to obtain \n        the customer's consent\n      "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v(
+            "\n        When it is difficult to obtain the customer's consent when there is a particular need for \n        improving public health or promoting the healthy development of children\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "privacy-item" }, [
+        _c("div", { staticClass: "privacy-item-theme" }, [
+          _vm._v("[3] Subcontracting")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v(
+            "\n        The Company may entrust all or part of the handling of personal information acquired to \n        the extent necessary for the above purposes after taking necessary protective measures.\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "privacy-item" }, [
+        _c("div", { staticClass: "privacy-item-theme" }, [
+          _vm._v("[4] Disclosure, correction/deletion, suspension of use, etc.")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v(
+            "\n        If the customer requests, discloses, corrects/adds/deletes, suspends or deletes the purpose of \n        use of his/her personal information, he/she will receive it by the method specified in “4. \n        Regarding the handling of personal information”. I will do it.\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "privacy-item" }, [
+        _c("div", { staticClass: "privacy-item-theme" }, [_vm._v("[5] Other")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "privacy-item_contents" }, [
+          _vm._v(
+            "\n        Please understand that if you do not fill in all the items, all or part of Photo Share services \n        may not be available.\n      "
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_contents" }, [
+      _c("div", { staticClass: "use-item" }, [
+        _c("div", { staticClass: "use-item-theme" }, [
+          _vm._v("[1] Prohibition of diversion/resale")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "use-item_contents" }, [
+          _vm._v(
+            "\n        The customer shall not use or access Photo Share services provided by the Company, in whole or in part, \n        for the purpose of business activities or other profit-promoting activities or activities equivalent \n        thereto or preparation activities therefor. I shall. In addition, we shall not use or access for \n        the purpose of religious activities or political activities.\n      "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "use-item_contents" }, [
+          _vm._v(
+            "\n        Unauthorized reproduction or unauthorized use of the reviews posted on Photo Share is prohibited. \n        However, the person who made the posting is excluded.\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "use-item" }, [
+        _c("div", { staticClass: "use-item-theme" }, [
+          _vm._v("[2] Change / stop")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "use-item_contents" }, [
+          _vm._v(
+            "\n        We may change the tabelog provided to our customers for our convenience. Please note that Photo Share services \n        may be stopped in the event of a disaster, accident, or other emergency. In addition, even if the customer \n        or a third party is damaged by changing or stopping the eating log without obtaining the customer's consent \n        in advance, we will not compensate at all.\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "use-item" }, [
+        _c("div", { staticClass: "use-item-theme" }, [
+          _vm._v("[3] Equipment required for use")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "use-item_contents" }, [
+          _vm._v(
+            "\n        In order for customers to use Photo Share services, it is necessary to access the web. Regarding access to the web, \n        the customer is required to properly prepare and operate the necessary equipment and software at \n        his own responsibility and cost. We are not involved at all.\n      "
+          )
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

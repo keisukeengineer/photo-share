@@ -2,16 +2,15 @@
   <div
     v-if="photo"
     class="photo-detail"
-    :class="{ 'photo-detail--column': fullWidth}"
   >
-    <figure class="photo-detail__pane photo-detail__image"
-      @click="fullWidth = ! fullWidth"
-    >
+    <div class="photo-detail__photo">
       <transition appear>
-        <img :src="photo.url" alt="">
-        <figcaption>Posted by {{ photo.owner.name }}</figcaption>
+        <a :href="photo.url" data-lightbox="group">
+          <img :src="photo.url" alt="">
+        </a>
       </transition>
-    </figure>
+      <div>by {{ photo.owner.name }}</div>
+    </div>
     <div class="photo-detail__pane">
       <button
         class="button button--like"
@@ -81,18 +80,10 @@ export default {
   data () {
     return {
       photo: null,
-      fullWidth: false,
       commentContent: '',
       commentErrors: null,
       shareURL: '',
     }
-  },
-  mounted: function () {
-    this.getDefaultWindowWidth()
-    window.addEventListener('resize', this.handleResize)
-  },
-  beforeDestroy: function () {
-    window.removeEventListener('resize', this.handleResize)
   },
   computed: {
     isLogin () {
@@ -177,19 +168,6 @@ export default {
 
       this.photo.likes_count = this.photo.likes_count - 1
       this.photo.liked_by_user = false
-    },
-    getDefaultWindowWidth() {
-      if(screen.width === 375) {
-        this.fullWidth = true
-      }
-    },
-    handleResize() {
-      // iPhone 6/7/8/10 の場合、画像をフルサイズにする
-      if(window.innerWidth <= 375) {
-        this.fullWidth = true
-      } else {
-        this.fullWidth = false
-      }
     }
   }
 }
@@ -198,6 +176,25 @@ export default {
 <style scoped lang="scss">
 .photo-detail {
   margin-top: 9rem;
+  display: flex;
+  justify-content: space-between;
+
+    &__photo {
+      margin-right: 1rem;
+
+      @media screen and (max-width: 1000px) {
+        margin-right: 0rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+
+    &__pane {
+      width: 100%;
+    }
+  }
 
   @media screen and (max-width: 375px) {
     margin-top: 1rem;

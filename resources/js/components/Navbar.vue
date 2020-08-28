@@ -124,8 +124,8 @@ export default {
   }
 
   .drawer-item {
-    padding: 2rem 0;
     color: white;
+    transition: .5s;
 
     .logout {
       @include button__link__menu;
@@ -222,7 +222,7 @@ export default {
 
     .drawer-list {
       list-style: none;
-      padding-top: 3rem;
+      padding-top: 4rem;
       padding-left: 1.5rem;
       padding-inline-start: 0;
     }

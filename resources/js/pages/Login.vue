@@ -15,7 +15,7 @@
       </li>
     </ul>
 
-    <!-- ログイン -->
+    <!--  ログイン  -->
     <transition appear>
       <div class="panel" v-show="tab === 1">
         <form class="form" @submit.prevent="login">
@@ -56,7 +56,7 @@
       </div>
     </transition>
 
-    <!-- 会員登録 -->
+    <!--  会員登録  -->
     <transition appear>
       <div class="panel" v-show="tab === 2">
         <form class="form" @submit.prevent="register">

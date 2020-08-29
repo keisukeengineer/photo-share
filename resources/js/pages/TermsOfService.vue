@@ -227,10 +227,10 @@
   animation: page 1s forwards;
 
   @keyframes page {
-    0% {
+    from {
       opacity: 0;
     }
-    100% {
+    to {
       opacity: 1;
     }
   }
@@ -248,6 +248,7 @@
   }
 
   &_first_contents {
+    text-align: center;
     margin-bottom: 2rem;
   }
 

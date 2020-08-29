@@ -82,10 +82,6 @@ export default {
       this.closeMenue()
     },
     closeMenue() {
-//       if(location.href === window.Laravel.basePath + 'login') {
-// console.log('test')
-//       }
-
       document.getElementById('drawer-check').checked = false
     }
   }

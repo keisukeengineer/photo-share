@@ -195,7 +195,8 @@ export default {
   margin-top: 9rem;
 
   @media screen and (max-width: 375px) {
-    margin-top: 1rem;
+    padding: .5rem 2rem;
+    margin-top: 0rem;
   }
 
   .v-enter-active {

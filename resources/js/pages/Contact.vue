@@ -110,10 +110,10 @@ export default {
   animation: page 1s forwards;
 
   @keyframes page {
-    0% {
+    from {
       opacity: 0;
     }
-    100% {
+    to {
       opacity: 1;
     }
   }

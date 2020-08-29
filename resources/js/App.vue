@@ -78,7 +78,7 @@ export default {
   methods: {
     calculateScrollY() {
       this.scrollY = window.scrollY;
-
+console.log('test')
 　    if(this.scrollY > 100) {
         this.show = true
       } else if(this.scrollY === 0) {

@@ -54,14 +54,6 @@ export default {
     padding: .5rem 0;
   }
 
-  .button--link {
-    @include button__link;
-
-    &:hover {
-      border-color: black;
-    }
-  }
-
   .share_wrapper {
     display: inline-block;
     padding: .5rem 0;

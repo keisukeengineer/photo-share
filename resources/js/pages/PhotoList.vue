@@ -15,16 +15,6 @@
       :class="{'paginate_hidden': photos[0] === undefined}"
       :show-step-links="true"
     />
-    <transition name="topButton">
-      <button
-        type="button"
-        class="button button--link"
-        v-if="show"
-        @click="moveToTop()"
-      >
-        <i class="fas fa-arrow-up" />
-      </button>
-    </transition>
   </div>
 </template>
 
@@ -39,15 +29,7 @@ export default {
     return {
       photos: [],
       paginate: ['paginate-log'],
-      scrollY: 0,
-      show: false
     }
-  },
-  mounted() {
-   window.addEventListener('scroll', this.calculateScrollY);
-  },
-  beforeDestroy() {
-   window.removeEventListener('scroll', this.calculateScrollY);
   },
   watch: {
     $route: {
@@ -111,37 +93,12 @@ export default {
         }
         return photo
       })
-    },
-    calculateScrollY() {
-      this.scrollY = window.scrollY;
-
-      if(this.scrollY > 100) {
-        this.show = true
-      } else if(this.scrollY === 0) {
-        this.show = false
-      }
-
-    },
-    moveToTop() {
-      const duration = 500;  // 移動速度 : 0.5s
-      const interval = 8;    // 0.08s毎に移動
-      const step = -window.scrollY / Math.ceil(duration / interval); // 1回に移動する距離
-
-      const timer = setInterval(() => {
-        window.scrollBy(0, step); // 指定した位置へ移動
-
-        if(window.scrollY <= 0) {
-          clearInterval(timer);
-        }
-      }, interval);
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-@import '../../sass/_mixin';
-
 .photo-list {
   margin-top: 9rem;
 
@@ -192,17 +149,6 @@ export default {
 
   .paginate_hidden {
     display: none;
-  }
-
-  .button--link {
-    position: fixed;
-    right: 1rem;
-    bottom: 7rem;
-    @include button__link;
-
-    &:hover {
-      border-color: black;
-    }
   }
 
   .topButton-enter-active,

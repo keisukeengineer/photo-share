@@ -122,7 +122,6 @@
 
 <script>
 import { mapState } from 'vuex'
-import { checkPassword } from '../util'
 
 export default {
   data () {

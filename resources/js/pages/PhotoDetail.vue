@@ -179,14 +179,18 @@ export default {
   display: flex;
   justify-content: space-between;
 
-    &__photo {
-      margin-right: 1rem;
+  &__photo {
+    margin-right: 1rem;
 
-      @media screen and (max-width: 1000px) {
-        margin-right: 0rem;
-        margin-bottom: 2rem;
-      }
+    @media screen and (min-width: 1000px) {
+      width: 100%;
     }
+
+    @media screen and (max-width: 1000px) {
+      margin-right: 0rem;
+      margin-bottom: 2rem;
+    }
+  }
 
   @media screen and (max-width: 1000px) {
     flex-direction: column;

@@ -6,8 +6,16 @@
     <main>
       <div class="container">
         <Message />
+        <RouterView />
         <transition>
-          <RouterView />
+          <button
+            type="button"
+            class="button button--link"
+            v-if="show"
+            @click="moveToTop()"
+          >
+            <i class="fas fa-arrow-up" />
+          </button>
         </transition>
       </div>
     </main>
@@ -26,6 +34,18 @@ export default {
     Message,
     Navbar,
     Footer
+  },
+  data () {
+    return {
+      scrollY: 0,
+      show: false
+    }
+  },
+  mounted() {
+   window.addEventListener('scroll', this.calculateScrollY);
+  },
+  beforeDestroy() {
+   window.removeEventListener('scroll', this.calculateScrollY);
   },
   computed: {
     errorCode () {
@@ -54,6 +74,30 @@ export default {
     $route () {
       this.$store.commit('error/setCode', null)
     }
+  },
+  methods: {
+    calculateScrollY() {
+      this.scrollY = window.scrollY;
+
+　    if(this.scrollY > 100) {
+        this.show = true
+      } else if(this.scrollY === 0) {
+        this.show = false
+      }
+    },
+    moveToTop() {
+      const duration = 500;  // 移動速度 : 0.5s
+      const interval = 8;    // 0.08s毎に移動
+      const step = -window.scrollY / Math.ceil(duration / interval); // 1回に移動する距離
+
+      const timer = setInterval(() => {
+        window.scrollBy(0, step); // 指定した位置へ移動
+
+        if(window.scrollY <= 0) {
+          clearInterval(timer);
+        }
+      }, interval);
+    }
   }
 }
 </script>
@@ -67,6 +111,27 @@ export default {
     and (max-width: 1366px)
     and (max-height: 1024px) {
       max-width: 1370px;
+  }
+
+  .button--link {
+    position: fixed;
+    right: .5rem;
+    bottom: 7rem;
+    margin: 0 .45rem;
+    border: 1px solid #dedede;
+    transition: border-color .3s ease-in-out;
+
+    &:hover {
+      border-color: black;
+    }
+  }
+
+  .v-enter-active, .v-leave-active {
+    transition: opacity .8s
+  }
+
+  .v-enter, .v-leave-to {
+    opacity: 0;
   }
 }
 </style>

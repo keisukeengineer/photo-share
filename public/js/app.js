@@ -3552,7 +3552,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".login[data-v-3b6adb30] {\n  margin-top: 9rem;\n}\n@media screen and (max-width: 375px) {\n.login[data-v-3b6adb30] {\n    margin-top: 1rem;\n}\n}\n.login .v-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.7s;\n}\n.login .form-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.5s;\n}\n.login .v-enter[data-v-3b6adb30], .login .form-enter[data-v-3b6adb30] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".login[data-v-3b6adb30] {\n  margin-top: 9rem;\n}\n@media screen and (max-width: 375px) {\n.login[data-v-3b6adb30] {\n    padding: 0.5rem 2rem;\n    margin-top: 0rem;\n}\n}\n.login .v-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.7s;\n}\n.login .form-enter-active[data-v-3b6adb30] {\n  transition: opacity 0.5s;\n}\n.login .v-enter[data-v-3b6adb30], .login .form-enter[data-v-3b6adb30] {\n  opacity: 0;\n}", ""]);
 
 // exports
 

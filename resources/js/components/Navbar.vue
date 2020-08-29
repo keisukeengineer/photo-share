@@ -127,14 +127,9 @@ export default {
     color: white;
     transition: .5s;
 
-    .logout {
-      @include button__link__menu;
-    }
-
     .login,
     .contact,
     .terms_of_service {
-      @include button__link__menu;
       text-decoration: none;
       color: white;
     }

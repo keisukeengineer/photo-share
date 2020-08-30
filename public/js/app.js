@@ -2043,7 +2043,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   methods: {
     calculateScrollY: function calculateScrollY() {
       this.scrollY = window.scrollY;
-      console.log('test');
 
       if (this.scrollY > 100) {
         this.show = true;

@@ -1,5 +1,7 @@
 <template>
   <div class="photo-list">
+    <a href="#modal" id="login"></a>
+    <LoginPopup />
     <paginate class="paginate" name="paginate-log" :list="photos" :per="6">
       <Photo
         class="grid__item"
@@ -21,9 +23,11 @@
 <script>
 import { OK } from '../util'
 import Photo from '../components/Photo.vue'
+import LoginPopup from '../components/LoginPopup'
+
 export default {
   components: {
-    Photo,
+    Photo, LoginPopup
   },
   data () {
     return {
@@ -52,7 +56,7 @@ export default {
     },
     onLikeClick ({ id, liked }) {
       if (! this.$store.getters['auth/check']) {
-        alert('いいね機能を使うにはログインしてください。')
+        document.getElementById('login').click()
         return false
       }
 
@@ -160,5 +164,12 @@ export default {
   .topButton-leave-to {
     opacity: 0;
   }
+
+
+
+
+
+
+
 }
 </style>

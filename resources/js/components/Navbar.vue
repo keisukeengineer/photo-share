@@ -5,6 +5,7 @@
     </RouterLink>
     <div class="navbar__menu">
       <div id="user-name" v-if="isLogin">{{ username }}</div>
+      <div id="user-name" v-else>Guest</div>
       <div v-if="isLogin">
         <button class="button" @click="showForm = ! showForm">
           <i class="icon ion-md-add" />

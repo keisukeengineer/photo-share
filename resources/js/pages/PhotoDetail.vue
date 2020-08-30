@@ -3,6 +3,8 @@
     v-if="photo"
     class="photo-detail"
   >
+    <a href="#modal" id="login"></a>
+    <LoginPopup />
     <div class="photo-detail__photo">
       <transition appear>
         <a :href="photo.url" data-lightbox="group">
@@ -69,6 +71,7 @@
 
 <script>
 import { OK, CREATED, UNPROCESSABLE_ENTITY } from '../util'
+import LoginPopup from '../components/LoginPopup'
 
 export default {
   props: {
@@ -76,6 +79,9 @@ export default {
       type: String,
       required: true,
     }
+  },
+  components: {
+    LoginPopup
   },
   data () {
     return {
@@ -137,7 +143,7 @@ export default {
     },
     onLikeClick () {
       if (! this.isLogin) {
-        alert('いいね機能を使うにはログインしてください。')
+        document.getElementById('login').click()
         return false
       }
 

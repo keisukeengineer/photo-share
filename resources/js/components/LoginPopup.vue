@@ -60,7 +60,6 @@ export default {
   },
   computed: {
     ...mapState({
-      apiStatus: state => state.auth.apiStatus,
       loginErrors: state => state.auth.loginErrorMessages
     })
   },
@@ -78,7 +77,13 @@ export default {
       this.$store.commit('auth/setLoginErrorMessages', null)
     },
     async login () {
+      this.clearError()
       await this.$store.dispatch('auth/login', this.loginForm)
+
+      if(this.loginErrors) {
+        return false
+      }
+
       document.getElementById('modal-close').click()
     }
   }
@@ -154,7 +159,7 @@ export default {
   right: 0;
   width: 35px;
   color: #95979c !important;
-  font-size: 20px;
+  font-size: 2.2rem;
   font-weight: 700;
   line-height: 35px;
   text-align: center;
@@ -164,5 +169,9 @@ export default {
 
 .modal-wrapper #modal-close:hover {
   color: #2b2e38 !important
+}
+
+.errors {
+  padding-right: 1rem;
 }
 </style>

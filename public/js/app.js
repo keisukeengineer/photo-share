@@ -2202,9 +2202,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
-    apiStatus: function apiStatus(state) {
-      return state.auth.apiStatus;
-    },
     loginErrors: function loginErrors(state) {
       return state.auth.loginErrorMessages;
     }
@@ -2230,13 +2227,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                _this.clearError();
+
+                _context.next = 3;
                 return _this.$store.dispatch('auth/login', _this.loginForm);
 
-              case 2:
+              case 3:
+                if (!_this.loginErrors) {
+                  _context.next = 5;
+                  break;
+                }
+
+                return _context.abrupt("return", false);
+
+              case 5:
                 document.getElementById('modal-close').click();
 
-              case 3:
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -3616,7 +3623,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".modal-wrapper[data-v-96df4424] {\n  z-index: 999;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 40px 10px;\n  text-align: center;\n}\n.modal-wrapper[data-v-96df4424]:not(:target) {\n  opacity: 0;\n  visibility: hidden;\n  transition: opacity 0.3s, visibility 0.3s;\n}\n.modal-wrapper[data-v-96df4424]:target {\n  opacity: 1;\n  visibility: visible;\n  transition: opacity 0.4s, visibility 0.4s;\n}\n.modal-wrapper[data-v-96df4424]::after {\n  display: inline-block;\n  height: 100%;\n  margin-left: -0.05em;\n  vertical-align: middle;\n  content: \"\";\n}\n.modal-wrapper .modal-window[data-v-96df4424] {\n  box-sizing: border-box;\n  display: inline-block;\n  z-index: 20;\n  position: relative;\n  width: 70%;\n  max-width: 600px;\n  padding: 30px 30px 15px;\n  border-radius: 2px;\n  background: #fff;\n  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);\n  vertical-align: middle;\n}\n.modal-wrapper .modal-window .modal-content[data-v-96df4424] {\n  max-height: 80vh;\n  overflow-y: auto;\n  text-align: left;\n}\n.modal-overlay[data-v-96df4424] {\n  z-index: 10;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.8);\n}\n.modal-wrapper #modal-close[data-v-96df4424] {\n  z-index: 20;\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 35px;\n  color: #95979c !important;\n  font-size: 20px;\n  font-weight: 700;\n  line-height: 35px;\n  text-align: center;\n  text-decoration: none;\n  text-indent: 0;\n}\n.modal-wrapper #modal-close[data-v-96df4424]:hover {\n  color: #2b2e38 !important;\n}", ""]);
+exports.push([module.i, ".modal-wrapper[data-v-96df4424] {\n  z-index: 999;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 40px 10px;\n  text-align: center;\n}\n.modal-wrapper[data-v-96df4424]:not(:target) {\n  opacity: 0;\n  visibility: hidden;\n  transition: opacity 0.3s, visibility 0.3s;\n}\n.modal-wrapper[data-v-96df4424]:target {\n  opacity: 1;\n  visibility: visible;\n  transition: opacity 0.4s, visibility 0.4s;\n}\n.modal-wrapper[data-v-96df4424]::after {\n  display: inline-block;\n  height: 100%;\n  margin-left: -0.05em;\n  vertical-align: middle;\n  content: \"\";\n}\n.modal-wrapper .modal-window[data-v-96df4424] {\n  box-sizing: border-box;\n  display: inline-block;\n  z-index: 20;\n  position: relative;\n  width: 70%;\n  max-width: 600px;\n  padding: 30px 30px 15px;\n  border-radius: 2px;\n  background: #fff;\n  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);\n  vertical-align: middle;\n}\n.modal-wrapper .modal-window .modal-content[data-v-96df4424] {\n  max-height: 80vh;\n  overflow-y: auto;\n  text-align: left;\n}\n.modal-overlay[data-v-96df4424] {\n  z-index: 10;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.8);\n}\n.modal-wrapper #modal-close[data-v-96df4424] {\n  z-index: 20;\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 35px;\n  color: #95979c !important;\n  font-size: 2.2rem;\n  font-weight: 700;\n  line-height: 35px;\n  text-align: center;\n  text-decoration: none;\n  text-indent: 0;\n}\n.modal-wrapper #modal-close[data-v-96df4424]:hover {\n  color: #2b2e38 !important;\n}\n.errors[data-v-96df4424] {\n  padding-right: 1rem;\n}", ""]);
 
 // exports
 

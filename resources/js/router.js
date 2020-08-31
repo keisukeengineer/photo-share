@@ -14,8 +14,9 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/login',
+    path: '/login/:id',
     component: Login,
+    props: true,
     beforeEnter (to, from, next) {
       if (store.getters['auth/check']) {
         next('/')

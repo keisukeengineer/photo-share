@@ -2191,6 +2191,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2241,7 +2251,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 return _context.abrupt("return", false);
 
               case 5:
-                document.getElementById('modal-close').click();
+                _this.closeMenue();
 
               case 6:
               case "end":
@@ -2250,6 +2260,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         }, _callee);
       }))();
+    },
+    closeMenue: function closeMenue() {
+      document.getElementById('modal-close').click();
     }
   }
 });
@@ -2360,6 +2373,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2400,7 +2417,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
               case 2:
                 if (_this.apiStatus) {
-                  _this.$router.push('/login');
+                  _this.$router.push("/login/".concat(1));
                 }
 
                 _this.closeMenue();
@@ -2923,6 +2940,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    id: {
+      type: String,
+      required: false
+    }
+  },
   data: function data() {
     return {
       tab: 1,
@@ -2938,6 +2961,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     };
   },
+  created: function created() {
+    this.clearError();
+  },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
     apiStatus: function apiStatus(state) {
       return state.auth.apiStatus;
@@ -2949,8 +2975,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return state.auth.registerErrorMessages;
     }
   })),
-  created: function created() {
-    this.clearError();
+  watch: {
+    id: {
+      handler: function handler() {
+        this.tab = parseInt(this.id, 10);
+      },
+      immediate: true
+    }
   },
   methods: {
     clear_login_email: function clear_login_email() {
@@ -3623,7 +3654,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".modal-wrapper[data-v-96df4424] {\n  z-index: 999;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 40px 10px;\n  text-align: center;\n}\n.modal-wrapper[data-v-96df4424]:not(:target) {\n  opacity: 0;\n  visibility: hidden;\n  transition: opacity 0.3s, visibility 0.3s;\n}\n.modal-wrapper[data-v-96df4424]:target {\n  opacity: 1;\n  visibility: visible;\n  transition: opacity 0.4s, visibility 0.4s;\n}\n.modal-wrapper[data-v-96df4424]::after {\n  display: inline-block;\n  height: 100%;\n  margin-left: -0.05em;\n  vertical-align: middle;\n  content: \"\";\n}\n.modal-wrapper .modal-window[data-v-96df4424] {\n  box-sizing: border-box;\n  display: inline-block;\n  z-index: 20;\n  position: relative;\n  width: 70%;\n  max-width: 600px;\n  padding: 30px 30px 15px;\n  border-radius: 2px;\n  background: #fff;\n  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);\n  vertical-align: middle;\n}\n.modal-wrapper .modal-window .modal-content[data-v-96df4424] {\n  max-height: 80vh;\n  overflow-y: auto;\n  text-align: left;\n}\n.modal-overlay[data-v-96df4424] {\n  z-index: 10;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.8);\n}\n.modal-wrapper #modal-close[data-v-96df4424] {\n  z-index: 20;\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 35px;\n  color: #95979c !important;\n  font-size: 2.2rem;\n  font-weight: 700;\n  line-height: 35px;\n  text-align: center;\n  text-decoration: none;\n  text-indent: 0;\n}\n.modal-wrapper #modal-close[data-v-96df4424]:hover {\n  color: #2b2e38 !important;\n}\n.errors[data-v-96df4424] {\n  padding-right: 1rem;\n}", ""]);
+exports.push([module.i, ".modal-wrapper[data-v-96df4424] {\n  z-index: 999;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 40px 10px;\n  text-align: center;\n}\n.modal-wrapper[data-v-96df4424]:not(:target) {\n  opacity: 0;\n  visibility: hidden;\n  transition: opacity 0.3s, visibility 0.3s;\n}\n.modal-wrapper[data-v-96df4424]:not(:target) {\n  opacity: 0;\n  visibility: hidden;\n  transition: opacity 0.3s, visibility 0.3s;\n}\n.modal-wrapper[data-v-96df4424]:target {\n  opacity: 1;\n  visibility: visible;\n  transition: opacity 0.4s, visibility 0.4s;\n}\n.modal-wrapper[data-v-96df4424]::after {\n  display: inline-block;\n  height: 100%;\n  margin-left: -0.05em;\n  vertical-align: middle;\n  content: \"\";\n}\n.modal-wrapper .modal-overlay[data-v-96df4424] {\n  z-index: 10;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.8);\n}\n.modal-wrapper .modal-window[data-v-96df4424] {\n  box-sizing: border-box;\n  display: inline-block;\n  z-index: 20;\n  position: relative;\n  width: 70%;\n  max-width: 600px;\n  padding: 30px 30px 15px;\n  border-radius: 2px;\n  background: #fff;\n  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);\n  vertical-align: middle;\n}\n.modal-wrapper .modal-window .modal-content[data-v-96df4424] {\n  max-height: 80vh;\n  overflow-y: auto;\n  text-align: left;\n}\n.modal-wrapper .modal-window .modal-content .form-enter-active[data-v-96df4424] {\n  transition: opacity 0.8s;\n}\n.modal-wrapper .modal-window .modal-content .form-enter[data-v-96df4424] {\n  opacity: 0;\n}\n.modal-wrapper .modal-window .modal-content .errors[data-v-96df4424] {\n  padding-right: 1rem;\n}\n.modal-wrapper .modal-window .modal-content #messageRegister[data-v-96df4424] {\n  padding: 1rem 0;\n}\n.modal-wrapper .modal-window #modal-close[data-v-96df4424] {\n  z-index: 20;\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 35px;\n  color: #95979c !important;\n  font-size: 2.2rem;\n  font-weight: 700;\n  line-height: 35px;\n  text-align: center;\n  text-decoration: none;\n  text-indent: 0;\n}\n.modal-wrapper .modal-window #modal-close[data-v-96df4424]:hover {\n  color: #2b2e38 !important;\n}", ""]);
 
 // exports
 
@@ -3642,7 +3673,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン ( メニューバー ) */\n.navbar[data-v-6dde423b] {\n  height: 6rem;\n  /* 三本線のうち一番上の棒の位置調整 */\n  /* 三本線のうち一番下の棒の位置調整 */\n  /* アイコンがクリックされたら真ん中の線を透明にする */\n  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */\n  /* メニューのデザイン*/\n  /* アイコンがクリックされたらメニューを表示 */\n}\n.navbar__brand[data-v-6dde423b] {\n  margin-left: 1rem;\n  transition: opacity 0.3s ease-in-out;\n}\n.navbar__brandhover[data-v-6dde423b] {\n  opacity: 0.5;\n}\n.navbar__menu[data-v-6dde423b] {\n  margin-left: auto;\n}\n.navbar__menu__brand[data-v-6dde423b] {\n  padding: 0.5rem;\n}\n.navbar__menu__brand[data-v-6dde423b]:hover {\n  transition: all 0.3s ease-in-out;\n}\n.navbar__menu #user-name[data-v-6dde423b] {\n  padding: 1rem;\n}\n.navbar .drawer-item[data-v-6dde423b] {\n  color: white;\n  transition: 0.5s;\n}\n.navbar .drawer-item .logout[data-v-6dde423b] {\n  width: 100%;\n  display: block;\n  padding: 2rem 0;\n  padding-left: 2rem;\n  font-size: 1.5rem;\n  transition: 0.5s;\n}\n.navbar .drawer-item .logout[data-v-6dde423b]:hover {\n  color: #9b9898;\n  background: white;\n}\n.navbar .drawer-item .login[data-v-6dde423b],\n.navbar .drawer-item .contact[data-v-6dde423b],\n.navbar .drawer-item .terms_of_service[data-v-6dde423b] {\n  width: 100%;\n  display: block;\n  padding: 2rem 0;\n  padding-left: 2rem;\n  font-size: 1.5rem;\n  transition: 0.5s;\n  text-decoration: none;\n  color: white;\n}\n.navbar .drawer-item .login[data-v-6dde423b]:hover,\n.navbar .drawer-item .contact[data-v-6dde423b]:hover,\n.navbar .drawer-item .terms_of_service[data-v-6dde423b]:hover {\n  color: #9b9898;\n  background: white;\n}\n.navbar .drawer-open[data-v-6dde423b] {\n  display: flex;\n  height: 60px;\n  width: 60px;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  z-index: 100;\n}\n.navbar .drawer-hidden[data-v-6dde423b] {\n  display: none;\n}\n.navbar .drawer-open span[data-v-6dde423b],\n.navbar .drawer-open span[data-v-6dde423b]:before,\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  content: \"\";\n  display: block;\n  height: 3px;\n  width: 25px;\n  border-radius: 3px;\n  background: #333;\n  transition: 0.5s;\n  position: absolute;\n}\n.navbar .drawer-open span[data-v-6dde423b]:before {\n  bottom: 8px;\n}\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  top: 8px;\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b] {\n  background: rgba(255, 255, 255, 0);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::before {\n  bottom: 0;\n  transform: rotate(45deg);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::after {\n  top: 0;\n  transform: rotate(-45deg);\n}\n.navbar .drawer-content[data-v-6dde423b] {\n  width: 30%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 100%;\n  /* メニューを画面の外に飛ばす */\n  z-index: 99;\n  background: #9b9898;\n  transition: 0.5s;\n}\n@media screen and (max-width: 1200px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 40%;\n}\n}\n@media screen and (max-width: 950px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 50%;\n}\n}\n@media screen and (max-width: 750px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 60%;\n}\n}\n@media screen and (max-width: 650px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 70%;\n}\n}\n@media screen and (max-width: 550px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 100%;\n}\n}\n.navbar .drawer-content .drawer-list[data-v-6dde423b] {\n  list-style: none;\n  padding-top: 4rem;\n  padding-left: 1.5rem;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n}\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n  left: 70%;\n  /* メニューを画面に入れる */\n}\n@media screen and (max-width: 1200px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 60%;\n}\n}\n@media screen and (max-width: 950px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 50%;\n}\n}\n@media screen and (max-width: 750px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 40%;\n}\n}\n@media screen and (max-width: 650px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 30%;\n}\n}\n@media screen and (max-width: 550px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 0%;\n}\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ボタン ( メニューバー ) */\n.navbar[data-v-6dde423b] {\n  height: 6rem;\n  /* 三本線のうち一番上の棒の位置調整 */\n  /* 三本線のうち一番下の棒の位置調整 */\n  /* アイコンがクリックされたら真ん中の線を透明にする */\n  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */\n  /* メニューのデザイン*/\n  /* アイコンがクリックされたらメニューを表示 */\n}\n.navbar__brand[data-v-6dde423b] {\n  margin-left: 1rem;\n  transition: opacity 0.3s ease-in-out;\n}\n.navbar__brandhover[data-v-6dde423b] {\n  opacity: 0.5;\n}\n.navbar__menu[data-v-6dde423b] {\n  margin-left: auto;\n}\n.navbar__menu__brand[data-v-6dde423b] {\n  padding: 0.5rem;\n}\n.navbar__menu__brand[data-v-6dde423b]:hover {\n  transition: all 0.3s ease-in-out;\n}\n.navbar__menu #user-name[data-v-6dde423b] {\n  padding: 1rem;\n}\n.navbar .drawer-item[data-v-6dde423b] {\n  color: white;\n  transition: 0.5s;\n}\n.navbar .drawer-item .logout[data-v-6dde423b] {\n  width: 100%;\n  display: block;\n  padding: 2rem 0;\n  padding-left: 2rem;\n  font-size: 1.5rem;\n  transition: 0.5s;\n}\n.navbar .drawer-item .logout[data-v-6dde423b]:hover {\n  color: #9b9898;\n  background: white;\n}\n.navbar .drawer-item .login[data-v-6dde423b],\n.navbar .drawer-item .register[data-v-6dde423b],\n.navbar .drawer-item .contact[data-v-6dde423b],\n.navbar .drawer-item .terms_of_service[data-v-6dde423b] {\n  width: 100%;\n  display: block;\n  padding: 2rem 0;\n  padding-left: 2rem;\n  font-size: 1.5rem;\n  transition: 0.5s;\n  text-decoration: none;\n  color: white;\n}\n.navbar .drawer-item .login[data-v-6dde423b]:hover,\n.navbar .drawer-item .register[data-v-6dde423b]:hover,\n.navbar .drawer-item .contact[data-v-6dde423b]:hover,\n.navbar .drawer-item .terms_of_service[data-v-6dde423b]:hover {\n  color: #9b9898;\n  background: white;\n}\n.navbar .drawer-open[data-v-6dde423b] {\n  display: flex;\n  height: 60px;\n  width: 60px;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  z-index: 100;\n}\n.navbar .drawer-hidden[data-v-6dde423b] {\n  display: none;\n}\n.navbar .drawer-open span[data-v-6dde423b],\n.navbar .drawer-open span[data-v-6dde423b]:before,\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  content: \"\";\n  display: block;\n  height: 3px;\n  width: 25px;\n  border-radius: 3px;\n  background: #333;\n  transition: 0.5s;\n  position: absolute;\n}\n.navbar .drawer-open span[data-v-6dde423b]:before {\n  bottom: 8px;\n}\n.navbar .drawer-open span[data-v-6dde423b]:after {\n  top: 8px;\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b] {\n  background: rgba(255, 255, 255, 0);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::before {\n  bottom: 0;\n  transform: rotate(45deg);\n}\n.navbar #drawer-check:checked ~ .drawer-open span[data-v-6dde423b]::after {\n  top: 0;\n  transform: rotate(-45deg);\n}\n.navbar .drawer-content[data-v-6dde423b] {\n  width: 30%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 100%;\n  /* メニューを画面の外に飛ばす */\n  z-index: 99;\n  background: #9b9898;\n  transition: 0.5s;\n}\n@media screen and (max-width: 1200px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 40%;\n}\n}\n@media screen and (max-width: 950px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 50%;\n}\n}\n@media screen and (max-width: 750px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 60%;\n}\n}\n@media screen and (max-width: 650px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 70%;\n}\n}\n@media screen and (max-width: 550px) {\n.navbar .drawer-content[data-v-6dde423b] {\n    width: 100%;\n}\n}\n.navbar .drawer-content .drawer-list[data-v-6dde423b] {\n  list-style: none;\n  padding-top: 4rem;\n  padding-left: 1.5rem;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n}\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n  left: 70%;\n  /* メニューを画面に入れる */\n}\n@media screen and (max-width: 1200px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 60%;\n}\n}\n@media screen and (max-width: 950px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 50%;\n}\n}\n@media screen and (max-width: 750px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 40%;\n}\n}\n@media screen and (max-width: 650px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 30%;\n}\n}\n@media screen and (max-width: 550px) {\n.navbar #drawer-check:checked ~ .drawer-content[data-v-6dde423b] {\n    left: 0%;\n}\n}", ""]);
 
 // exports
 
@@ -6387,7 +6418,31 @@ var render = function() {
             ],
             1
           )
-        ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { attrs: { id: "messageRegister" } },
+          [
+            _vm._v(
+              "\n        If you have not registered, please click \n        "
+            ),
+            _c(
+              "RouterLink",
+              {
+                staticClass: "register",
+                attrs: { to: "/login/" + 2 },
+                on: {
+                  click: function($event) {
+                    return _vm.closeMenue()
+                  }
+                }
+              },
+              [_vm._v("\n          here\n        ")]
+            )
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c("a", { attrs: { href: "#!", id: "modal-close" } }, [_vm._v("×")])
@@ -6540,13 +6595,35 @@ var render = function() {
                 [
                   _c(
                     "RouterLink",
-                    { staticClass: "login", attrs: { to: "/login" } },
+                    { staticClass: "login", attrs: { to: "/login/" + 1 } },
                     [
                       _c("i", { staticClass: "fas fa-sign-in-alt" }, [
                         _vm._v(" Login")
-                      ]),
-                      _vm._v(" / \n          "),
-                      _c("i", { staticClass: "fas fa-user-plus" }, [
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.isLogin
+            ? _c(
+                "li",
+                {
+                  staticClass: "drawer-item",
+                  on: {
+                    click: function($event) {
+                      return _vm.closeMenue()
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "RouterLink",
+                    { staticClass: "register", attrs: { to: "/login/" + 2 } },
+                    [
+                      _c("i", { staticClass: "fas fa-sign-out-alt" }, [
                         _vm._v(" Register")
                       ])
                     ]
@@ -6574,7 +6651,7 @@ var render = function() {
           _c(
             "li",
             {
-              staticClass: "drawer-item cursor",
+              staticClass: "drawer-item",
               on: {
                 click: function($event) {
                   return _vm.closeMenue()
@@ -6598,7 +6675,7 @@ var render = function() {
           _c(
             "li",
             {
-              staticClass: "drawer-item cursor",
+              staticClass: "drawer-item",
               on: {
                 click: function($event) {
                   return _vm.closeMenue()
@@ -26806,8 +26883,9 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var routes = [{
-  path: '/login',
+  path: '/login/:id',
   component: _pages_Login_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+  props: true,
   beforeEnter: function beforeEnter(to, from, next) {
     if (_store__WEBPACK_IMPORTED_MODULE_4__["default"].getters['auth/check']) {
       next('/');

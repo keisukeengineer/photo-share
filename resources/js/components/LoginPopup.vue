@@ -40,6 +40,16 @@
             </div>
           </form>
         </div>
+        <div id="messageRegister">
+          If you have not registered, please click 
+          <RouterLink
+            class="register"
+            :to="`/login/${2}`"
+            @click="closeMenue()"
+          >
+            here
+          </RouterLink>
+        </div>
       </div>
       <a href="#!" id="modal-close">×</a>
     </div>
@@ -84,6 +94,9 @@ export default {
         return false
       }
 
+      this.closeMenue()
+    },
+    closeMenue() {
       document.getElementById('modal-close').click()
     }
   }
@@ -99,79 +112,97 @@ export default {
   bottom: 0;
   left: 0;
   padding: 40px 10px;
-  text-align: center
-}
-
-.modal-wrapper:not(:target) {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .3s, visibility .3s;
-}
-
-.modal-wrapper:target {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity .4s, visibility .4s;
-}
-
-.modal-wrapper::after {
-  display: inline-block;
-  height: 100%;
-  margin-left: -.05em;
-  vertical-align: middle;
-  content: ""
-}
-
-.modal-wrapper .modal-window {
-  box-sizing: border-box;
-  display: inline-block;
-  z-index: 20;
-  position: relative;
-  width: 70%;
-  max-width: 600px;
-  padding: 30px 30px 15px;
-  border-radius: 2px;
-  background: #fff;
-  box-shadow: 0 0 30px rgba(0, 0, 0, .6);
-  vertical-align: middle
-}
-
-.modal-wrapper .modal-window .modal-content {
-  max-height: 80vh;
-  overflow-y: auto;
-  text-align: left
-}
-
-.modal-overlay {
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, .8)
-}
-
-.modal-wrapper #modal-close {
-  z-index: 20;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 35px;
-  color: #95979c !important;
-  font-size: 2.2rem;
-  font-weight: 700;
-  line-height: 35px;
   text-align: center;
-  text-decoration: none;
-  text-indent: 0
-}
 
-.modal-wrapper #modal-close:hover {
-  color: #2b2e38 !important
-}
+  &:not(:target) {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+  }
 
-.errors {
-  padding-right: 1rem;
+  &:not(:target) {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .4s, visibility .4s;
+  }
+
+  &::after {
+    display: inline-block;
+    height: 100%;
+    margin-left: -.05em;
+    vertical-align: middle;
+    content: ""
+  }
+
+  .modal-overlay {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8)
+  }
+
+  .modal-window {
+    box-sizing: border-box;
+    display: inline-block;
+    z-index: 20;
+    position: relative;
+    width: 70%;
+    max-width: 600px;
+    padding: 30px 30px 15px;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .6);
+    vertical-align: middle;
+
+    .modal-content {
+      max-height: 80vh;
+      overflow-y: auto;
+      text-align: left;
+
+      .form-enter-active {
+        transition: opacity .8s
+      }
+
+      .form-enter{
+        opacity: 0;
+      }
+
+      .errors {
+        padding-right: 1rem;
+      }
+
+      #messageRegister {
+        padding: 1rem 0;
+      }
+    }
+
+    #modal-close {
+      z-index: 20;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 35px;
+      color: #95979c !important;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 35px;
+      text-align: center;
+      text-decoration: none;
+      text-indent: 0;
+
+      &:hover {
+        color: #2b2e38 !important
+      }
+    }
+  }
 }
 </style>

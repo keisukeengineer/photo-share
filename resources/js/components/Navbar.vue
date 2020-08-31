@@ -21,20 +21,24 @@
     <nav class="drawer-content">
       <ul class="drawer-list">
         <li class="drawer-item" v-if="!isLogin" @click="closeMenue()">
-          <RouterLink class="login" to="/login">
-            <i class="fas fa-sign-in-alt">&nbsp;Login</i>&emsp;/&emsp;
-            <i class="fas fa-user-plus">&nbsp;Register</i>
+          <RouterLink class="login" :to="`/login/${1}`">
+            <i class="fas fa-sign-in-alt">&nbsp;Login</i>
+          </RouterLink>
+        </li>
+        <li class="drawer-item" v-if="!isLogin" @click="closeMenue()">
+          <RouterLink class="register" :to="`/login/${2}`">
+            <i class="fas fa-sign-out-alt">&nbsp;Register</i>
           </RouterLink>
         </li>
         <li class="drawer-item cursor" v-if="isLogin" @click="logout">
           <i class="fas fa-sign-out-alt logout">&nbsp;Logout</i>
         </li>
-        <li class="drawer-item cursor" @click="closeMenue()">
+        <li class="drawer-item" @click="closeMenue()">
           <RouterLink class="contact" to="/contact">
             <i class="fas fa-user">&nbsp;Contact Us</i>
           </RouterLink>
         </li>
-        <li class="drawer-item cursor" @click="closeMenue()">
+        <li class="drawer-item" @click="closeMenue()">
           <RouterLink class="terms_of_service" to="/terms_of_service">
             <i class="fas fa-asterisk">&nbsp;Terms of service</i>
           </RouterLink>
@@ -77,7 +81,7 @@ export default {
       await this.$store.dispatch('auth/logout')
 
       if (this.apiStatus) {
-        this.$router.push('/login')
+        this.$router.push(`/login/${1}`)
       }
 
       this.closeMenue()
@@ -129,6 +133,7 @@ export default {
     }
 
     .login,
+    .register,
     .contact,
     .terms_of_service {
       @include button__link__menu;

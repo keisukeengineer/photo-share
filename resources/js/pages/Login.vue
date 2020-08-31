@@ -124,6 +124,12 @@
 import { mapState } from 'vuex'
 
 export default {
+  props: {
+    id: {
+      type: String,
+      required: false
+    }
+  },
   data () {
     return {
       tab: 1,
@@ -139,6 +145,9 @@ export default {
       }
     }
   },
+  created () {
+    this.clearError()
+  },
   computed: {
     ...mapState({
       apiStatus: state => state.auth.apiStatus,
@@ -146,8 +155,13 @@ export default {
       registerErrors: state => state.auth.registerErrorMessages
     })
   },
-  created () {
-    this.clearError()
+  watch: {
+    id: {
+      handler() {
+        this.tab = parseInt(this.id, 10)
+      },
+      immediate: true
+    }
   },
   methods: {
     clear_login_email() {

@@ -208,7 +208,7 @@ export default {
 .login {
   margin-top: 9rem;
 
-  @media screen and (max-width: 375px){
+  @media screen and (max-width: 414px){
     padding: .5rem 2rem;
     margin-top: 0;
   }

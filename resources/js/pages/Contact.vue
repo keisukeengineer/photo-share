@@ -125,7 +125,7 @@ export default {
     border-top: 1rem solid rgb(175, 169, 169);
     border-bottom: 1rem solid rgb(175, 169, 169);
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 414px) {
       font-size: 1.8rem;
     }
   }

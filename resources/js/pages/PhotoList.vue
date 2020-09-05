@@ -106,17 +106,25 @@ export default {
 .photo-list {
   margin-top: 9rem;
 
-  @media screen
-    and (max-width: 375px) {
-    height: 123rem;
+  @media screen and (max-width: 414px) {
+    margin-top: 8.5rem;
+  }
+
+  @media screen and (max-height: 414px) {
+    margin-top: 5rem;
+  }
+
+  @media screen and (max-width: 375px) {
     margin-top: 1rem;
+    margin-bottom: 8rem;
   }
 
   .paginate {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    padding-inline-start: 0px;
+    padding-inline-start: 0;
+    margin-block-start: 0;
 
     li {
       width: 31%;
@@ -133,6 +141,10 @@ export default {
         and (max-width: 1024px)
         and (max-height: 768px) {
         width: 31.33%;
+      }
+      @media screen
+        and (max-width: 414px) {
+        width: 47.8%;
       }
       @media screen
         and (max-width: 375px) {
@@ -164,12 +176,5 @@ export default {
   .topButton-leave-to {
     opacity: 0;
   }
-
-
-
-
-
-
-
 }
 </style>

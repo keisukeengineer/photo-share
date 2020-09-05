@@ -181,9 +181,14 @@ export default {
 
 <style scoped lang="scss">
 .photo-detail {
-  margin-top: 9rem;
+  margin-top: 7.5rem;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-height: 414px) {
+    margin-top: 6rem;
+    padding-right: 1.3rem;
+  }
 
   &__photo {
     margin-right: 1rem;
@@ -206,8 +211,14 @@ export default {
     }
   }
 
-  @media screen and (max-width: 375px) {
-    margin-top: 1rem;
+  @media screen and (max-height: 414px) {
+    flex-direction: row;
+    margin-top: 6rem;
+
+    &__pane {
+      width: 50rem;
+      margin-left: 1rem;
+    }
   }
 
   .v-enter-active, .v-leave-active {

@@ -49,14 +49,28 @@ export default {
   height: 6rem;
   background: white;
 
+  @media screen and (max-height: 414px) {
+    height: 4rem;
+    flex-direction: row;
+  }
+
   .copyright {
     color: #8a8a8a;
     padding: .5rem 0;
+
+    @media screen and (max-height: 414px) {
+      order: -1;
+    }
   }
 
   .share_wrapper {
     display: inline-block;
     padding: .5rem 0;
+
+    @media screen and (max-height: 414px) {
+      position: absolute;
+      right: 1rem;
+    }
 
     &_sub {
       display: inline-block;

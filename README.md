@@ -11,7 +11,7 @@
 ※ レスポンシブに対応させました( iPhone / iPad )<br><br>
 
 # 概要
-作成期間&nbsp;：&nbsp;16日&nbsp;( 2020/08/16 時点 )<br>
+作成期間&nbsp;：&nbsp;１ヶ月&nbsp;( 2020/09/04 )<br>
 お気に入りの写真を投稿してシェアできるWEBアプリケーションです。<br><br>
 
 # コメント
@@ -44,7 +44,6 @@ Topボタン<br>
 # 言語
 HTML5<br>
 CSS3<br>
-SCSS<br>
 Javascript<br>
 PHP&ensp;:&ensp;7.2.30<br>
 MySQL&ensp;:&ensp;5.7.30<br><br>
@@ -53,13 +52,22 @@ MySQL&ensp;:&ensp;5.7.30<br><br>
 Vue.js&ensp;:&ensp;2.6.11<br>
 Laravel&ensp;:&ensp;6.18.31<br><br>
 
+# ツール
+SCSS<br>
+jQuery&ensp;:&ensp;3.1.1<br>
+LightBox2&ensp;:&ensp;2.7.1<br>
+GitHub<br>
+Docker&ensp;:&ensp;19.03.12<br>
+CircleCI<br><br>
+
 # 開発環境
-Git&ensp;:&ensp;2.23.0<br>
 Node&ensp;:&ensp;12.16.3<br>
 Nginx&ensp;:&ensp;1.17.10<br>
-Docker&ensp;:&ensp;19.03.12<br>
-CircleCI<br>
-AmazonLinux2<br>
-AWS ( EC2、RDS、S3、CodeDeploy )<br>
 VisualStudio&ensp;:&ensp;1.45.1<br>
-MacOS Catalina&ensp;:&ensp;10.15.4
+MacOS Catalina&ensp;:&ensp;10.15.4<br><br>
+
+# 本番環境
+Node&ensp;:&ensp;12.16.3<br>
+Nginx&ensp;:&ensp;1.17.10<br>
+AWS ( EC2、RDS、S3、CodeDeploy )<br>
+AmazonLinux２<br>

@@ -208,9 +208,13 @@ export default {
 .login {
   margin-top: 9rem;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 375px){
     padding: .5rem 2rem;
-    margin-top: 0rem;
+    margin-top: 0;
+  }
+
+  @media screen and (max-height: 414px){
+    margin-top: 0;
   }
 
   .v-enter-active {

@@ -103,35 +103,45 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.container {
-  max-width: 1100px;
-
-  /** iPad 横向き */
-  @media screen
-    and (max-width: 1366px)
-    and (max-height: 1024px) {
-      max-width: 1370px;
+main {
+  @media screen and (max-height: 414px) {
+    margin-top: 5rem;
   }
 
-  .button--link {
-    position: fixed;
-    right: .5rem;
-    bottom: 7rem;
-    margin: 0 .45rem;
-    border: 1px solid #dedede;
-    transition: border-color .3s ease-in-out;
+  .container {
+    max-width: 1100px;
 
-    &:hover {
-      border-color: black;
+    /** iPad 横向き */
+    @media screen
+      and (max-width: 1366px)
+      and (max-height: 1024px) {
+        max-width: 1370px;
     }
-  }
 
-  .v-enter-active, .v-leave-active {
-    transition: opacity .8s
-  }
+    .button--link {
+      position: fixed;
+      right: .5rem;
+      bottom: 7rem;
+      margin: 0 .45rem;
+      border: 1px solid #dedede;
+      transition: border-color .3s ease-in-out;
 
-  .v-enter, .v-leave-to {
-    opacity: 0;
+      @media screen and (max-height: 414px) {
+        bottom: 5rem;
+      }
+
+      &:hover {
+        border-color: black;
+      }
+    }
+
+    .v-enter-active, .v-leave-active {
+      transition: opacity .8s
+    }
+
+    .v-enter, .v-leave-to {
+      opacity: 0;
+    }
   }
 }
 </style>

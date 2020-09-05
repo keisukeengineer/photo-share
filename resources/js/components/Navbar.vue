@@ -99,6 +99,10 @@ export default {
 .navbar {
   height: 6rem;
 
+  @media screen and (max-height: 414px) {
+    height: 4rem;
+  }
+
   &__brand {
     margin-left: 1rem;
     transition: opacity .3s ease-in-out;

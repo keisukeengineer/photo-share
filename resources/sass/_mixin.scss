@@ -7,6 +7,11 @@
   font-size: 1.5rem;
   transition: 0.5s;
 
+  @media screen and (max-height: 414px){
+    padding: 1.5rem 0;
+    padding-left: 2rem;
+  }
+
   &:hover {
     color: #9b9898;
     background: white;

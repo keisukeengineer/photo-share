@@ -54,20 +54,20 @@ Laravel&ensp;:&ensp;6.18.31<br><br>
 
 # ツール
 SCSS<br>
-Ajax<br>
-jQuery<br>
+jQuery&ensp;:&ensp;3.1.1<br>
+LightBox2&ensp;:&ensp;2.7.1<br>
 GitHub<br>
 Docker&ensp;:&ensp;19.03.12<br>
-CircleCI<br>
+CircleCI<br><br>
 
 # 開発環境
 Node&ensp;:&ensp;12.16.3<br>
 Nginx&ensp;:&ensp;1.17.10<br>
 VisualStudio&ensp;:&ensp;1.45.1<br>
-MacOS Catalina&ensp;:&ensp;10.15.4
+MacOS Catalina&ensp;:&ensp;10.15.4<br><br>
 
 # 本番環境
 Node&ensp;:&ensp;12.16.3<br>
 Nginx&ensp;:&ensp;1.17.10<br>
-AmazonLinux２<br>
 AWS ( EC2、RDS、S3、CodeDeploy )<br>
+AmazonLinux２<br>

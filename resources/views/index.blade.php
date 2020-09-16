@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+　 <!-- Tracking code -->
+  <script>
+  　window.dataLayer = window.dataLayer || [];
+  　function gtag()　{
+    　dataLayer.push(arguments);
+　　}
+  　gtag('js', new Date());
+
+  　gtag('config', 'UA-178135632-1');
+　</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -21,17 +31,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <!-- LightBox -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
-  <!-- GoogleAnalytics -->
-  <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
-  <script>
-  　window.dataLayer = window.dataLayer || [];
-  　function gtag()　{
-    　dataLayer.push(arguments);
-　　}
-  　gtag('js', new Date());
-
-  　gtag('config', 'UA-178135632-1');
-　</script>
 
   <!-- Current Path -->
   <script>

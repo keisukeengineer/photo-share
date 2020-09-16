@@ -1,9 +1,14 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="{{ url('/') }}/">
+  <meta property="og:title" content="Photo Share">
+  <meta property="og:description" content="You can share your favorite photos.">
+  <meta property="og:image" content="/photo-share-detail.png">
 
   <title>{{ config('app.name') }}</title>
 

@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <!-- GoogleAnalytics -->
+  <script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-178135632-1"></script>
+  <!-- End GoogleAnalytics -->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -14,20 +19,17 @@
 
   <title>Photo Share</title>
 
-  <!-- GoogleAnalytics -->
-  <script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-178135632-1"></script>
   <!-- app.js -->
-  <script src="{{ mix('js/app.js') }}" defer></script>
+  <script type="text/javascript" src="{{ mix('js/app.js') }}" defer></script>
   <!-- FontAwesome -->
-  <script src="https://kit.fontawesome.com/61fdc2f5c9.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://kit.fontawesome.com/61fdc2f5c9.js" crossorigin="anonymous"></script>
   <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <!-- LightBox -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
 
   <!-- Current Path -->
-  <script>
+  <script type="text/javascript">
     window.Laravel = {
       basePath: '{{ url('/') }}/'
     }

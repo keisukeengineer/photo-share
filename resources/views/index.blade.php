@@ -13,9 +13,10 @@
   <meta property="og:title" content="Photo Share" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ url('/') }}/" />
-  <meta property="og:image" content="{{ url('/') }}/photo-share-detail.png" />
-  <meta property="og:description" content="You can share your favorite photos." />
+  <meta property="og:image" content="{{ url('/') }}/photo-share-top.png" />
+  <meta property="og:description" content="当サイトのサービスを利用すれば、お気に入りの写真を共有できます。" />
   <meta property="og:locale" content="ja_JP" />
+  <meta name="description" content="当サイトのサービスを利用すれば、お気に入りの写真を共有できます。">
 
   <title>Photo Share</title>
 

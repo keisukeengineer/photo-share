@@ -21,8 +21,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <!-- LightBox -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
-  <!-- GoogleAnalytics -->
-  <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
+
+  <!-- Tracking code -->
   <script>
   　window.dataLayer = window.dataLayer || [];
   　function gtag()　{
@@ -32,6 +32,21 @@
 
   　gtag('config', 'UA-178135632-1');
 　</script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i) {
+      w[l]=w[l]||[];w[l].push({
+        'gtm.start': new Date().getTime(),
+         event: 'gtm.js'
+      });
+
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })
+  (window,document,'script','dataLayer','GTM-XXXX');
+  </script>
 
   <!-- Current Path -->
   <script>

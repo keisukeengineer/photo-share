@@ -1,10 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-　 <!-- GoogleAnalytics -->
-  <script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-178135632-1"></script>
-  <!-- End GoogleAnalytics -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,6 +13,10 @@
   <meta property="og:locale" content="ja_JP" />
 
   <title>Photo Share</title>
+
+  <!-- GoogleAnalytics -->
+  <script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-178135632-1"></script>
   <!-- app.js -->
   <script src="{{ mix('js/app.js') }}" defer></script>
   <!-- FontAwesome -->

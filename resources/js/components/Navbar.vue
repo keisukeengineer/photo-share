@@ -4,9 +4,9 @@
       Photo Share
     </RouterLink>
     <div class="navbar__menu">
-      <div id="user-name" v-if="isLogin">{{ username }}</div>
-      <div id="user-name" v-else>Guest</div>
-      <div v-if="isLogin">
+      <div class="navbar__item__right" v-if="isLogin">{{ username }}</div>
+      <div class="navbar__item__right" v-else>Guest</div>
+      <div class="navbar__item__right" v-if="isLogin">
         <button class="button" @click="showForm = ! showForm">
           <i class="icon ion-md-add" />
           <i class="fas fa-image" />
@@ -123,8 +123,12 @@ export default {
       }
     }
 
-    #user-name {
+    .navbar__item__right {
       padding: 1rem;
+
+      @media screen and (max-width: 414px) {
+        padding: .5rem;
+      }
     }
   }
 

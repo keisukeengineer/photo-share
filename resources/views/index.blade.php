@@ -1,12 +1,9 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-  <!-- GoogleAnalytics -->
-  <script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-178135632-1"></script>
-  <!-- End GoogleAnalytics -->
-
   <meta charset="utf-8">
+  <meta name="keyword" content="写真、共有">
+  <meta name="description" content="当サイトのサービスを利用すれば、お気に入りの写真を共有できます。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="twitter:card" content="summary_large_image">
@@ -16,10 +13,20 @@
   <meta property="og:image" content="{{ url('/') }}/photo-share-top.png" />
   <meta property="og:description" content="当サイトのサービスを利用すれば、お気に入りの写真を共有できます。" />
   <meta property="og:locale" content="ja_JP" />
-  <meta name="description" content="当サイトのサービスを利用すれば、お気に入りの写真を共有できます。">
 
   <title>Photo Share</title>
 
+  <!-- GoogleAnalytics -->
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178225654-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-178225654-1');
+  </script>
   <!-- app.js -->
   <script type="text/javascript" src="{{ mix('js/app.js') }}" defer></script>
   <!-- FontAwesome -->

@@ -16,8 +16,6 @@
 
   <title>Photo Share</title>
 
-  <!-- GoogleAnalytics -->
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178225654-1"></script>
   <script>

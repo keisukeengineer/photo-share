@@ -3,5 +3,5 @@
 set -eux
 
 cd ~/photo-ci
-php artisan migrate --force
+php artisan migrate:refresh --force
 php artisan config:cache
